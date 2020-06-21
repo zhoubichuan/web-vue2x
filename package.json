@@ -1,23 +1,20 @@
 {
-  "name": "Web-Vue",
+  "name": "interview",
   "version": "1.0.0",
-  "description": "---\r lang: zh-CN\r home: true\r heroImage: ''\r actionText: 先睹为快 →\r actionLink: /article/dataDriver/\r pageClass: page_index\r footer: Vue 源码学习记录\r meta:\r   - name: keywords\r     content: Vue 源码学习记录\r ---",
+  "description": "",
   "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {},
+  "author": "zhoubichaun@icloud.com",
+  "hommepage": "https://github.com/zhoubichuan/Web-Interview/",
+  "private": true,
+  "license": "MIT",
   "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "dev": "vuepress dev src",
+    "build": "vuepress build src",
+    "src:build": "vuepress build src",
+    "deploy": "bash deploy.sh",
+    "gh-pages": "bash deploy_gh-pages.sh"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zhoubichuan/Web-Vue.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zhoubichuan/Web-Vue/issues"
-  },
-  "homepage": "https://github.com/zhoubichuan/Web-Vue#readme"
+  "devDependencies": {
+    "vuepress": "^0.14.4"
+  }
 }
