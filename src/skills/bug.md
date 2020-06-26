@@ -8,4 +8,4 @@ meta:
     content: vuepress,最新技术文档,vuepress主题
 ---
 
-# 四、egg 相关知识点
+# 二、常见 bug

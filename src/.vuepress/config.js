@@ -41,7 +41,7 @@ module.exports = {
   ],
   port: 3009,
   dest: 'dist', // 指定 vuepress build 的输出目录
-  serviceWorker: false, // pwa
+  skillsWorker: false, // pwa
 
   // 主题配置
   themeConfig: {
@@ -327,23 +327,31 @@ module.exports = {
               link: '/element/MessageBox',
             }]
           },
-          // {
-          //   text: 'Vue开发技巧',
-          //   link: '/service/node',
-          //   items: [{
-          //     text: '一、Node',
-          //     link: '/service/1.node',
-          //   }, {
-          //     text: '二、Express',
-          //     link: '/service/2.express',
-          //   }, {
-          //     text: '三、Koa',
-          //     link: '/service/3.koa',
-          //   }, {
-          //     text: '四、Egg',
-          //     link: '/service/4.egg',
-          //   }]
-          // },
+          {
+            text: 'Vue开发技巧',
+            items: [{
+              text: '一、开发技巧',
+              link: '/skills/skill',
+            }, {
+              text: '二、常见bug',
+              link: '/skills/bug',
+            }, {
+              text: '三、配置webpack',
+              link: '/skills/webpack',
+            }, {
+              text: '四、配置vscode',
+              link: '/skills/vscode',
+            }, {
+              text: '五、测试',
+              link: '/skills/test',
+            }, {
+              text: '六、权限',
+              link: '/skills/prem',
+            }, {
+              text: '七、国际化',
+              link: '/skills/i18n',
+            }]
+          },
           // {
           //   text: 'Vue相关插件',
           //   link: '/article/',
@@ -416,7 +424,7 @@ module.exports = {
             'Spinner', 'Badge', 'Card', 'Rate', 'Steps', 'Step', 'Carousel', 'Scrollbar', 'CarouselItem', 'Collapse', 'CollapseItem', 'Cascader', 'ColorPicker', 'Transfer',
             'Container', 'Header', 'Aside', 'Main', 'Footer', 'Timeline', 'TimelineItem', 'Link', 'Divider', 'Image', 'Calendar', 'Backtop', 'PageHeader', 'CascaderPanel', 'Avatar', 'Drawer', 'Popconfirm', 'CollapseTransition', 'MessageBox'
           ],
-          // '/service/': ['1.node', '2.express', '3.koa', '4.egg'],
+          // '/skills/': ['1.node', '2.express', '3.koa', '4.egg'],
           // '/article/': ['阿里巴巴', '蘑菇街', '饿了么', '今日头条', '滴滴', '兑吧', '百分点', '海风教育', '海康威视', '沪江', '酷家乐', '寺库', '挖财', '网易', '微医', '携程', '喜马拉雅', '有赞']
         }
       }
