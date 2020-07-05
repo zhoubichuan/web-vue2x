@@ -1,12 +1,16 @@
 module.exports = {
   // 基础配置
   base: '/Web-Vue/', // 部署站点的基础路径
+  description: 'vue相关知识点',
   locales: {
     // 默认标题
     '/': {
       title: 'Vue笔记',
       description: ''
     }
+  },
+  markdown: {
+    lineNumbers: true // 代码块显示行号
   },
   head: [
     // 添加链接 pwa 的 manifest 如果需要
@@ -50,6 +54,7 @@ module.exports = {
     locales: {
       '/': {
         docsBranch: 'master', // 假如文档放在一个特定的分支下
+        editLinks: true, // 启用编辑
         editLinkText: '在github上编辑此页',
         lastUpdated: '上次更新', // 获取每个文件最后一次 git 提交的时间戳
         nav: [{
@@ -352,68 +357,68 @@ module.exports = {
               link: '/skills/i18n',
             }]
           },
-          // {
-          //   text: 'Vue相关插件',
-          //   link: '/article/',
-          //   items: [{
-          //     text: '阿里巴巴',
-          //     link: '/article/阿里巴巴',
-          //   }, {
-          //     text: '饿了么',
-          //     link: '/article/饿了么',
-          //   }, {
-          //     text: '百分点',
-          //     link: '/article/百分点',
-          //   }, {
-          //     text: '宝宝树',
-          //     link: '/article/宝宝树',
-          //   }, {
-          //     text: '滴滴',
-          //     link: '/article/滴滴',
-          //   }, {
-          //     text: '兑吧',
-          //     link: '/article/兑吧',
-          //   }, {
-          //     text: '海风教育',
-          //     link: '/article/宝海风教育',
-          //   }, {
-          //     text: '海康威视',
-          //     link: '/article/海康威视',
-          //   }, {
-          //     text: '沪江',
-          //     link: '/article/沪江',
-          //   }, {
-          //     text: '今日头条',
-          //     link: '/article/今日头条',
-          //   }, {
-          //     text: '酷家乐',
-          //     link: '/article/酷家乐',
-          //   }, {
-          //     text: '蘑菇街',
-          //     link: '/article/蘑菇街',
-          //   }, {
-          //     text: '寺库',
-          //     link: '/article/寺库',
-          //   }, {
-          //     text: '挖财',
-          //     link: '/article/挖财',
-          //   }, {
-          //     text: '网易',
-          //     link: '/article/网易',
-          //   }, {
-          //     text: '微医',
-          //     link: '/article/微医',
-          //   }, {
-          //     text: '喜马拉雅',
-          //     link: '/article/喜马拉雅',
-          //   }, {
-          //     text: '携程',
-          //     link: '/article/携程',
-          //   }, {
-          //     text: '有赞',
-          //     link: '/article/有赞',
-          //   }]
-          // }
+          {
+            text: 'Vue知识',
+            link: '/vueBase/',
+            items: [{
+              text: '1.构建基础篇',
+              link: '/vueBase/1.buildBase',
+            }, {
+              text: '2.Vue组件精讲',
+              link: '/vueBase/2.componeDetail',
+            }, {
+              text: '百分点',
+              link: '/vueBase/百分点',
+            }, {
+              text: '宝宝树',
+              link: '/vueBase/宝宝树',
+            }, {
+              text: '滴滴',
+              link: '/vueBase/滴滴',
+            }, {
+              text: '兑吧',
+              link: '/vueBase/兑吧',
+            }, {
+              text: '海风教育',
+              link: '/vueBase/宝海风教育',
+            }, {
+              text: '海康威视',
+              link: '/vueBase/海康威视',
+            }, {
+              text: '沪江',
+              link: '/vueBase/沪江',
+            }, {
+              text: '今日头条',
+              link: '/vueBase/今日头条',
+            }, {
+              text: '酷家乐',
+              link: '/vueBase/酷家乐',
+            }, {
+              text: '蘑菇街',
+              link: '/vueBase/蘑菇街',
+            }, {
+              text: '寺库',
+              link: '/vueBase/寺库',
+            }, {
+              text: '挖财',
+              link: '/vueBase/挖财',
+            }, {
+              text: '网易',
+              link: '/vueBase/网易',
+            }, {
+              text: '微医',
+              link: '/vueBase/微医',
+            }, {
+              text: '喜马拉雅',
+              link: '/vueBase/喜马拉雅',
+            }, {
+              text: '携程',
+              link: '/vueBase/携程',
+            }, {
+              text: '有赞',
+              link: '/vueBase/有赞',
+            }]
+          }
         ],
         sidebar: {
           '/vue/': ['1.preparation', '2.dataDriven', '3.componentization', '4.deepResponsePrinciple', '5.compile', '6.extend', '7.vueRouter', '8.vuex'],
@@ -424,8 +429,8 @@ module.exports = {
             'Spinner', 'Badge', 'Card', 'Rate', 'Steps', 'Step', 'Carousel', 'Scrollbar', 'CarouselItem', 'Collapse', 'CollapseItem', 'Cascader', 'ColorPicker', 'Transfer',
             'Container', 'Header', 'Aside', 'Main', 'Footer', 'Timeline', 'TimelineItem', 'Link', 'Divider', 'Image', 'Calendar', 'Backtop', 'PageHeader', 'CascaderPanel', 'Avatar', 'Drawer', 'Popconfirm', 'CollapseTransition', 'MessageBox'
           ],
-          // '/skills/': ['1.node', '2.express', '3.koa', '4.egg'],
-          // '/article/': ['阿里巴巴', '蘑菇街', '饿了么', '今日头条', '滴滴', '兑吧', '百分点', '海风教育', '海康威视', '沪江', '酷家乐', '寺库', '挖财', '网易', '微医', '携程', '喜马拉雅', '有赞']
+          '/skills/': ['1.node', '2.express', '3.koa', '4.egg'],
+          '/vueBase/': ['1.buildBase', '2.componeDetail', '饿了么', '今日头条', '滴滴', '兑吧', '百分点', '海风教育', '海康威视', '沪江', '酷家乐', '寺库', '挖财', '网易', '微医', '携程', '喜马拉雅', '有赞']
         }
       }
     }
