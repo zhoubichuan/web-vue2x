@@ -60,30 +60,12 @@ module.exports = {
         nav: [{
             text: '基础知识点',
             items: [{
-                text: '1.构建基础篇',
-                link: '/vueBase/1.buildBase'
+                text: '构建基础篇',
+                link: '/vueBase/build/1.config'
               },
               {
-                text: '一、开发技巧',
-                link: '/skills/skill',
-              }, {
-                text: '二、常见bug',
-                link: '/skills/bug',
-              }, {
-                text: '三、配置webpack',
-                link: '/skills/webpack',
-              }, {
-                text: '四、配置vscode',
-                link: '/skills/vscode',
-              }, {
-                text: '五、测试',
-                link: '/skills/test',
-              }, {
-                text: '六、权限',
-                link: '/skills/prem',
-              }, {
-                text: '七、国际化',
-                link: '/skills/i18n',
+                text: '开发技巧',
+                link: '/vueBase/skills/skill',
               }
             ]
           },
@@ -91,47 +73,47 @@ module.exports = {
             text: '高级使用技巧',
             items: [{
                 text: '1.Vue组件精讲',
-                link: '/vueSenior/1.recursionAndDynamics'
+                link: '/vueSenior/use/1.recursionAndDynamics'
               },
-              {
-                text: '2.使用TypeScript开发vue',
-                link: '/vueSenior/typeScript'
-              },
+              // {
+              //   text: '2.使用TypeScript开发vue',
+              //   link: '/vueSenior/typeScript'
+              // },
             ]
           },
           {
             text: '相关源码解析',
             items: [{
                 text: 'vue源码解析',
-                link: '/sourceCode/vue'
+                link: '/sourceCode/vue/1.preparation'
               },
-              {
-                text: 'vuex源码解析',
-                link: '/sourceCode/vuex'
-              },
-              {
-                text: 'vue-router源码解析',
-                link: '/sourceCode/vue-router'
-              },
+              // {
+              //   text: 'vuex源码解析',
+              //   link: '/sourceCode/vuex'
+              // },
+              // {
+              //   text: 'vue-router源码解析',
+              //   link: '/sourceCode/vue-router'
+              // },
               {
                 text: 'Element源码解析',
-                link: '/sourceCode/element'
+                link: '/sourceCode/element/Pagination'
               },
             ]
           }
         ],
         sidebar: {
-          '/sourceCode/': ['1.preparation', '2.dataDriven', '3.componentization', '4.deepResponsePrinciple', '5.compile', '6.extend', '7.vueRouter', '8.vuex'],
-          '/element/': ['Pagination', 'Dialog', 'Autocomplete', 'Dropdown',
+          '/vueBase/skills/': ['bug', 'i18n', 'prem', 'skill', 'test', 'vscode', 'webpack'],
+          '/vueBase/build/': ['1.config', '2.webpack', '3.file', '4.single', '5.page', '7.module', '8.project', '9.utils', '10.ui', '11.data', '12.skill', '13.com', '14.data', '15.api'],
+          '/vueSenior/use/': ['1.recursionAndDynamics', '2.extend', '3.componentCommunication', '4.render', '5.api'],
+          '/sourceCode/vue/': ['1.preparation', '2.dataDriven', '3.componentization', '4.deepResponsePrinciple', '5.compile', '6.extend', '7.vueRouter', '8.vuex'],
+          '/sourceCode/element/': ['Pagination', 'Dialog', 'Autocomplete', 'Dropdown',
             'DropdownMenu', 'DropdownItem', 'Menu', 'Submenu', 'MenuItem', 'MenuItemGroup', 'Input', 'InputNumber', 'Radio', 'RadioGroup', 'RadioButton', 'Checkbox', 'CheckboxButton', 'CheckboxGroup',
             'Switch', 'Option', 'OptionGroup', 'Button', 'ButtonGroup', 'Table', 'TableColumn', 'DatePicker', 'TimeSelect', 'TimePicker', 'Popover', 'Tooltip', 'Breadcrumb', 'BreadcrumbItem',
             'Form', 'FormItem', 'Tabs', 'TabPane', 'Tag', 'Tree', 'Alert', 'Slider', 'Icon', 'Row', 'Col', 'Upload', 'Progress',
             'Spinner', 'Badge', 'Card', 'Rate', 'Steps', 'Step', 'Carousel', 'Scrollbar', 'CarouselItem', 'Collapse', 'CollapseItem', 'Cascader', 'ColorPicker', 'Transfer',
             'Container', 'Header', 'Aside', 'Main', 'Footer', 'Timeline', 'TimelineItem', 'Link', 'Divider', 'Image', 'Calendar', 'Backtop', 'PageHeader', 'CascaderPanel', 'Avatar', 'Drawer', 'Popconfirm', 'CollapseTransition', 'MessageBox'
           ],
-          '/skills/': ['1.node', '2.express', '3.koa', '4.egg'],
-          '/vueBase/': ['1.buildBase', '饿了么', '今日头条', '滴滴', '兑吧', '百分点', '海风教育', '海康威视', '沪江', '酷家乐', '寺库', '挖财', '网易', '微医', '携程', '喜马拉雅', '有赞'],
-          '/vueSenior/': ['1.recursionAndDynamics', '2.extend', '3.componentCommunication', '4.render']
         }
       }
     }
