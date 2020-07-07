@@ -94,26 +94,34 @@ module.exports = {
                 link: '/vueSenior/1.recursionAndDynamics'
               },
               {
-                text: '菜单4-2',
-                link: '/ers2'
+                text: '2.使用TypeScript开发vue',
+                link: '/vueSenior/typeScript'
               },
             ]
           },
           {
             text: '相关源码解析',
             items: [{
-                text: 'Vue源码解析',
-                link: '/vue/1.preparation'
+                text: 'vue源码解析',
+                link: '/sourceCode/vue'
+              },
+              {
+                text: 'vuex源码解析',
+                link: '/sourceCode/vuex'
+              },
+              {
+                text: 'vue-router源码解析',
+                link: '/sourceCode/vue-router'
               },
               {
                 text: 'Element源码解析',
-                link: '/element/Pagination'
+                link: '/sourceCode/element'
               },
             ]
           }
         ],
         sidebar: {
-          '/vue/': ['1.preparation', '2.dataDriven', '3.componentization', '4.deepResponsePrinciple', '5.compile', '6.extend', '7.vueRouter', '8.vuex'],
+          '/sourceCode/': ['1.preparation', '2.dataDriven', '3.componentization', '4.deepResponsePrinciple', '5.compile', '6.extend', '7.vueRouter', '8.vuex'],
           '/element/': ['Pagination', 'Dialog', 'Autocomplete', 'Dropdown',
             'DropdownMenu', 'DropdownItem', 'Menu', 'Submenu', 'MenuItem', 'MenuItemGroup', 'Input', 'InputNumber', 'Radio', 'RadioGroup', 'RadioButton', 'Checkbox', 'CheckboxButton', 'CheckboxGroup',
             'Switch', 'Option', 'OptionGroup', 'Button', 'ButtonGroup', 'Table', 'TableColumn', 'DatePicker', 'TimeSelect', 'TimePicker', 'Popover', 'Tooltip', 'Breadcrumb', 'BreadcrumbItem',
