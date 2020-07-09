@@ -105,7 +105,7 @@ module.exports = {
         sidebar: {
           '/vueBase/skills/': ['bug', 'i18n', 'prem', 'skill', 'test', 'vscode', 'webpack'],
           '/vueBase/build/': ['1.config', '2.webpack', '3.file', '4.single', '5.page', '7.module', '8.project', '9.utils', '10.ui', '11.data', '12.skill', '13.com', '14.data', '15.api'],
-          '/vueSenior/use/': ['1.recursionAndDynamics', '2.extend', '3.componentCommunication', '4.render', '5.api'],
+          '/vueSenior/use/': ['1.recursionAndDynamics', '2.extend', '3.componentCommunication', '4.render', '5.api', '6.form', '7.checkBox', '8.active', '9.alert', '10.table', '11.tree'],
           // '/vueSenior/npm/': [],
           '/sourceCode/vue/': ['1.preparation', '2.dataDriven', '3.componentization', '4.deepResponsePrinciple', '5.compile', '6.extend', '7.vueRouter', '8.vuex'],
           '/sourceCode/element/': ['Pagination', 'Dialog', 'Autocomplete', 'Dropdown',
