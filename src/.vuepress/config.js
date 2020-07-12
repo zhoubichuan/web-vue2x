@@ -1,6 +1,6 @@
 module.exports = {
   // 基础配置
-  base: '/Web-Vue/', // 部署站点的基础路径
+  base: '/vue/', // 部署站点的基础路径
   description: 'vue相关知识点',
   locales: {
     // 默认标题
@@ -45,7 +45,7 @@ module.exports = {
   ],
   port: 3009,
   dest: 'dist', // 指定 vuepress build 的输出目录
-  skillsWorker: false, // pwa
+  serviceWorker: true, // pwa
 
   // 主题配置
   themeConfig: {
@@ -60,55 +60,55 @@ module.exports = {
         nav: [{
             text: '基础知识点',
             items: [{
-                text: '构建基础篇',
-                link: '/vueBase/build/1.config'
+                text: '1.构建基础篇',
+                link: '/base/build/1.config'
               },
               {
-                text: '开发技巧',
-                link: '/vueBase/skills/skill',
+                text: '2.项目功能点',
+                link: '/base/skills/skill',
               }
             ]
           },
           {
             text: '高级使用技巧',
             items: [{
-                text: '1.Vue组件精讲',
-                link: '/vueSenior/use/1.recursionAndDynamics'
+                text: '1.组件精讲',
+                link: '/senior/use/1.recursionAndDynamics'
               },
-              // {
-              //   text: '2.使用TypeScript开发vue',
-              //   link: '/vueSenior/typeScript'
-              // },
+              {
+                text: '2.TypeScript',
+                link: '/senior/typeScript'
+              },
             ]
           },
           {
             text: '相关源码解析',
             items: [{
                 text: 'vue源码解析',
-                link: '/sourceCode/vue/1.preparation'
+                link: '/source/vue/1.preparation'
               },
               // {
               //   text: 'vuex源码解析',
-              //   link: '/sourceCode/vuex'
+              //   link: '/source/vuex'
               // },
               // {
               //   text: 'vue-router源码解析',
-              //   link: '/sourceCode/vue-router'
+              //   link: '/source/vue-router'
               // },
               {
                 text: 'Element源码解析',
-                link: '/sourceCode/element/Pagination'
+                link: '/source/element/Pagination'
               },
             ]
           }
         ],
         sidebar: {
-          '/vueBase/skills/': ['bug', 'i18n', 'prem', 'skill', 'test', 'vscode', 'webpack'],
-          '/vueBase/build/': ['1.config', '2.webpack', '3.file', '4.single', '5.page', '7.module', '8.project', '9.utils', '10.ui', '11.data', '12.skill', '13.com', '14.data', '15.api'],
-          '/vueSenior/use/': ['1.recursionAndDynamics', '2.extend', '3.componentCommunication', '4.render', '5.api', '6.form', '7.checkBox', '8.active', '9.alert', '10.table', '11.tree'],
-          // '/vueSenior/npm/': [],
-          '/sourceCode/vue/': ['1.preparation', '2.dataDriven', '3.componentization', '4.deepResponsePrinciple', '5.compile', '6.extend', '7.vueRouter', '8.vuex'],
-          '/sourceCode/element/': ['Pagination', 'Dialog', 'Autocomplete', 'Dropdown',
+          '/base/skills/': ['bug', 'i18n', 'prem', 'skill', 'test', 'vscode', 'webpack'],
+          '/base/build/': ['1.config', '2.webpack', '3.file', '4.single', '5.page', '7.module', '8.project', '9.utils', '10.ui', '11.data', '12.skill', '13.com', '14.data', '15.api'],
+          '/senior/use/': ['1.recursionAndDynamics', '2.extend', '3.componentCommunication', '4.render', '5.api', '6.form', '7.checkBox', '8.active', '9.alert', '10.table', '11.tree'],
+          '/senior/npm/': [],
+          '/source/vue/': ['1.preparation', '2.dataDriven', '3.componentization', '4.deepResponsePrinciple', '5.compile', '6.extend', '7.vueRouter', '8.vuex'],
+          '/source/element/': ['Pagination', 'Dialog', 'Autocomplete', 'Dropdown',
             'DropdownMenu', 'DropdownItem', 'Menu', 'Submenu', 'MenuItem', 'MenuItemGroup', 'Input', 'InputNumber', 'Radio', 'RadioGroup', 'RadioButton', 'Checkbox', 'CheckboxButton', 'CheckboxGroup',
             'Switch', 'Option', 'OptionGroup', 'Button', 'ButtonGroup', 'Table', 'TableColumn', 'DatePicker', 'TimeSelect', 'TimePicker', 'Popover', 'Tooltip', 'Breadcrumb', 'BreadcrumbItem',
             'Form', 'FormItem', 'Tabs', 'TabPane', 'Tag', 'Tree', 'Alert', 'Slider', 'Icon', 'Row', 'Col', 'Upload', 'Progress',
@@ -118,5 +118,5 @@ module.exports = {
         }
       }
     }
-  }
+  },
 }

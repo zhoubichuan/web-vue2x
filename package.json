@@ -11,6 +11,7 @@
     "dev": "vuepress dev src",
     "build": "vuepress build src",
     "src:build": "vuepress build src",
+    "getname": "node utils/getFilenames.js",
     "deploy": "bash deploy.sh",
     "gh-pages": "bash deploy_gh-pages.sh"
   },
