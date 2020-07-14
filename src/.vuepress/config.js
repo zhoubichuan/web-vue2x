@@ -1,6 +1,6 @@
 module.exports = {
   // 基础配置
-  base: '/vue/', // 部署站点的基础路径
+  base: '/Web-Vue/', // 部署站点的基础路径
   description: 'vue相关知识点',
   locales: {
     // 默认标题
@@ -77,7 +77,7 @@ module.exports = {
               },
               {
                 text: '2.TypeScript',
-                link: '/senior/typeScript'
+                link: '/senior/typeScript/1.base'
               },
             ]
           },
@@ -89,11 +89,11 @@ module.exports = {
               },
               {
                 text: '2.vuex源码解析',
-                link: '/source/vuex'
+                link: '/source/vuex/1.base'
               },
               {
                 text: '3.vue-router源码解析',
-                link: '/source/vue-router'
+                link: '/source/vue-router/1.base'
               },
               {
                 text: '4.element源码解析',
