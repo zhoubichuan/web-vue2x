@@ -3,12 +3,12 @@ lang: zh-CN
 home: true
 heroImage: ""
 actionText: 先睹为快 →
-actionLink: /vueBase/build/1.config
+actionLink: /base/build/1.config
 pageClass: page_index
-footer: 前端面试
+footer: Vue框架相关知识点积累
 meta:
   - name: keywords
-    content: 面试相关,前端学习,前端笔记
+    content: Vue相关,前端学习,前端笔记
 ---
 
 <template>
