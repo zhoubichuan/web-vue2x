@@ -58,19 +58,19 @@ module.exports = {
         editLinkText: '在github上编辑此页',
         lastUpdated: '上次更新', // 获取每个文件最后一次 git 提交的时间戳
         nav: [{
-            text: '基础知识点',
+            text: '基础知识',
             items: [{
                 text: '1.构建基础篇',
                 link: '/base/build/1.config'
               },
               {
                 text: '2.项目功能点',
-                link: '/base/skills/skill',
+                link: '/base/function/skill',
               }
             ]
           },
           {
-            text: '高级使用技巧',
+            text: '高级知识',
             items: [{
                 text: '1.组件精讲',
                 link: '/senior/use/1.recursionAndDynamics'
@@ -82,29 +82,29 @@ module.exports = {
             ]
           },
           {
-            text: '相关源码解析',
+            text: '源码知识',
             items: [{
-                text: 'vue源码解析',
+                text: '1.vue源码解析',
                 link: '/source/vue/1.preparation'
               },
-              // {
-              //   text: 'vuex源码解析',
-              //   link: '/source/vuex'
-              // },
-              // {
-              //   text: 'vue-router源码解析',
-              //   link: '/source/vue-router'
-              // },
               {
-                text: 'Element源码解析',
+                text: '2.vuex源码解析',
+                link: '/source/vuex'
+              },
+              {
+                text: '3.vue-router源码解析',
+                link: '/source/vue-router'
+              },
+              {
+                text: '4.element源码解析',
                 link: '/source/element/Pagination'
               },
             ]
           }
         ],
         sidebar: {
-          '/base/skills/': ['bug', 'i18n', 'prem', 'skill', 'test', 'vscode', 'webpack'],
           '/base/build/': ['1.config', '2.webpack', '3.file', '4.single', '5.page', '7.module', '8.project', '9.utils', '10.ui', '11.data', '12.skill', '13.com', '14.data', '15.api'],
+          '/base/function/': ['skill', 'bug', 'webpack', 'vscode', 'test', 'prem', 'i18n'],
           '/senior/use/': ['1.recursionAndDynamics', '2.extend', '3.componentCommunication', '4.render', '5.api', '6.form', '7.checkBox', '8.active', '9.alert', '10.table', '11.tree'],
           '/senior/npm/': [],
           '/source/vue/': ['1.preparation', '2.dataDriven', '3.componentization', '4.deepResponsePrinciple', '5.compile', '6.extend', '7.vueRouter', '8.vuex'],

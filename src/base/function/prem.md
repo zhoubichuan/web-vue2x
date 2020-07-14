@@ -8,4 +8,4 @@ meta:
     content: vuepress,最新技术文档,vuepress主题
 ---
 
-# 五、测试
+# 六、vue 中权限配置

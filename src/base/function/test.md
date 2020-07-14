@@ -1,0 +1,341 @@
+---
+lang: zh-CN
+sidebarDepth: 2
+meta:
+  - name: description
+    content: 个人总结的vuepress学习技术文档-主题
+  - name: keywords
+    content: vuepress,最新技术文档,vuepress主题
+---
+
+# 五、vue 单元测试和测试用例
+
+监听测试用例运行,每次修改文件会自动重新跑测试用例，不用每次手动跑
+
+```
+yarn run test:unit --watch
+```
+
+## 1、单元测试
+
+测试 props 传值
+
+- Test1.vue
+
+```vue
+<template>
+  <h1>{{ msg }}</h1>
+</template>
+```
+
+```js
+{
+  props: {
+    msg: String
+  }
+}
+```
+
+test1.spec.js
+
+```js
+const msg = "new message"
+const wrapper = shallowMount(Test1, {
+  propsData: { msg },
+})
+expect(wrapper.text()).to.include(msg)
+```
+
+测试点击事件
+
+Test2.vue
+
+```vue
+<template>
+  <span id="count">{{ count }}</span>
+  <button @click="increment">点击</button>
+  <template></template
+></template>
+```
+
+```js
+{
+  data() {
+  return { count: 10};
+},
+methods: {
+  increment() {
+    this.count++;
+  }
+}
+}
+```
+
+test2.spec.js
+
+```js
+let wrapper = shallowMount(Test2)
+wrapper.setData({ count: 10 })
+expect(wrapper.find("span").text()).to.be.equal("10")
+wrapper.find("button").trigger("click")
+expect(wrapper.find("span").text()).to.be.equal("11")
+```
+
+测试自定义方法
+
+Test3.vue
+
+```vue
+<template>
+  <Child @show="show"></Child>
+  <p id="content" v-if="flag">{{ name }}</p>
+</template>
+```
+
+```js
+props:{
+  fn:{}
+},
+methods:{
+  clickMe(){
+    this.fn('123')
+    this.fn('456')
+  }
+}
+
+```
+
+test3.spec.js
+
+```js
+let wrapper = shallowMount(Test3)
+expect(wrapper.find("#content").exists()).to.be.false
+wrapper.find(Child).vm.$emit("show")
+expect(wrapper.find("#content").exists()).to.be.true
+```
+
+测试子组件触发父组件方法
+
+Child.vue
+
+```vue
+<template>
+<button @click="clickMe">click</button>
+</tempalte>
+```
+
+```js
+import Child from "./Child.vue";
+export default {
+  data() {
+    return {name: "javascript", flag: false };
+  },
+  methods: {
+    show() {
+      this.flag = true;
+    }
+  },
+   components: {
+      Child
+    }
+};
+</script>
+```
+
+child.spec.js
+
+```js
+let callback = sinon.spy()
+let wrapper = shallowMount(Child, {
+  propsData: { fn: callback },
+})
+wrapper.find("button").trigger("click")
+expect(callback.getCall(0).args[0]).to.be.equal("123")
+expect(callback.getCall(1).args[0]).to.be.equal("456")
+expect(callback.callCount).to.be.equal(2)
+```
+
+测试 axios
+
+Test4.vue
+
+```vue
+<template>
+<span >{{user}}</span>
+</tempalte>
+```
+
+```js
+{
+  data(){
+    return {user:''}
+  },
+  mounted(){
+      axios.get('/user').then((res)=>{
+          this.user = res.data.user;
+      }).catch(err=>{
+          console.log(err);
+      });
+  }
+}
+```
+
+test4.spec.js
+
+```js
+beforeEach(() => {
+  moxios.install()
+})
+afterEach(() => {
+  moxios.uninstall()
+})
+it("测试axios", (done) => {
+  let wrapper = shallowMount(Test4)
+  moxios.stubRequest("/user", {
+    status: 200,
+    response: { user: "jw" },
+  })
+  moxios.wait(() => {
+    expect(wrapper.text()).to.include("jw")
+    done()
+  })
+})
+```
+
+测试 vuex
+
+Store.vue
+
+```vue
+<template>
+  <div>
+    <span>{{ this.$store.state.username }}</span>
+    <button @click="clickMe">点击</button>
+  </div>
+</template>
+<script>
+// 测试vuex 从两个方向 测试ui 测试功能
+import { mapState, mapActions } from "vuex"
+export default {
+  computed: {
+    ...mapState(["username"]),
+  },
+  methods: {
+    ...mapActions(["set_username"]),
+    clickMe() {
+      this["set_username"]("jw")
+    },
+  },
+}
+</script>
+```
+
+store.js
+
+```js
+export default {
+  state: {
+    username: "zfpx",
+  },
+  mutations: {
+    set_username(state, username) {
+      state.username = username
+    },
+  },
+  actions: {
+    set_username({ commit }, username) {
+      commit("set_username", username)
+    },
+  },
+}
+```
+
+main.js
+
+```js
+import Vue from "vue"
+import App from "./App.vue"
+import router from "./router"
+import config from "./store"
+import Vuex from "vuex"
+
+Vue.use(Vuex)
+let store = new Vuex.Store(config)
+
+Vue.config.productionTip = false
+
+new Vue({
+  router,
+  store,
+  render: (h) => h(App),
+}).$mount("#app")
+```
+
+store.spec.js
+
+```js
+import { shallowMount, createLocalVue } from "@vue/test-utils"
+import Vuex from "vuex"
+import Store from "@/components/Store.vue"
+let localVue = createLocalVue()
+localVue.use(Vuex) //防止用例之间的污染
+let state
+let store
+let actions
+let callback = jest.fn()
+describe("测试vuex 能否在页面中使用", () => {
+  state = { username: "jw" }
+  actions = {
+    set_username: callback,
+  }
+  beforeEach(() => {
+    state = { username: "jw" }
+    store = new Vuex.Store({
+      state,
+      actions,
+    })
+  })
+  it("state能否正常显示到页面中", () => {
+    let wrapper = shallowMount(Store, {
+      localVue,
+      store,
+    })
+    expect(wrapper.text()).toContain("jw")
+  })
+  it("点击按钮时action能否正常触发", () => {
+    let wrapper = shallowMount(Store, {
+      localVue, //提供测试的构造函数vue
+      store,
+    })
+    wrapper.find("button").trigger("click")
+    expect(callback).toHaveBeenCalled()
+  })
+})
+```
+
+将 store 中的部分内容放到 main.js 中可以改造得更简洁
+
+```js
+import { createLocalVue } from "@vue/test-utils"
+import Vuex from "vuex"
+import config from "@/store"
+let localVue = createLocalVue()
+localVue.use(Vuex) //防止用例之间的污染
+
+describe("测试vuex 能否在页面中使用", () => {
+  let store
+  beforeEach(() => {
+    store = new Vuex.Store(config)
+  })
+  it("state能否正常显示到页面中", () => {
+    expect(store.state.username).toBe("zfpx")
+    jest.useFakeTimers() //创建一个模拟的定时器，会把异步代码立刻返回
+    store.dispatch("set_username", "newName")
+    jest.runAllTimers() //把timer执行
+    expect(store.state.username).toBe("newName")
+    jest.useRealTimers()
+  })
+})
+```
+
+## 2、测试用例

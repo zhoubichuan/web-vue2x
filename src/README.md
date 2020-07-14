@@ -5,10 +5,10 @@ heroImage: ""
 actionText: 先睹为快 →
 actionLink: /vueBase/build/1.config
 pageClass: page_index
-footer: Vue相关知识
+footer: 前端面试
 meta:
   - name: keywords
-    content: Vue相关,前端学习,前端笔记
+    content: 面试相关,前端学习,前端笔记
 ---
 
 <template>
