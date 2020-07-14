@@ -79,6 +79,11 @@ module.exports = {
                 text: '2.TypeScript',
                 link: '/senior/typeScript/1.base'
               },
+              {
+                text: '3.用 npm script 打造超溜的前端工作流',
+                link: '/senior/npm/1.base'
+              },
+
             ]
           },
           {
@@ -106,8 +111,11 @@ module.exports = {
           '/base/build/': ['1.config', '2.webpack', '3.file', '4.single', '5.page', '7.module', '8.project', '9.utils', '10.ui', '11.data', '12.skill', '13.com', '14.data', '15.api'],
           '/base/function/': ['skill', 'bug', 'webpack', 'vscode', 'test', 'prem', 'i18n'],
           '/senior/use/': ['1.recursionAndDynamics', '2.extend', '3.componentCommunication', '4.render', '5.api', '6.form', '7.checkBox', '8.active', '9.alert', '10.table', '11.tree'],
-          '/senior/npm/': [],
+          '/senior/npm/': ['1.base'],
+          '/senior/typeScript/': ['1.base'],
           '/source/vue/': ['1.preparation', '2.dataDriven', '3.componentization', '4.deepResponsePrinciple', '5.compile', '6.extend', '7.vueRouter', '8.vuex'],
+          '/source/vue-router/': ['1.base'],
+          '/source/vuex/': ['1.base'],
           '/source/element/': ['Pagination', 'Dialog', 'Autocomplete', 'Dropdown',
             'DropdownMenu', 'DropdownItem', 'Menu', 'Submenu', 'MenuItem', 'MenuItemGroup', 'Input', 'InputNumber', 'Radio', 'RadioGroup', 'RadioButton', 'Checkbox', 'CheckboxButton', 'CheckboxGroup',
             'Switch', 'Option', 'OptionGroup', 'Button', 'ButtonGroup', 'Table', 'TableColumn', 'DatePicker', 'TimeSelect', 'TimePicker', 'Popover', 'Tooltip', 'Breadcrumb', 'BreadcrumbItem',
