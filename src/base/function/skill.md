@@ -9,3 +9,7 @@ meta:
 ---
 
 # 一、开发技巧
+
+## 1.template 中打印变量
+
+vue.prototype.\$log = window.console

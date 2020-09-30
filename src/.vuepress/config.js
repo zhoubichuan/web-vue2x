@@ -5,7 +5,7 @@ module.exports = {
   locales: {
     // 默认标题
     '/': {
-      title: 'Vue笔记',
+      title: 'Vue学习总结',
       description: ''
     }
   },
