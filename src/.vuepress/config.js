@@ -73,14 +73,14 @@ module.exports = {
             text: '高级知识',
             items: [{
                 text: '1.组件精讲',
-                link: '/senior/use/1.recursionAndDynamics'
+                link: '/senior/componentElaboration/1.recursionAndDynamics'
               },
               {
                 text: '2.TypeScript',
                 link: '/senior/typeScript/1.base'
               },
               {
-                text: '3.用 npm script 打造超溜的前端工作流',
+                text: '3.前端工作流',
                 link: '/senior/npm/1.base'
               },
 
@@ -110,7 +110,20 @@ module.exports = {
         sidebar: {
           '/base/build/': ['1.config', '2.webpack', '3.file', '4.single', '5.page', '6.module', '7.devide', '8.project', '9.utils', '10.ui', '11.data', '12.skill', '13.com', '14.data', '15.api'],
           '/base/function/': ['skill', 'bug', 'webpack', 'vscode', 'test', 'prem', 'i18n'],
-          '/senior/use/': ['1.recursionAndDynamics', '2.extend', '3.componentCommunication', '4.render', '5.api', '6.form', '7.checkBox', '8.active', '9.alert', '10.table', '11.table', '12.tree'],
+          '/senior/componentElaboration/': [
+            '1.recursionAndDynamics', //递归组件与动态组件
+            '2.vueConstructor', //Vue 的构造器--extend
+            '3.componentCommunication', //Vue 组件的通信
+            '4.render',
+            '5.api',
+            '6.form',
+            '7.checkBox',
+            '8.active',
+            '9.alert',
+            '10.renderTable',
+            '11.slotScopeTable',
+            '12.treeControl'
+          ],
           '/senior/npm/': ['1.base'],
           '/senior/typeScript/': ['1.base'],
           '/source/vue/': ['1.preparation', '2.dataDriven', '3.componentization', '4.deepResponsePrinciple', '5.compile', '6.extend', '7.vueRouter', '8.vuex'],
