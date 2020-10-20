@@ -118,7 +118,7 @@ module.exports = {
             '5.api',
             '6.form',
             '7.checkBox',
-            '8.active',
+            '8.dispaly',
             '9.alert',
             '10.renderTable',
             '11.slotScopeTable',
