@@ -6,7 +6,7 @@ module.exports = {
     // 默认标题
     '/': {
       title: 'Vue学习总结',
-      description: ''
+      description: 'Vue学习总结'
     }
   },
   markdown: {
