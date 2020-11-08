@@ -89,7 +89,7 @@ module.exports = {
           {
             text: '源码知识',
             items: [{
-                text: '1.vue源码解析',
+                text: '1.vue2.xx源码解析',
                 link: '/source/vue/1.preparation'
               },
               {
@@ -126,7 +126,16 @@ module.exports = {
           ],
           '/senior/npm/': ['1.base'],
           '/senior/typeScript/': ['1.base'],
-          '/source/vue/': ['1.preparation', '2.dataDriven', '3.componentization', '4.deepResponsePrinciple', '5.compile', '6.extend', '7.vueRouter', '8.vuex'],
+          '/source/vue/': [
+            '1.preparation',
+            '2.dataDriven',
+            '2.responsePrinciple',
+            '3.compilePrinciple',
+            '4.distributionUpdate',
+            '6.extend',
+            '7.vueRouter',
+            '8.vuex'
+          ],
           '/source/vue-router/': ['1.base'],
           '/source/vuex/': ['1.base'],
           '/source/element/': ['Pagination', 'Dialog', 'Autocomplete', 'Dropdown',
