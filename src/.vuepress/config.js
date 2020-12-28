@@ -101,7 +101,16 @@ module.exports = {
         ],
         sidebar: {
           '/base/build/': ['1.config', '2.webpack', '3.file', '4.single', '5.page', '6.module', '7.devide', '8.project', '9.utils', '10.ui', '11.data', '12.skill', '13.com', '14.data', '15.api'],
-          '/base/function/': ['skill', 'bug', 'webpack', 'vscode', 'test', 'prem', 'i18n'],
+          '/base/function/': [
+           '1.configureVscode',
+           '2.developmentSkills',
+           '3.configureWebpack',
+           '4.projectMonitor',
+           '5.unitTesting',
+           '6.configurePrem',
+           '7.internationalization',
+           '8.errorCollection'
+          ],
           '/senior/componentElaboration/': [
             '1.recursionAndDynamics', //递归组件与动态组件
             '2.vueConstructor', //Vue 的构造器--extend
