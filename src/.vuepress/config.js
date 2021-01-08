@@ -130,11 +130,11 @@ module.exports = {
           '/source/vue/': [
             '1.overview',
             '2.initMixin',
-            '2.responsePrinciple',
-            '3.compilePrinciple',
-            '4.distributionUpdate',
-            '6.extend',
-            '7.vueRouter',
+            '3.stateMixin',
+            '4.eventsMixin',
+            '5.lifecycleMixin',
+            '6.renderMixin',
+            '7.initGlobalAPI',
             '8.vuex'
           ],
           '/source/vue-router/': ['1.base'],
