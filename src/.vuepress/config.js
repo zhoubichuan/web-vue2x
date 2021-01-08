@@ -89,7 +89,7 @@ module.exports = {
           {
             text: '源码知识',
             items: [{
-                text: 'VUE2xx',
+                text: 'Vue 2',
                 link: '/source/vue/1.overview'
               },
               {
@@ -129,7 +129,7 @@ module.exports = {
           '/senior/typeScript/': ['1.base'],
           '/source/vue/': [
             '1.overview',
-            '2.dataDriven',
+            '2.initMixin',
             '2.responsePrinciple',
             '3.compilePrinciple',
             '4.distributionUpdate',
