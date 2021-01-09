@@ -16,6 +16,7 @@
     "gh-pages": "bash deploy_gh-pages.sh"
   },
   "devDependencies": {
-    "vuepress": "^0.14.4"
+    "vuepress": "^0.14.4",
+    "vuepress-plugin-boxx": "0.0.7"
   }
 }

@@ -2,6 +2,9 @@ module.exports = {
   // 基础配置
   base: '/Web-Vue/', // 部署站点的基础路径
   description: 'vue相关知识点',
+  plugins: [
+    ["vuepress-plugin-boxx"]
+  ],
   locales: {
     // 默认标题
     '/': {
@@ -135,7 +138,7 @@ module.exports = {
             '5.lifecycleMixin',
             '6.renderMixin',
             '7.initGlobalAPI',
-            '8.vuex'
+            '8.Vue'
           ],
           '/source/vue-router/': ['1.base'],
           '/source/vuex/': ['1.base'],
