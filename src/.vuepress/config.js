@@ -132,13 +132,14 @@ module.exports = {
           '/senior/typeScript/': ['1.base'],
           '/source/vue/': [
             '1.overview',
-            '2.initMixin',
-            '3.stateMixin',
-            '4.eventsMixin',
-            '5.lifecycleMixin',
-            '6.renderMixin',
-            '7.initGlobalAPI',
-            '8.Vue'
+            '2.initGlobalAPI',
+            '3.initMixin',
+            '4.stateMixin',
+            '5.eventsMixin',
+            '6.lifecycleMixin',
+            '7.renderMixin',
+            '8.mount',
+            '9.mount'
           ],
           '/source/vue-router/': ['1.base'],
           '/source/vuex/': ['1.base'],
