@@ -96,6 +96,14 @@ module.exports = {
                 link: '/source/vue/1.overview'
               },
               {
+                text: 'Vue Router',
+                link: '/source/vue-router/1.base'
+              },
+              {
+                text: 'Vuex',
+                link: '/source/vuex/1.base'
+              },
+              {
                 text: 'ElementUI',
                 link: '/source/element/Pagination'
               },
