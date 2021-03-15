@@ -147,7 +147,10 @@ module.exports = {
             '6.lifecycleMixin',
             '7.renderMixin',
             '8.mount',
-            '9.mount'
+            '9.ast',
+            '10.optimize',
+            '11.gencode',
+            '12.mount'
           ],
           '/source/vue-router/': ['1.base'],
           '/source/vuex/': ['1.base'],
