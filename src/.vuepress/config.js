@@ -68,7 +68,7 @@ module.exports = {
               },
               {
                 text: '2.项目功能点',
-                link: '/base/function/skill',
+                link: '/base/function/1.configureVscode',
               }
             ]
           },
