@@ -150,7 +150,9 @@ module.exports = {
             '9.ast',
             '10.optimize',
             '11.gencode',
-            '12.mount'
+            '12.mount',
+            '13._render',
+            '14._update'
           ],
           '/source/vue-router/': ['1.base'],
           '/source/vuex/': ['1.base'],
