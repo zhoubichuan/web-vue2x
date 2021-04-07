@@ -8,8 +8,8 @@ module.exports = {
   locales: {
     // 默认标题
     '/': {
-      title: 'Vue学习总结',
-      description: 'Vue学习总结'
+      title: 'Vue知识专项',
+      description: 'Vue相关知识点总结'
     }
   },
   markdown: {
