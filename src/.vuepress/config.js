@@ -63,7 +63,7 @@ module.exports = {
         nav: [{
             text: '基础知识',
             items: [{
-                text: '1.构建基础篇',
+                text: '1.前端工程化',
                 link: '/base/build/1.config'
               },
               {
@@ -75,7 +75,7 @@ module.exports = {
           {
             text: '高级知识',
             items: [{
-                text: '1.组件精讲',
+                text: '1.组件开发',
                 link: '/senior/componentElaboration/1.recursionAndDynamics'
               },
               {
