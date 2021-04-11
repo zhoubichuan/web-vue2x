@@ -14,10 +14,10 @@ meta:
   <div class="cont">
     <div id="large-header" class="large-header"></div>
     <div class="features">
-    <div class="feature">
-    <h2>Vue前端工程化</h2> 
-      <p>掌握Vue组件间的多种通信方式及数据同步 渲染函数及jsx高阶应用 vue-cli3、vuex、vue-router进阶之JWT认证</p>
-    </div>
+      <div class="feature">
+        <h2>Vue前端工程化</h2> 
+        <p>掌握Vue组件间的多种通信方式及数据同步 渲染函数及jsx高阶应用 vue-cli3、vuex、vue-router进阶之JWT认证</p>
+      </div>
       <div class="feature">
         <h2>Vue组件化开发</h2> 
         <p>组件设计思路，组件编写工作流搭建 从0编写复杂组件之异步级联组件 单元测试编写及组件的发布</p>
