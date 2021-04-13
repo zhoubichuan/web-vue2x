@@ -2,9 +2,34 @@ module.exports = {
   // 基础配置
   base: '/Web-Vue/', // 部署站点的基础路径
   description: 'vue相关知识点',
-  plugins: [
-    ["vuepress-plugin-boxx"]
-  ],
+  plugins: {
+    // 名称：@vuepress/plugin-pwa 网页内容有更新的时候有刷新按钮。可以把网页保存到桌面，当一个app一样
+    '@vuepress/pwa': {
+        serviceWorker: true,
+        updatePopup: {
+            message: "有新的内容更新",
+            buttonText: "刷新"
+        }
+    },
+    // 名称：@vuepress/plugin-back-to-top 效果：文章看到下面的时候，点击一个图标会回到顶部
+    '@vuepress/back-to-top': true,
+    // 名称：@vuepress/plugin-active-header-links 效果：页面滚动时自动激活侧边栏链接的插件，效果就是右边内容滚动的时候，看到哪里了，左侧菜单会自动高亮显示当前看的目录。
+    '@vuepress/active-header-links':{
+        sidebarLinkSelector: '.sidebar-link',
+        headerAnchorSelector: '.header-anchor'
+    },
+    "@vssue/vuepress-plugin-vssue" :{
+      platform: 'github', //v3的platform是github，v4的是github-v4
+      locale: 'zh', //语言
+      // 其他的 Vssue 配置
+      owner: 'zhoubichuan', //github账户名
+      repo: 'Web-Vue', //github一个项目的名称
+      clientId: 'Iv1.2923ba5d4de48a3c',//注册的Client ID
+      clientSecret: '110210',//注册的Client Secret
+      autoCreateIssue:true // 自动创建评论，默认是false，最好开启，这样首次进入页面的时候就不用去点击创建评论的按钮了。
+    },
+    "vuepress-plugin-boxx":["vuepress-plugin-boxx"]
+  },
   locales: {
     // 默认标题
     '/': {
