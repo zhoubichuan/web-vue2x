@@ -160,7 +160,8 @@ module.exports = {
             '5.unitTesting',
             '6.configurePrem',
             '7.internationalization',
-            '8.errorCollection'
+            '8.errorCollection',
+            '9.optimize'
           ],
           '/senior/componentElaboration/': [
             '1.recursionAndDynamics', //递归组件与动态组件
