@@ -88,41 +88,41 @@ module.exports = {
         nav: [{
           text: '基础知识',
           items: [{
-            text: '1.前端工程化',
+            text: '一.前端工程化',
             link: '/base/build/1.start'
           },
           {
-            text: '2.项目功能点',
+            text: '二.项目功能点',
             link: '/base/function/1.configureVscode',
           }]
         },
         {
           text: '高级知识',
           items: [{
-            text: '1.组件开发',
+            text: '一.组件开发',
             link: '/senior/componentElaboration/1.recursionAndDynamics'
           },
           {
-            text: '2.TypeScript',
+            text: '二.TypeScript',
             link: '/senior/typeScript/1.base'
           },
           {
-            text: '3.前端工作流',
+            text: '三.前端工作流',
             link: '/senior/npm/1.base'
           }]
         },
         {
           text: '源码知识',
           items: [{
-            text: 'Vue 2',
-            link: '/source/vue/1.overview'
+            text: '一.Vue 2',
+            link: '/source/vue2/inde'
           },
           {
-            text: 'Vue Router',
+            text: '二.Vue Router',
             link: '/source/vue-router/1.base'
           },
           {
-            text: 'Vuex',
+            text: '三.Vuex',
             link: '/source/vuex/1.base'
           }]
         }
@@ -171,8 +171,8 @@ module.exports = {
           ],
           '/senior/npm/': ['1.base'],
           '/senior/typeScript/': ['1.base'],
-          '/source/vue/': [
-            '1.overview',
+          '/source/vue2/': [
+            'inde',
             '2.initGlobalAPI',
             '3.initMixin',
             '4.stateMixin',
