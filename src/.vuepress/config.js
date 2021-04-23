@@ -94,8 +94,7 @@ module.exports = {
           {
             text: '2.项目功能点',
             link: '/base/function/1.configureVscode',
-          }
-          ]
+          }]
         },
         {
           text: '高级知识',
@@ -110,9 +109,7 @@ module.exports = {
           {
             text: '3.前端工作流',
             link: '/senior/npm/1.base'
-          },
-
-          ]
+          }]
         },
         {
           text: '源码知识',
@@ -127,12 +124,7 @@ module.exports = {
           {
             text: 'Vuex',
             link: '/source/vuex/1.base'
-          },
-          {
-            text: 'ElementUI',
-            link: '/source/element/Pagination'
-          },
-          ]
+          }]
         }
         ],
         sidebar: {
