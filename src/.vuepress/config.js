@@ -73,7 +73,7 @@ module.exports = {
   ],
   port: 3009,
   dest: 'dist', // 指定 vuepress build 的输出目录
-  serviceWorker: false, // pwa
+  serviceWorker: true, // pwa
 
   // 主题配置
   themeConfig: {
@@ -109,6 +109,10 @@ module.exports = {
           {
             text: '三.前端工作流',
             link: '/senior/npm/1.base'
+          },
+          {
+            text: '四.Vue3.0差异',
+            link: '/senior/vue3/inde.md'
           }]
         },
         {
