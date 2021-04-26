@@ -92,8 +92,8 @@ module.exports = {
             link: '/base/build/1.start'
           },
           {
-            text: '二.项目功能点',
-            link: '/base/function/1.configureVscode',
+            text: '二.项目专题',
+            link: '/base/project/1.configureVscode',
           }]
         },
         {
@@ -108,7 +108,7 @@ module.exports = {
           },
           {
             text: '三.前端工作流',
-            link: '/senior/npm/1.base'
+            link: '/senior/npm/1'
           },
           {
             text: '四.Vue3.0差异',
@@ -148,7 +148,7 @@ module.exports = {
             '13.com',
             '14.data',
             '15.api'],
-          '/base/function/': [
+          '/base/project/': [
             '1.configureVscode',
             '2.developmentSkills',
             '3.configureWebpack',
@@ -173,7 +173,22 @@ module.exports = {
             '11.slotScopeTable',
             '12.treeControl'
           ],
-          '/senior/npm/': ['1.base'],
+          '/senior/npm/': [
+            '1',
+            '2',
+            '3',
+            '4',
+            '5',
+            '6',
+            '7',
+            '8',
+            '9',
+            '10',
+            '11',
+            '12',
+            '13',
+            '14',
+          ],
           '/senior/typeScript/': ['1.base'],
           '/source/vue2/': [
             'inde',
