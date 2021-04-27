@@ -32,11 +32,11 @@ meta:
       </div>
       <div class="feature">
         <h2>Vue2.0源码实现</h2> 
-        <p>Vue-router原理剖析、Vuex原理剖析 、Vue2.0原理剖析</p>
+        <p>Vue/cli原理、Vue2.0原理剖析、Vue-router原理剖析、Vuex原理剖析 </p>
       </div>
       <div class="feature">
         <h2>Vue3.0源码实现</h2> 
-        <p>Vue-router、Vuex源码实现、Vue3.0原理剖析</p>
+        <p>Vue/cli原理、Vue3.0原理剖析、Vue-router、Vuex源码实现</p>
       </div>
     </div>
   </div>
