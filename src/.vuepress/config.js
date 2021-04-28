@@ -118,15 +118,18 @@ module.exports = {
         {
           text: '源码知识',
           items: [{
-            text: '一.Vue 2',
+            text: '一.Vue/cli',
+            link: '/source/vue-cli/inde'
+          },{
+            text: '二.Vue 2',
             link: '/source/vue2/inde'
           },
           {
-            text: '二.Vue Router',
+            text: '三.Vue Router',
             link: '/source/vue-router/1.base'
           },
           {
-            text: '三.Vuex',
+            text: '四.Vuex',
             link: '/source/vuex/1.base'
           }]
         }
@@ -189,7 +192,12 @@ module.exports = {
             '13',
             '14',
           ],
-          '/senior/typeScript/': ['1.base'],
+          '/senior/typeScript/': [
+            '1.base'
+          ],
+          '/source/vue-cli/': [
+            'inde'
+          ],
           '/source/vue2/': [
             'inde',
             '2.initGlobalAPI',
@@ -206,8 +214,12 @@ module.exports = {
             '13._render',
             '14._update'
           ],
-          '/source/vue-router/': ['1.base'],
-          '/source/vuex/': ['1.base']
+          '/source/vue-router/': [
+            '1.base'
+          ],
+          '/source/vuex/': [
+            '1.base'
+          ]
         }
       }
     }
