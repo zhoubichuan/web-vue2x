@@ -72,7 +72,7 @@ module.exports = {
     ]
   ],
   port: 3009,
-  dest: 'dist', // 指定 vuepress build 的输出目录
+  dest: 'dist', // 指定 vuepress 的输出目录
   serviceWorker: true, // pwa
 
   // 主题配置
@@ -89,7 +89,7 @@ module.exports = {
           text: '基础知识',
           items: [{
             text: '一.前端工程化',
-            link: '/base/build/1.start'
+            link: '/base/engineering/1.start'
           },
           {
             text: '二.项目专题',
@@ -135,7 +135,7 @@ module.exports = {
         }
         ],
         sidebar: {
-          '/base/build/': [
+          '/base/engineering/': [
             '1.start',
             '2.webpack',
             '3.file',
