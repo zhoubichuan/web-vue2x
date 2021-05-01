@@ -93,7 +93,7 @@ module.exports = {
           },
           {
             text: '二.项目专题',
-            link: '/base/project/1.configureVscode',
+            link: '/base/project/1.configure',
           }]
         },
         {
@@ -152,8 +152,8 @@ module.exports = {
             '14.data',
             '15.api'],
           '/base/project/': [
-            '1.configureVscode',
-            '2.developmentSkills',
+            '1.configure',
+            '2.devSkills',
             '3.configureWebpack',
             '4.projectMonitor',
             '5.unitTesting',
