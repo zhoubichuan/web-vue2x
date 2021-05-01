@@ -100,7 +100,7 @@ module.exports = {
           text: '高级知识',
           items: [{
             text: '一.组件开发',
-            link: '/senior/componentElaboration/1.recursionAndDynamics'
+            link: '/senior/component/1.recursionAndDynamics'
           },
           {
             text: '二.TypeScript',
@@ -162,7 +162,7 @@ module.exports = {
             '8.errorCollection',
             '9.optimize'
           ],
-          '/senior/componentElaboration/': [
+          '/senior/component/': [
             '1.recursionAndDynamics', //递归组件与动态组件
             '2.vueConstructor', //Vue 的构造器--extend
             '3.componentCommunication', //Vue 组件的通信
