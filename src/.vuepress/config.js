@@ -24,8 +24,8 @@ module.exports = {
       // 其他的 Vssue 配置
       owner: 'zhoubichuan', //github账户名
       repo: 'Web-Vue', //github一个项目的名称
-      clientId: 'Iv1.2923ba5d4de48a3c',//注册的Client ID
-      clientSecret: '110210',//注册的Client Secret
+      clientId: 'Iv1.2923ba5d4de48a3c', //注册的Client ID
+      clientSecret: '110210', //注册的Client Secret
       autoCreateIssue: true // 自动创建评论，默认是false，最好开启，这样首次进入页面的时候就不用去点击创建评论的按钮了。
     },
     "vuepress-plugin-boxx": ["vuepress-plugin-boxx"]
@@ -63,6 +63,10 @@ module.exports = {
         content: 'black'
       }
     ],
+    ['meta', {
+      name: 'viewport',
+      content: 'width=device-width,initial-scale=1,user-scalable=no'
+    }],
     [
       'meta',
       {
@@ -86,53 +90,56 @@ module.exports = {
         editLinkText: '在github上编辑此页',
         lastUpdated: '上次更新', // 获取每个文件最后一次 git 提交的时间戳
         nav: [{
-          text: '基础知识',
-          items: [{
-            text: '一.前端工程化',
-            link: '/base/engineering/1.start'
+            text: '基础知识',
+            items: [{
+                text: '一.前端工程化',
+                link: '/base/engineering/1.start'
+              },
+              {
+                text: '二.项目专题',
+                link: '/base/project/1.configure',
+              }
+            ]
           },
           {
-            text: '二.项目专题',
-            link: '/base/project/1.configure',
-          }]
-        },
-        {
-          text: '高级知识',
-          items: [{
-            text: '一.组件开发',
-            link: '/senior/component/1.recursionAndDynamics'
+            text: '高级知识',
+            items: [{
+                text: '一.组件开发',
+                link: '/senior/component/1.recursionAndDynamics'
+              },
+              {
+                text: '二.TypeScript',
+                link: '/senior/typeScript/1.base'
+              },
+              {
+                text: '三.前端工作流',
+                link: '/senior/npm/1'
+              },
+              {
+                text: '四.Vue3.0差异',
+                link: '/senior/vue3/inde.md'
+              }
+            ]
           },
           {
-            text: '二.TypeScript',
-            link: '/senior/typeScript/1.base'
-          },
-          {
-            text: '三.前端工作流',
-            link: '/senior/npm/1'
-          },
-          {
-            text: '四.Vue3.0差异',
-            link: '/senior/vue3/inde.md'
-          }]
-        },
-        {
-          text: '源码知识',
-          items: [{
-            text: '一.Vue/cli',
-            link: '/source/vue-cli/inde'
-          },{
-            text: '二.Vue 2',
-            link: '/source/vue2/inde'
-          },
-          {
-            text: '三.Vue Router',
-            link: '/source/vue-router/1.base'
-          },
-          {
-            text: '四.Vuex',
-            link: '/source/vuex/1.base'
-          }]
-        }
+            text: '源码知识',
+            items: [{
+                text: '一.Vue/cli',
+                link: '/source/vue-cli/inde'
+              }, {
+                text: '二.Vue 2',
+                link: '/source/vue2/inde'
+              },
+              {
+                text: '三.Vue Router',
+                link: '/source/vue-router/1.base'
+              },
+              {
+                text: '四.Vuex',
+                link: '/source/vuex/1.base'
+              }
+            ]
+          }
         ],
         sidebar: {
           '/base/engineering/': [
@@ -150,7 +157,8 @@ module.exports = {
             '12.skill',
             '13.com',
             '14.data',
-            '15.api'],
+            '15.api'
+          ],
           '/base/project/': [
             '1.configure',
             '2.devSkills',
