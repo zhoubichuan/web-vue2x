@@ -34,7 +34,7 @@ module.exports = {
     // 默认标题
     '/': {
       title: 'Vue知识专项',
-      description: 'Vue相关知识点总结'
+      description: '不积硅步，无以至千里'
     }
   },
   markdown: {
