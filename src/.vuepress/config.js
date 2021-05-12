@@ -92,11 +92,11 @@ module.exports = {
         nav: [{
             text: '基础知识',
             items: [{
-                text: '一.Vue项目工程化',
+                text: '一.项目工程化',
                 link: '/base/engineering/1.start'
               },
               {
-                text: '二.Vue项目功能模块',
+                text: '二.项目功能模块',
                 link: '/base/project/1.configure',
               }
             ]
@@ -104,7 +104,7 @@ module.exports = {
           {
             text: '高级知识',
             items: [{
-                text: '一.Vue组件的开发',
+                text: '一.组件开发',
                 link: '/senior/component/1.recursionAndDynamics'
               },
               {
