@@ -104,11 +104,11 @@ module.exports = {
           {
             text: '高级知识',
             items: [{
-                text: '一.组件开发',
+                text: '一.Vue的组件开发',
                 link: '/senior/component/1.recursionAndDynamics'
               },
               {
-                text: '二.TypeScript',
+                text: '二. 使用TypeScript',
                 link: '/senior/typeScript/1.base'
               },
               {
@@ -116,7 +116,7 @@ module.exports = {
                 link: '/senior/npm/1'
               },
               {
-                text: '四.Vue3.0差异',
+                text: '四.Vue3.0',
                 link: '/senior/vue3/inde.md'
               }
             ]
