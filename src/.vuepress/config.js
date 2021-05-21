@@ -122,7 +122,7 @@ module.exports = {
             ]
           },
           {
-            text: '源码知识',
+            text: 'Vue2.0源码实现',
             items: [{
                 text: '一.Vue/cli',
                 link: '/source/vue-cli/inde'
@@ -137,6 +137,22 @@ module.exports = {
               {
                 text: '四.Vuex',
                 link: '/source/vuex/1.base'
+              }
+            ]
+          },
+          {
+            text: 'Vue3.0源码实现',
+            items: [{
+                text: '一.Vue2.0',
+                link: '/source/vue3/inde'
+              },
+              {
+                text: '二.Vue Router3',
+                link: '/source/vue-router3/1.base'
+              },
+              {
+                text: '三.Vuex3',
+                link: '/source/vuex3/1.base'
               }
             ]
           }
@@ -226,6 +242,28 @@ module.exports = {
             '1.base'
           ],
           '/source/vuex/': [
+            '1.base'
+          ],
+          '/source/vue3/': [
+            'inde',
+            '2.initGlobalAPI',
+            '3.initMixin',
+            '4.stateMixin',
+            '5.eventsMixin',
+            '6.lifecycleMixin',
+            '7.renderMixin',
+            '8.mount',
+            '9.ast',
+            '10.optimize',
+            '11.gencode',
+            '12.mount',
+            '13._render',
+            '14._update'
+          ],
+          '/source/vue-router3/': [
+            '1.base'
+          ],
+          '/source/vuex3/': [
             '1.base'
           ]
         }
