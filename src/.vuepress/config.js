@@ -127,7 +127,7 @@ module.exports = {
                 text: '一.Vue/cli',
                 link: '/source/vue-cli/inde'
               }, {
-                text: '二.Vue 2',
+                text: '二.Vue2.0',
                 link: '/source/vue2/inde'
               },
               {
