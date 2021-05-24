@@ -143,7 +143,7 @@ module.exports = {
           {
             text: 'Vue3.0源码实现',
             items: [{
-                text: '一.Vue2.0',
+                text: '一.Vue3.0',
                 link: '/source/vue3/inde'
               },
               {
