@@ -122,7 +122,7 @@ module.exports = {
             ]
           },
           {
-            text: 'Vue2.0源码实现',
+            text: 'Vue2.0源码',
             items: [{
                 text: '一.Vue/cli',
                 link: '/source/vue-cli/inde'
@@ -141,7 +141,7 @@ module.exports = {
             ]
           },
           {
-            text: 'Vue3.0源码实现',
+            text: 'Vue3.0源码',
             items: [{
                 text: '一.Vue3.0',
                 link: '/source/vue3/inde'
