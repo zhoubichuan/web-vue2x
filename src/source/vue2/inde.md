@@ -121,7 +121,7 @@ Vue.prototype._init = function(options) {
 ```
 
 ::: tip
-这里重点要看的是`initState`，这个方法会处理用户传入的props、methods、data、computed、watch。
+这里重点要看的是`initState`，这个方法会处理用户传入的 props、methods、data、computed、watch。
 :::
 
 ### 1.1 初始化 data 过程
@@ -149,22 +149,20 @@ function initState(vm) {
 这里重点要看的是`initData`，Vue 内部数据进入这里会将数据进行响应式处理，以 data 中的数据简单来说，就是将 data 中的对象添加 get 和 set,变成响应式数据，在访问数据时触发 get 时通过 dep 进行依赖收集，在设置数据时通过 set 进行派发更新。
 :::
 
-#### 1.1.1
+**initData**：将用户的 data 数据变成响应式数据
 
-将用户的 data 数据变成响应式数据
-
-- 使用 observe 对数据进行观测
+- 首先使用 observe 对数据进行观测
 
 ```js
 function initData(vm) {
   var data = vm.$options.data
   data = vm._data = typeof data === "function" ? getData(data, vm) : data || {}
   var keys = Object.keys(data)
-  observe(data, true /* asRootData */)
+  observe(data, true)
 }
 ```
 
-- 实例化观测数据
+- 然后实例化观测数据
 
 ```js
 function observe(value, asRootData) {
@@ -174,7 +172,7 @@ function observe(value, asRootData) {
 }
 ```
 
-- 给每个对象添加侦听器（dep）
+- 最后给每个对象添加侦听器（dep）
 
 ```js
 export class Observer {
@@ -208,9 +206,11 @@ export class Observer {
 }
 ```
 
-分别处理数组类型的数据和对象类型的数据
+::: tip
+这里会分别对数组类型的数据和对象类型的数据进行不同的处理，简单的来说对象通过数据劫持，数组通过修改原型上的方法，来拦截相关操作
+:::
 
-##### 1.1.1.1 数组类型
+**数组类型**
 
 ```js
 Observer.prototype.observeArray = function observeArray(items) {
@@ -220,7 +220,7 @@ Observer.prototype.observeArray = function observeArray(items) {
 }
 ```
 
-##### 1.1.1.2 对象类型
+**对象类型**
 
 ```js
 export function defineReactive(obj, key, val, customSetter, shallow) {
