@@ -108,7 +108,7 @@ module.exports = {
                 link: '/senior/component/1.recursionAndDynamics'
               },
               {
-                text: '二. 使用TypeScript',
+                text: '二.使用TypeScript',
                 link: '/senior/typeScript/1.base'
               },
               {
