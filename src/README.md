@@ -28,7 +28,7 @@ meta:
       </div>
       <div class="feature">
         <h2><a href="/Web-Vue/base/engineering/1.start.html">Vue优化和服务器布署</a></h2> 
-        <p>Vue优化预渲染、骨架屏、Nuxt.js服务端渲染 使用typescript构建vue应用 Docker + nginx实现vue的布署和持续集成</p>
+        <p>Vue优化预渲染、骨架屏、服务端渲染 使用typescript构建vue应用 Docker + nginx实现vue的布署和持续集成</p>
       </div>
       <div class="feature">
         <h2><a href="/Web-Vue/source/vue2/inde.html">Vue2.0源码实现</a></h2> 
@@ -37,6 +37,18 @@ meta:
       <div class="feature">
         <h2><a href="/Web-Vue/base/engineering/1.start.html">Vue3.0源码实现</a></h2> 
         <p>Vue/cli原理、Vue3.0原理剖析、Vue-router、Vuex源码实现</p>
+      </div>
+      <div class="feature">
+        <h2><a href="https://github.com/zhoubichuan/order-vue.git">点餐系统</a></h2> 
+        <p>前端使用Vue2.0开发，主要包含登陆模块、点餐模块</p>
+      </div>
+      <div class="feature">
+        <h2><a href="https://github.com/zhoubichuan/resume-vue.git">我的简历</a></h2> 
+        <p>Vue2.0结合TypeScript，一个标准的模版工程，包含相关Webpack的配置，基本功能的封装</p>
+      </div>
+      <div class="feature">
+        <h2><a href="https://github.com/zhoubichuan/Web-ElementUI.git">ElementUI组件</a></h2> 
+        <p>使用Vue2.0结合ElementUI风格，开发出类似的前端组件</p>
       </div>
     </div>
   </div>

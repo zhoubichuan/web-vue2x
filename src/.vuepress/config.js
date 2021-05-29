@@ -155,6 +155,38 @@ module.exports = {
                 link: '/source/vuex3/1.base'
               }
             ]
+          },
+          {
+            text: 'Vue项目',
+            items: [{
+                text: '点餐系统',
+                link: 'https://github.com/zhoubichuan/order-vue.git'
+              },
+              {
+                text: '我的简历',
+                link: 'https://github.com/zhoubichuan/resume-vue.git'
+              },
+              {
+                text: 'ElementUI组件',
+                link: 'https://github.com/zhoubichuan/Web-ElementUI.git'
+              }
+            ]
+          },
+          {
+            text: 'Vue相关资料',
+            items: [{
+                text: 'Vue官网',
+                link: 'https://cn.vuejs.org'
+              },
+              {
+                text: '深入浅出Vue.js',
+                link: 'https://cn.vuejs.org'
+              },
+              {
+                text: 'Vue.js权威指南',
+                link: 'https://cn.vuejs.org'
+              }
+            ]
           }
         ],
         sidebar: {
