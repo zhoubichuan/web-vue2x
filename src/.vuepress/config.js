@@ -104,15 +104,15 @@ module.exports = {
           {
             text: '高级知识',
             items: [{
-                text: '一.Vue的组件开发',
-                link: '/senior/component/1.recursionAndDynamics'
+                text: '一.组件开发',
+                link: '/senior/component/1.recursion'
               },
               {
-                text: '二.使用TypeScript',
+                text: '二.TypeScript',
                 link: '/senior/typeScript/1.base'
               },
               {
-                text: '三.前端工作流',
+                text: '三.npm专题',
                 link: '/senior/npm/1'
               },
               {
@@ -205,7 +205,8 @@ module.exports = {
             '12.skill',
             '13.com',
             '14.data',
-            '15.api'
+            '15.api',
+            '16.communication'
           ],
           '/base/project/': [
             '1.configure',
@@ -219,9 +220,9 @@ module.exports = {
             '9.optimize'
           ],
           '/senior/component/': [
-            '1.recursionAndDynamics', //递归组件与动态组件
-            '2.vueConstructor', //Vue 的构造器--extend
-            '3.componentCommunication', //Vue 组件的通信
+            '1.recursion', //递归组件与动态组件
+            '2.dynamics',
+            '3.extend', //Vue 的构造器--extend
             '4.render',
             '5.api',
             '6.form',
