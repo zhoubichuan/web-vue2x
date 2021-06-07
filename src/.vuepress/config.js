@@ -210,7 +210,7 @@ module.exports = {
           ],
           '/base/project/': [
             '1.configure',
-            '2.devSkills',
+            '2.skill',
             '3.configureWebpack',
             '4.projectMonitor',
             '5.unitTesting',
