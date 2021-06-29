@@ -82,6 +82,7 @@ new Vue({
 ### vue2.0 源码运行示意图
 
 ![](./Vue.png)
+![](./Vue2.0.png)
 
 ## 1 \_init 阶段
 
