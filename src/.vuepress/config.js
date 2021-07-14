@@ -92,7 +92,7 @@ module.exports = {
         nav: [{
             text: '基础知识',
             items: [{
-                text: '一.Vue的工程化',
+                text: '一.Vue的工程化',
                 link: '/base/engineering/1.start'
               },
               {
