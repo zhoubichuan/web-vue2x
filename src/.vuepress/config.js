@@ -93,7 +93,7 @@ module.exports = {
             text: '基础知识',
             items: [{
                 text: '一.Vue的工程化',
-                link: '/base/engineering/1.start'
+                link: '/base/engine/1.start'
               },
               {
                 text: '二.Vue功能模块',
@@ -190,7 +190,7 @@ module.exports = {
           }
         ],
         sidebar: {
-          '/base/engineering/': [
+          '/base/engine/': [
             '1.start',
             '2.webpack',
             '3.file',
