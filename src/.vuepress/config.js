@@ -193,7 +193,7 @@ module.exports = {
           '/base/engine/': [
             '1.start',
             '2.webpack',
-            '3.file',
+            '3.env',
             '4.single',
             '5.page',
             '6.module',
@@ -203,10 +203,10 @@ module.exports = {
             '10.ui',
             '11.data',
             '12.skill',
-            '13.com',
-            '14.data',
+            '13.module',
+            '14.package',
             '15.api',
-            '16.communication'
+            '16.message'
           ],
           '/base/project/': [
             '1.configure',
