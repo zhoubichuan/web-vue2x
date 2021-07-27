@@ -144,7 +144,7 @@ module.exports = {
             text: 'Vue3.0源码',
             items: [{
                 text: '一.Vue3.0',
-                link: '/source/vue3/inde'
+                link: '/source/vue3/index'
               },
               {
                 text: '二.Vue Router3',
@@ -161,10 +161,6 @@ module.exports = {
             items: [{
                 text: '点餐系统',
                 link: 'https://github.com/zhoubichuan/order-vue.git'
-              },
-              {
-                text: '我的简历',
-                link: 'https://github.com/zhoubichuan/resume-vue.git'
               },
               {
                 text: 'ElementUI组件',
@@ -248,6 +244,9 @@ module.exports = {
             '12',
             '13',
             '14',
+          ],
+          '/senior/vue3/': [
+            '1.index',
           ],
           '/senior/typeScript/': [
             '1.base'
