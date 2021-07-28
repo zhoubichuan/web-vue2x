@@ -43,10 +43,6 @@ meta:
         <p>前端使用Vue2.0开发，主要包含登陆模块、点餐模块</p>
       </div>
       <div class="feature">
-        <h2><a href="https://github.com/zhoubichuan/resume-vue.git">我的简历</a></h2> 
-        <p>Vue2.0结合TypeScript，一个标准的模版工程，包含相关Webpack的配置，基本功能的封装</p>
-      </div>
-      <div class="feature">
         <h2><a href="https://github.com/zhoubichuan/Web-ElementUI.git">ElementUI组件</a></h2> 
         <p>使用Vue2.0结合ElementUI风格，开发出类似的前端组件</p>
       </div>
