@@ -117,7 +117,7 @@ module.exports = {
               },
               {
                 text: '四.Vue3.0',
-                link: '/senior/vue3/inde.md'
+                link: '/senior/vue3/1.index.md'
               }
             ]
           },
@@ -144,7 +144,7 @@ module.exports = {
             text: 'Vue3.0源码',
             items: [{
                 text: '一.Vue3.0',
-                link: '/source/vue3/index'
+                link: '/source/vue3/1.index'
               },
               {
                 text: '二.Vue Router3',
@@ -152,7 +152,7 @@ module.exports = {
               },
               {
                 text: '三.Vuex3',
-                link: '/source/vuex3/1.base'
+                link: '/source/vuex3/1.index'
               }
             ]
           },
@@ -277,7 +277,7 @@ module.exports = {
             '1.base'
           ],
           '/source/vue3/': [
-            'inde',
+            '1.index',
             '2.initGlobalAPI',
             '3.initMixin',
             '4.stateMixin',
@@ -296,7 +296,7 @@ module.exports = {
             '1.base'
           ],
           '/source/vuex3/': [
-            '1.base'
+            '1.index'
           ]
         }
       }
