@@ -117,7 +117,7 @@ module.exports = {
               },
               {
                 text: '四.Vue3.0',
-                link: '/senior/vue3/1.index.md'
+                link: '/senior/vue3/1.index'
               }
             ]
           },
