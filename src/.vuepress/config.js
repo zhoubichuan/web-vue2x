@@ -83,11 +83,11 @@ module.exports = {
   themeConfig: {
     editLinks: true,
     docsDir: 'src', // 假如文档不是放在仓库的根目录下
+    docsBranch: 'master', // 假如文档放在一个特定的分支下
+    editLinks: true, // 启用编辑
+    editLinkText: '在github上编辑此页',
     locales: {
       '/': {
-        docsBranch: 'master', // 假如文档放在一个特定的分支下
-        editLinks: true, // 启用编辑
-        editLinkText: '在github上编辑此页',
         lastUpdated: '上次更新', // 获取每个文件最后一次 git 提交的时间戳
         nav: [{
             text: '基础知识',
@@ -117,7 +117,7 @@ module.exports = {
               },
               {
                 text: '四.Vue3.0',
-                link: '/senior/vue3/inde.md'
+                link: '/senior/vue3/1.index'
               }
             ]
           },
@@ -144,7 +144,7 @@ module.exports = {
             text: 'Vue3.0源码',
             items: [{
                 text: '一.Vue3.0',
-                link: '/source/vue3/inde'
+                link: '/source/vue3/1.index'
               },
               {
                 text: '二.Vue Router3',
@@ -152,7 +152,7 @@ module.exports = {
               },
               {
                 text: '三.Vuex3',
-                link: '/source/vuex3/1.base'
+                link: '/source/vuex3/1.index'
               }
             ]
           },
@@ -161,10 +161,6 @@ module.exports = {
             items: [{
                 text: '点餐系统',
                 link: 'https://github.com/zhoubichuan/order-vue.git'
-              },
-              {
-                text: '我的简历',
-                link: 'https://github.com/zhoubichuan/resume-vue.git'
               },
               {
                 text: 'ElementUI组件',
@@ -249,6 +245,9 @@ module.exports = {
             '13',
             '14',
           ],
+          '/senior/vue3/': [
+            '1.index',
+          ],
           '/senior/typeScript/': [
             '1.base'
           ],
@@ -278,7 +277,7 @@ module.exports = {
             '1.base'
           ],
           '/source/vue3/': [
-            'inde',
+            '1.index',
             '2.initGlobalAPI',
             '3.initMixin',
             '4.stateMixin',
@@ -297,7 +296,7 @@ module.exports = {
             '1.base'
           ],
           '/source/vuex3/': [
-            '1.base'
+            '1.index'
           ]
         }
       }
