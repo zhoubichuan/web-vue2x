@@ -83,11 +83,11 @@ module.exports = {
   themeConfig: {
     editLinks: true,
     docsDir: 'src', // 假如文档不是放在仓库的根目录下
+    docsBranch: 'master', // 假如文档放在一个特定的分支下
+    editLinks: true, // 启用编辑
+    editLinkText: '在github上编辑此页',
     locales: {
       '/': {
-        docsBranch: 'master', // 假如文档放在一个特定的分支下
-        editLinks: true, // 启用编辑
-        editLinkText: '在github上编辑此页',
         lastUpdated: '上次更新', // 获取每个文件最后一次 git 提交的时间戳
         nav: [{
             text: '基础知识',
