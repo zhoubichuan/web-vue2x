@@ -122,13 +122,13 @@ module.exports = {
             ]
           },
           {
-            text: 'Vue2.0源码',
+            text: 'Vue 2.x源码',
             items: [{
                 text: '一.Vue/cli',
                 link: '/source/vue-cli/inde'
               }, {
-                text: '二.Vue2.0',
-                link: '/source/vue2/inde'
+                text: '二.Vue 2.x',
+                link: '/source/vue2.x/1.index'
               },
               {
                 text: '三.Vue Router',
@@ -141,10 +141,10 @@ module.exports = {
             ]
           },
           {
-            text: 'Vue3.0源码',
+            text: 'Vue 3.x源码',
             items: [{
-                text: '一.Vue3.0',
-                link: '/source/vue3/1.index'
+                text: '一.Vue3.x',
+                link: '/source/vue3.x/1.index'
               },
               {
                 text: '二.Vue Router3',
@@ -254,8 +254,8 @@ module.exports = {
           '/source/vue-cli/': [
             'inde'
           ],
-          '/source/vue2/': [
-            'inde',
+          '/source/vue2.x/': [
+            '1.index',
             '2.initGlobalAPI',
             '3.initMixin',
             '4.stateMixin',
@@ -276,7 +276,7 @@ module.exports = {
           '/source/vuex/': [
             '1.base'
           ],
-          '/source/vue3/': [
+          '/source/vue3.x/': [
             '1.index',
             '2.initGlobalAPI',
             '3.initMixin',
