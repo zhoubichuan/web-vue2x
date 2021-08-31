@@ -13,7 +13,8 @@
     "src:build": "vuepress build src",
     "getname": "node utils/getFilenames.js",
     "deploy": "bash deploy.sh",
-    "gh-pages": "bash deploy_gh-pages.sh"
+    "github": "bash github.sh",
+    "gitee": "bash gitee.sh"
   },
   "devDependencies": {
     "@vuepress/plugin-pwa": "^1.8.2",
