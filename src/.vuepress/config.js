@@ -63,7 +63,7 @@ module.exports = {
       locale: 'zh', //语言
       // 其他的 Vssue 配置
       owner: 'zhoubichuan', //github账户名
-      repo: 'Web-Vue', //github一个项目的名称
+      repo: 'web-vue', //github一个项目的名称
       clientId: 'Iv1.2923ba5d4de48a3c', //注册的Client ID
       clientSecret: '110210', //注册的Client Secret
       autoCreateIssue: true // 自动创建评论，默认是false，最好开启，这样首次进入页面的时候就不用去点击创建评论的按钮了。
