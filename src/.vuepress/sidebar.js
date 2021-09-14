@@ -1,6 +1,7 @@
 const sidebar = {
     '/base/engine/': [
         '1.index',
+        '1.project',
         '2.webpack',
         '3.env',
         '4.single',
