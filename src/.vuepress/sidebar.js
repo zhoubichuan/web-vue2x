@@ -17,6 +17,11 @@ const sidebar = {
         '15.api',
         '16.message'
     ],
+    '/base/vue2.x/': [
+        '1.index',
+        '2.life',
+        '3.directive'
+    ],
     '/base/project/': [
         '1.index',
         '2.skill',
@@ -28,7 +33,7 @@ const sidebar = {
         '8.errorCollection',
         '9.optimize'
     ],
-    '/base/vue3/': [
+    '/base/vue3.x/': [
         '1.index'
     ],
     '/senior/component/': [
