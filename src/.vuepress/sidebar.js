@@ -1,27 +1,28 @@
 const sidebar = {
     '/base/engine/': [
         '1.index',
-        '1.project',
+        '1.utils',
+        '2.project',
         '2.webpack',
         '3.env',
+        '5.ui',
+        '6.layout',
         '4.single',
         '5.page',
-        '6.module',
-        '7.devide',
-        '8.project',
-        '9.utils',
-        '10.ui',
-        '11.data',
-        '12.skill',
-        '13.module',
-        '14.package',
-        '15.api',
-        '16.message'
+        '9.module',
+        '10.skill',
+        '11.mock',
+        '12.optimization',
+        '13.deploy'
     ],
     '/base/vue2.x/': [
         '1.index',
         '2.life',
-        '3.directive'
+        '3.directive',
+        '13.module',
+        '14.package',
+        '16.message',
+        '15.api',
     ],
     '/base/project/': [
         '1.index',
@@ -35,7 +36,8 @@ const sidebar = {
         '9.optimize'
     ],
     '/base/vue3.x/': [
-        '1.index'
+        '1.index',
+        '16.message'
     ],
     '/senior/component/': [
         '1.index',
