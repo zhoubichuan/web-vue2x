@@ -50,12 +50,7 @@ module.exports = {
     },
     // 名称：@vuepress/plugin-back-to-top 效果：文章看到下面的时候，点击一个图标会回到顶部
     '@vuepress/back-to-top': true,
-    '@vuepress/medium-zoom': {
-      selector: "img.zoom-custom-imgs",
-      options: {
-        margin: 16
-      }
-    },
+    '@vuepress/medium-zoom': true,
     '@vuepress/nprogress': true,
     // 名称：@vuepress/plugin-active-header-links 效果：页面滚动时自动激活侧边栏链接的插件，效果就是右边内容滚动的时候，看到哪里了，左侧菜单会自动高亮显示当前看的目录。
     '@vuepress/active-header-links': {
@@ -85,12 +80,6 @@ module.exports = {
     lastUpdated: '上次更新', // 获取每个文件最后一次 git 提交的时间戳
     nav: require('./nav.js'),
     sidebar: require('./sidebar.js'),
-    searchMaxSuggestoins: 10,
-    serviceWorker: {
-      updatePopup: {
-        message: "New content is available.",
-        buttonText: 'Refresh'
-      }
-    }
+    searchMaxSuggestoins: 10
   },
 }
