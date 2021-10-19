@@ -31,7 +31,7 @@ const nav = [{
             link: '/senior/ts/1.index'
         },
         {
-            text: '三.Vue + NPM',
+            text: '三.Vue + NPM',
             link: '/senior/npm/1.index'
         }
     ]
