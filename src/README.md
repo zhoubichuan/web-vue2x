@@ -41,11 +41,11 @@ meta:
       </div>
       <div class="feature">
         <h2><a href="https://github.com/zhoubichuan/order-vue.git">点餐系统</a></h2> 
-        <p>前端使用Vue 2.x开发，主要包含登陆模块、点餐模块</p>
+        <p>前端使用Vue 3.x开发，主要包含登陆模块、点餐模块</p>
       </div>
       <div class="feature">
         <h2><a href="https://github.com/zhoubichuan/Web-ElementUI.git">ElementUI组件</a></h2> 
-        <p>使用Vue 2.x结合ElementUI风格，开发出类似的前端组件</p>
+        <p>使用Vue 3.x结合ElementUI风格，开发出类似的前端组件</p>
       </div>
     </div>
   </div>
