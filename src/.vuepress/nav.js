@@ -6,7 +6,7 @@ const nav = [{
             link: '/base/engine/1.index'
         },
         {
-            text: '二.Vue功能模块',
+            text: '二.Vue 功能模块',
             link: '/base/project/1.index',
         },
         {
