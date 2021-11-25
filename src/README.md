@@ -17,7 +17,7 @@ meta:
     <div class="features">
       <div class="feature">
         <h2><a href="/web-vue/base/engine/1.index.html">Vue的工程化</a></h2> 
-        <p>掌握Vue组件间的多种通信方式及数据同步 渲染函数及jsx高阶应用 vue-cli3、vuex、vue-router</p>
+        <p>掌握Vue创建一个项目所需的环境、工具、配置、布局、场景、技巧、优化、部署等常见流程</p>
       </div>
       <div class="feature">
         <h2><a href="/web-vue/base/project/1.index.html">Vue功能模块</a></h2> 
