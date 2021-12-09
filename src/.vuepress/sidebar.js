@@ -29,7 +29,7 @@ const sidebar = {
         '2.skill',
         '3.configureWebpack',
         '4.projectMonitor',
-        '5.unitTesting',
+        '5.test',
         '6.configurePrem',
         '7.internationalization',
         '8.errorCollection',
@@ -51,7 +51,7 @@ const sidebar = {
         '9.alert',
         '10.renderTable',
         '11.slotScopeTable',
-        '12.treeControl'
+        '12.tree'
     ],
     '/senior/ts/': [
         '1.index',
