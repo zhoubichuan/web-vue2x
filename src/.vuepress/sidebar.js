@@ -41,6 +41,7 @@ const sidebar = {
     ],
     '/senior/component/': [
         '1.index',
+        '1.recursion',
         '2.dynamics',
         '3.extend', //Vue 的构造器--extend
         '4.render',

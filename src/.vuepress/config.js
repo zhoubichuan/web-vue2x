@@ -7,41 +7,6 @@ module.exports = {
   markdown: {
     lineNumbers: true // 代码块显示行号
   },
-  head: [
-    // 添加链接 pwa 的 manifest 如果需要
-    [
-      'link',
-      {
-        rel: 'icon',
-        href: ''
-      }
-    ],
-    [
-      'meta',
-      {
-        name: 'apple-mobile-web-app-capable',
-        content: 'yes'
-      }
-    ],
-    [
-      'meta',
-      {
-        name: 'apple-mobile-web-app-status-bar-style',
-        content: 'black'
-      }
-    ],
-    ['meta', {
-      name: 'viewport',
-      content: 'width=device-width,initial-scale=1,user-scalable=no'
-    }],
-    [
-      'meta',
-      {
-        name: 'msapplication-TileColor',
-        content: '#000000'
-      }
-    ]
-  ],
   plugins: {
     // 名称：@vuepress/plugin-pwa 网页内容有更新的时候有刷新按钮。可以把网页保存到桌面，当一个app一样
     '@vuepress/pwa': {

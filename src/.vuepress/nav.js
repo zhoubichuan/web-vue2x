@@ -10,11 +10,11 @@ const nav = [{
             link: '/base/project/1.index',
         },
         {
-            text: '三.Vue 2.x',
+            text: '三.Vue 2.x基础',
             link: '/base/vue2.x/1.index'
         },
         {
-            text: '四.Vue 3.x',
+            text: '四.Vue 3.x基础',
             link: '/base/vue3.x/1.index'
         }
     ]
@@ -23,7 +23,7 @@ const nav = [{
     text: '高级知识',
     items: [
         {
-            text: '一.Vue组件开发',
+            text: '一.组件开发',
             link: '/senior/component/1.index'
         },
         {
@@ -31,7 +31,7 @@ const nav = [{
             link: '/senior/ts/1.index'
         },
         {
-            text: '三.Vue + NPM',
+            text: '三.包管理工具',
             link: '/senior/npm/1.index'
         }
     ]
