@@ -15,15 +15,6 @@ const sidebar = {
         '12.optimization',
         '13.deploy'
     ],
-    '/base/vue2.x/': [
-        '1.index',
-        '2.life',
-        '3.directive',
-        '13.module',
-        '14.package',
-        '16.message',
-        '15.api',
-    ],
     '/base/project/': [
         '1.index',
         '2.skill',
@@ -35,9 +26,24 @@ const sidebar = {
         '8.errorCollection',
         '9.optimize'
     ],
+    '/base/vue2.x/': [
+        '1.index',
+        '2.life',
+        '3.directive',
+        '10.vue-cli',
+        '11.vuex',
+        '12.vue-router',
+        '13.module',
+        '14.package',
+        '16.message',
+        '15.api',
+    ],
     '/base/vue3.x/': [
         '1.index',
-        '16.message'
+        '16.message',
+        '10.vue-cli',
+        '11.vuex',
+        '12.vue-router',
     ],
     '/senior/component/': [
         '1.index',
