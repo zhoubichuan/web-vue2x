@@ -30,10 +30,6 @@ const nav = [{
             text: '二.Vue + TS',
             link: '/senior/ts/1.index'
         },
-        {
-            text: '三.包管理工具',
-            link: '/senior/npm/1.index'
-        }
     ]
 },
 {
@@ -78,19 +74,19 @@ const nav = [{
         }
     ]
 },
-{
-    text: 'Vue项目',
-    items: [
-        {
-            text: '一.点餐系统',
-            link: 'https://github.com/zhoubichuan/order-vue.git'
-        },
-        {
-            text: '二.ElementUI 组件',
-            link: 'https://github.com/zhoubichuan/Web-ElementUI.git'
-        }
-    ]
-},
+// {
+//     text: 'Vue项目',
+//     items: [
+//         {
+//             text: '一.点餐系统',
+//             link: 'https://github.com/zhoubichuan/order-vue.git'
+//         },
+//         {
+//             text: '二.ElementUI 组件',
+//             link: 'https://github.com/zhoubichuan/Web-ElementUI.git'
+//         }
+//     ]
+// },
 {
     text: 'Vue相关资料',
     items: [
