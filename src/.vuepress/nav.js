@@ -28,7 +28,11 @@ const nav = [{
         },
         {
             text: '二.Vue + TS',
-            link: '/senior/ts/1.index'
+            link: '/senior/typescript/1.index'
+        },
+        {
+            text: '三.构建部署',
+            link: '/senior/deploy/1.index'
         },
     ]
 },
@@ -36,7 +40,7 @@ const nav = [{
     text: 'Vue 2.x源码',
     items: [
         {
-            text: '一.Vue/cli',
+            text: '一.Vue/cli2.x',
             link: '/source/vue-cli/1.index'
         },
         {
@@ -44,11 +48,11 @@ const nav = [{
             link: '/source/vue2.x/1.index'
         },
         {
-            text: '三.Vue-Router',
+            text: '三.Vue-Router3.x',
             link: '/source/vue-router/1.index'
         },
         {
-            text: '四.Vuex',
+            text: '四.Vuex3.x',
             link: '/source/vuex/1.index'
         }
     ]
@@ -57,7 +61,7 @@ const nav = [{
     text: 'Vue 3.x源码',
     items: [
         {
-            text: '一.Vue/cli',
+            text: '一.Vue/cli3.x',
             link: '/source/vue-cli3/1.index'
         },
         {
@@ -65,11 +69,11 @@ const nav = [{
             link: '/source/vue3.x/1.index'
         },
         {
-            text: '三.Vue-Router',
+            text: '三.Vue-Router4.x',
             link: '/source/vue-router3/1.index'
         },
         {
-            text: '四.Vuex',
+            text: '四.Vuex4.x',
             link: '/source/vuex3/1.index'
         }
     ]

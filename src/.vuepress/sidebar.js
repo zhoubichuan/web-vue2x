@@ -60,7 +60,10 @@ const sidebar = {
         '11.slotScopeTable',
         '12.tree'
     ],
-    '/senior/ts/': [
+    '/senior/typescript/': [
+        '1.index',
+    ],
+    '/senior/deploy/': [
         '1.index',
     ],
     '/senior/vue3/': [

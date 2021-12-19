@@ -32,7 +32,11 @@ meta:
         <p>了解组件设计思路，组件编写工作流搭建，从0编写复杂组件之异步级联组件 单元测试编写及组件的发布</p>
       </div>
       <div class="feature">
-        <h2><a href="/web-vue/base/engine/1.index.html">Vue优化和服务器布署</a></h2> 
+        <h2><a href="https://github.com/zhoubichuan/order-vue.git">Vue中TypeScript的应用</a></h2> 
+        <p>了解在大型项目中使用TypeScript构建和开发前端项目</p>
+      </div>
+      <div class="feature">
+        <h2><a href="/web-vue/base/engine/1.index.html">Vue的构建布署</a></h2> 
         <p>Vue优化预渲染、骨架屏、服务端渲染 使用typescript构建vue应用 Docker + nginx实现vue的布署和持续集成</p>
       </div>
       <div class="feature">
@@ -44,12 +48,8 @@ meta:
         <p>Vue/cli原理、Vue 3.x原理剖析、Vue-router、Vuex源码实现</p>
       </div>
       <div class="feature">
-        <h2><a href="https://github.com/zhoubichuan/order-vue.git">点餐系统</a></h2> 
-        <p>前端使用Vue 3.x开发，主要包含登陆模块、点餐模块</p>
-      </div>
-      <div class="feature">
-        <h2><a href="https://github.com/zhoubichuan/Web-ElementUI.git">ElementUI组件</a></h2> 
-        <p>使用Vue 3.x结合ElementUI风格，开发出类似的前端组件</p>
+        <h2><a href="https://github.com/zhoubichuan/Web-ElementUI.git">Vue 相关资料</a></h2> 
+        <p>精进Vue相关知识的了解，熟练掌握官方文档资料，了解最新框架知识</p>
       </div>
     </div>
   </div>
