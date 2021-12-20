@@ -17,6 +17,7 @@ const sidebar = {
     ],
     '/base/project/': [
         '1.index',
+        '1.config',
         '2.skill',
         '3.configureWebpack',
         '4.projectMonitor',
