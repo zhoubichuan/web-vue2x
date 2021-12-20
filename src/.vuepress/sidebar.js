@@ -40,6 +40,7 @@ const sidebar = {
     ],
     '/base/vue3.x/': [
         '1.index',
+        '2.life',
         '16.message',
         '10.vue-cli',
         '11.vuex',
