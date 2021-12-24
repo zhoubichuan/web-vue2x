@@ -51,7 +51,7 @@ const sidebar = {
         '1.index',
         '1.recursion',
         '2.dynamics',
-        '3.extend', //Vue 的构造器--extend
+        '3.dialog',
         '4.render',
         '5.api',
         '6.form',
