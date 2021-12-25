@@ -71,7 +71,7 @@ const sidebar = {
     '/senior/vue3/': [
         '1.index',
     ],
-    '/source/vue-cli/': [
+    '/source/vue-cli2.x/': [
         '1.index'
     ],
     '/source/vue2.x/': [
@@ -90,13 +90,13 @@ const sidebar = {
         '13._render',
         '14._update'
     ],
-    '/source/vue-router/': [
+    '/source/vue-router3.x/': [
         '1.index'
     ],
-    '/source/vuex/': [
+    '/source/vuex3.x/': [
         '1.index'
     ],
-    '/source/vue-cli3/': [
+    '/source/vue-cli3.x/': [
         '1.index'
     ],
     '/source/vue3.x/': [
@@ -115,10 +115,10 @@ const sidebar = {
         '13._render',
         '14._update'
     ],
-    '/source/vue-router3/': [
+    '/source/vue-router4.x/': [
         '1.index'
     ],
-    '/source/vuex3/': [
+    '/source/vuex4.x/': [
         '1.index'
     ]
 }

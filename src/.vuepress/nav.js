@@ -41,7 +41,7 @@ const nav = [{
     items: [
         {
             text: '一.Vue/cli2.x',
-            link: '/source/vue-cli/1.index'
+            link: '/source/vue-cli2.x/1.index'
         },
         {
             text: '二.Vue 2.x',
@@ -49,11 +49,11 @@ const nav = [{
         },
         {
             text: '三.Vue-Router3.x',
-            link: '/source/vue-router/1.index'
+            link: '/source/vue-router3.x/1.index'
         },
         {
             text: '四.Vuex3.x',
-            link: '/source/vuex/1.index'
+            link: '/source/vuex3.x/1.index'
         }
     ]
 },
@@ -62,7 +62,7 @@ const nav = [{
     items: [
         {
             text: '一.Vue/cli3.x',
-            link: '/source/vue-cli3/1.index'
+            link: '/source/vue-cli3.x/1.index'
         },
         {
             text: '二.Vue 3.x',
@@ -70,11 +70,11 @@ const nav = [{
         },
         {
             text: '三.Vue-Router4.x',
-            link: '/source/vue-router3/1.index'
+            link: '/source/vue-router4.x/1.index'
         },
         {
             text: '四.Vuex4.x',
-            link: '/source/vuex3/1.index'
+            link: '/source/vuex4.x/1.index'
         }
     ]
 },
