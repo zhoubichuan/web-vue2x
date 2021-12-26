@@ -29,23 +29,30 @@ const sidebar = {
     ],
     '/base/vue2.x/': [
         '1.index',
-        '2.life',
-        '3.directive',
-        '10.vue-cli',
-        '11.vuex',
-        '12.vue-router',
-        '13.module',
-        '14.package',
-        '16.message',
-        '15.api',
+        '1.vue-cli',
+        '2.vue',
+        '2.vue1',
+        '2.vue2',
+        '2.vue3',
+        '2.vue4',
+        '3.vue-router',
+        '4.vuex',
+        '5.ui',
+        '6.utils',
+        '7.style',
+        '8.eslint',
     ],
     '/base/vue3.x/': [
         '1.index',
-        '2.life',
-        '16.message',
-        '10.vue-cli',
-        '11.vuex',
-        '12.vue-router',
+        '1.vue-cli',
+        '2.vue',
+        '2.vue1',
+        '3.vue-router',
+        '4.vuex',
+        '5.ui',
+        '6.utils',
+        '7.style',
+        '8.eslint',
     ],
     '/senior/component/': [
         '1.index',
@@ -91,13 +98,16 @@ const sidebar = {
         '14._update'
     ],
     '/source/vue-router3.x/': [
-        '1.index'
+        '1.index',
+        '2.origin'
     ],
     '/source/vuex3.x/': [
-        '1.index'
+        '1.index',
+        '2.use',
+        '3.origin'
     ],
     '/source/vue-cli3.x/': [
-        '1.index'
+        '1.index',
     ],
     '/source/vue3.x/': [
         '1.index',

@@ -10,11 +10,11 @@ const nav = [{
             link: '/base/project/1.index',
         },
         {
-            text: '三.Vue 2.x基础',
+            text: '三.Vue 2.x全家桶',
             link: '/base/vue2.x/1.index'
         },
         {
-            text: '四.Vue 3.x基础',
+            text: '四.Vue 3.x全家桶',
             link: '/base/vue3.x/1.index'
         }
     ]
