@@ -24,7 +24,7 @@ meta:
         <p>掌握一般项目中的配置、登录、权限认证、单元测试、国际化、富文本、上传下载等常见功能</p>
       </div>
       <div class="feature">
-        <h2><a href="/web-vue/base/project/1.index.html">Vue基础知识</a></h2> 
+        <h2><a href="/web-vue/base/vue2.x/1.index.html">Vue基础知识</a></h2> 
         <p>掌握Vue2.x和Vue3.x全家桶中重点知识，全面提升Vue的编码能力</p>
       </div>
       <div class="feature">
@@ -32,23 +32,23 @@ meta:
         <p>了解组件设计思路，组件编写工作流搭建，从0编写复杂组件之异步级联组件 单元测试编写及组件的发布</p>
       </div>
       <div class="feature">
-        <h2><a href="https://github.com/zhoubichuan/order-vue.git">Vue中TypeScript的应用</a></h2> 
+        <h2><a href="/web-vue/senior/typescript/1.index.html">Vue中TypeScript的应用</a></h2> 
         <p>了解在大型项目中使用TypeScript构建和开发前端项目</p>
       </div>
       <div class="feature">
-        <h2><a href="/web-vue/base/engine/1.index.html">Vue的构建布署</a></h2> 
+        <h2><a href="/web-vue/senior/deploy/1.index.html">Vue的构建布署</a></h2> 
         <p>Vue优化预渲染、骨架屏、服务端渲染 使用typescript构建vue应用 Docker + nginx实现vue的布署和持续集成</p>
       </div>
       <div class="feature">
-        <h2><a href="/web-vue/source/vue2/1.index.html">Vue 2.x源码实现</a></h2> 
+        <h2><a href="/web-vue/source/vue2.x/1.index.html">Vue 2.x源码实现</a></h2> 
         <p>Vue/cli原理、Vue 2.x原理剖析、Vue-router原理剖析、Vuex原理剖析 </p>
       </div>
       <div class="feature">
-        <h2><a href="/web-vue/base/engine/1.index.html">Vue 3.x源码实现</a></h2> 
+        <h2><a href="/web-vue/source/vue3.x/1.index.html">Vue 3.x源码实现</a></h2> 
         <p>Vue/cli原理、Vue 3.x原理剖析、Vue-router、Vuex源码实现</p>
       </div>
       <div class="feature">
-        <h2><a href="https://github.com/zhoubichuan/Web-ElementUI.git">Vue 相关资料</a></h2> 
+        <h2><a href="https://cn.vuejs.org">Vue 相关资料</a></h2> 
         <p>精进Vue相关知识的了解，熟练掌握官方文档资料，了解最新框架知识</p>
       </div>
     </div>
