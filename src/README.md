@@ -25,7 +25,7 @@ meta:
       </div>
       <div class="feature">
         <h2><a href="/web-vue/base/vue2.x/1.index.html">Vue基础知识</a></h2> 
-        <p>掌握Vue2.x和Vue3.x全家桶中重点知识，全面提升Vue的编码能力</p>
+        <p>掌握Vue2.x全家桶和Vue3.x全家桶中重点知识，全面提升Vue的编码能力</p>
       </div>
       <div class="feature">
         <h2><a href="/web-vue/senior/component/1.index.html">Vue组件开发</a></h2> 
