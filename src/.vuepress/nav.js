@@ -34,6 +34,10 @@ const nav = [{
             text: '三.构建部署',
             link: '/senior/deploy/1.index'
         },
+        {
+            text: '四.微前端',
+            link: '/senior/1.micro/1.index'
+        },
     ]
 },
 {

@@ -75,6 +75,11 @@ const sidebar = {
     '/senior/deploy/': [
         '1.index',
     ],
+    '/senior/1.micro/': [
+        '1.index',
+        '1.singlespa',
+        '2.qiankun'
+    ],
     '/senior/vue3/': [
         '1.index',
     ],
