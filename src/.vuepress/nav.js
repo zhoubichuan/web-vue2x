@@ -99,7 +99,7 @@ const nav = [{
     text: 'Vue相关资料',
     items: [
         {
-            text: '一.Vue 官网',
+            text: '一.Vue2实践揭秘',
             link: 'https://cn.vuejs.org'
         },
         {

@@ -25,7 +25,9 @@ const sidebar = {
         '6.configurePrem',
         '7.internationalization',
         '8.errorCollection',
-        '9.optimize'
+        '9.optimize',
+        '10.server',
+        '11.pwa'
     ],
     '/base/vue2.x/': [
         '1.index',
@@ -50,9 +52,7 @@ const sidebar = {
         '3.vue-router',
         '4.vuex',
         '5.ui',
-        '6.utils',
-        '7.style',
-        '8.eslint',
+        '6.vueuse'
     ],
     '/senior/component/': [
         '1.index',
