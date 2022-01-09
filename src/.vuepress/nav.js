@@ -100,11 +100,11 @@ const nav = [{
     items: [
         {
             text: '一.Vue2实践揭秘',
-            link: 'https://cn.vuejs.org'
+            link: ''
         },
         {
             text: '二.深入浅出 Vue.js',
-            link: 'https://cn.vuejs.org'
+            link: '/'
         },
         {
             text: '三.Vue.js 权威指南',
