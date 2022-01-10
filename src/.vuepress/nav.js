@@ -27,7 +27,7 @@ const nav = [{
             link: '/senior/component/1.index'
         },
         {
-            text: '二.Vue + TS',
+            text: '二.TypeScript',
             link: '/senior/typescript/1.index'
         },
         {

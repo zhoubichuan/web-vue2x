@@ -72,6 +72,9 @@ const sidebar = {
     ],
     '/senior/typescript/': [
         '1.index',
+        '1.class',
+        '2.tsx',
+        '3.api'
     ],
     '/senior/deploy/': [
         '1.index',
