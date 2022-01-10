@@ -56,18 +56,19 @@ const sidebar = {
     ],
     '/senior/component/': [
         '1.index',
+        '1.env',
         '1.recursion',
         '2.dynamics',
         '3.dialog',
         '4.render',
-        '5.api',
         '6.form',
         '7.checkBox',
         '8.dispaly',
         '9.alert',
         '10.renderTable',
         '11.slotScopeTable',
-        '12.tree'
+        '12.tree',
+        '13.publish',
     ],
     '/senior/typescript/': [
         '1.index',
@@ -78,7 +79,8 @@ const sidebar = {
     '/senior/1.micro/': [
         '1.index',
         '1.singlespa',
-        '2.qiankun'
+        '2.qiankun',
+        '3.share'
     ],
     '/senior/vue3/': [
         '1.index',
