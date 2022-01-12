@@ -46,7 +46,7 @@ const sidebar = {
     ],
     '/base/vue3.x/': [
         '1.index',
-        '1.vue-cli',
+        '1.vue-cli3',
         '2.vue',
         '2.vue1',
         '3.vue-router',
