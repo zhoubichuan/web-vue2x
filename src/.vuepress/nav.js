@@ -96,21 +96,8 @@ const nav = [{
 //     ]
 // },
 {
-    text: 'Vue相关资料',
-    items: [
-        {
-            text: '一.Vue2实践揭秘',
-            link: ''
-        },
-        {
-            text: '二.深入浅出 Vue.js',
-            link: '/'
-        },
-        {
-            text: '三.Vue.js 权威指南',
-            link: 'https://cn.vuejs.org'
-        }
-    ]
+    text: 'Vue相关资料推荐',
+    link: '/read',
 }
 ]
 module.exports = nav
