@@ -54,7 +54,28 @@ const sidebar = {
         '5.ui',
         '6.vueuse'
     ],
-    '/senior/component/': [
+    '/senior/1.micro/': [
+        '1.index',
+        '1.singlespa',
+        '2.qiankun',
+        '3.share'
+    ],
+    '/senior/2.typescript/': [
+        '1.index',
+        '1.class',
+        '2.tsx',
+        '3.api',
+        '4.ts'
+    ],
+    '/senior/3.deploy/': [
+        '1.index',
+        '1.local',
+        '2.gitlab',
+        '3.genkins',
+        '4.centos',
+        '5.nginx'
+    ],
+    '/senior/4.component/': [
         '1.index',
         '1.env',
         '1.recursion',
@@ -69,21 +90,6 @@ const sidebar = {
         '11.slotScopeTable',
         '12.tree',
         '13.publish',
-    ],
-    '/senior/typescript/': [
-        '1.index',
-        '1.class',
-        '2.tsx',
-        '3.api'
-    ],
-    '/senior/deploy/': [
-        '1.index',
-    ],
-    '/senior/1.micro/': [
-        '1.index',
-        '1.singlespa',
-        '2.qiankun',
-        '3.share'
     ],
     '/senior/vue3/': [
         '1.index',

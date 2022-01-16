@@ -23,20 +23,21 @@ const nav = [{
     text: '高级知识',
     items: [
         {
-            text: '一.组件开发',
-            link: '/senior/component/1.index'
+            text: '一.微前端',
+            link: '/senior/1.micro/1.index'
         },
+
         {
             text: '二.TypeScript',
-            link: '/senior/typescript/1.index'
+            link: '/senior/2.typescript/1.index'
         },
         {
             text: '三.构建部署',
-            link: '/senior/deploy/1.index'
+            link: '/senior/3.deploy/1.index'
         },
         {
-            text: '四.微前端',
-            link: '/senior/1.micro/1.index'
+            text: '四.组件开发',
+            link: '/senior/4.component/1.index'
         },
     ]
 },
