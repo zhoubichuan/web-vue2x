@@ -5,8 +5,8 @@
 - 基础知识
   - [一.Vue 的工程化](https://zhoubichuan.github.io/web-vue/base/engine/1.index.html)
   - [二.Vue 功能模块](https://zhoubichuan.github.io/web-vue/base/project/1.index.html)
-  - [三.Vue 2.x基础](https://zhoubichuan.github.io/web-vue/base/vue2.x/1.index.html)
-  - [三.Vue 3.x基础](https://zhoubichuan.github.io/web-vue/base/vue3.x/1.index.html)
+  - [三.Vue 2.x 基础](https://zhoubichuan.github.io/web-vue/base/vue2.x/1.index.html)
+  - [三.Vue 3.x 基础](https://zhoubichuan.github.io/web-vue/base/vue3.x/1.index.html)
 - 高级知识
   - [一.Vue 组件开发](https://zhoubichuan.github.io/web-vue/senior/component/1.index.html)
   - [二.Vue + TS](https://zhoubichuan.github.io/web-vue/senior/typescript/1.index.html)
