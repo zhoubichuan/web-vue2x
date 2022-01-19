@@ -27,7 +27,9 @@ const sidebar = {
         '8.errorCollection',
         '9.optimize',
         '10.server',
-        '11.pwa'
+        '11.pwa',
+        '12.upload',
+        '13.video'
     ],
     '/base/vue2.x/': [
         '1.index',
