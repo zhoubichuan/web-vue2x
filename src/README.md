@@ -32,8 +32,8 @@ meta:
         <p>了解组件设计思路，组件编写工作流搭建，从0编写复杂组件之异步级联组件 单元测试编写及组件的发布</p>
       </div>
       <div class="feature">
-        <h2><a href="/web-vue/senior/typescript/1.index.html">TypeScript的应用</a></h2> 
-        <p>了解在大型项目中使用TypeScript构建和开发前端项目的一些基础知识，以及需要注意的一些问题</p>
+        <h2><a href="/web-vue/senior/typescript/1.index.html">TypeScript</a></h2> 
+        <p>掌握在Vue3.x项目中配置TypeScript，熟练在不同场景下的用法，以及需要注意的一些问题</p>
       </div>
       <div class="feature">
         <h2><a href="/web-vue/senior/deploy/1.index.html">Vue的构建布署</a></h2> 
