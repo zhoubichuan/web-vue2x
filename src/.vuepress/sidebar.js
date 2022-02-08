@@ -59,7 +59,9 @@ const sidebar = {
     '/senior/1.micro/': [
         '1.index',
         '1.singlespa',
+        '1.singlespa2',
         '2.qiankun',
+        '2.qiankun2',
         '3.share'
     ],
     '/senior/2.typescript/': [
