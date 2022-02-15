@@ -24,5 +24,8 @@
     "@vuepress/plugin-pwa": "^1.8.2",
     "vuepress": "^1.8.2",
     "vuepress-plugin-boxx": "0.0.7"
+  },
+  "dependencies": {
+    "vuepress-plugin-demo-container": "^0.2.0"
   }
 }
