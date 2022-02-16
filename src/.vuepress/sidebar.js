@@ -96,9 +96,13 @@ const sidebar = {
     ],
     '/senior/4.component/': [
         '1.index',
+        '1.button',
         '2.dropdown',
         '3.form',
+        '4.input',
         '5.checkBox',
+        '6.cascader',
+        '7.date',
         '8.dispaly',
         '9.dynamics',
         '1.env',
