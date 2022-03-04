@@ -3,7 +3,7 @@ const sidebar = {
         '1.index',
         '1.utils',
         '2.project',
-        '3.vuecli1',
+        '3.vuecli',
         '4.env',
         '5.ui',
         '6.layout',
