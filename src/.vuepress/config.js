@@ -5,9 +5,17 @@ module.exports = {
   port: 3009,
   dest: 'dist', // 指定 vuepress 的输出目录
   markdown: {
+    toc: { includeLevel: [2,3] },
     lineNumbers: true // 代码块显示行号
   },
+  // head: [
+  //   ['link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css' }],
+  //   ['link', { rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css" }]
+  // ],
+
   plugins: {
+    // 'vuepress-plugin-mermaidjs': {},
+    // "vuepress-plugin-auto-sidebar": {},
     'demo-container': true,
     // 名称：@vuepress/plugin-pwa 网页内容有更新的时候有刷新按钮。可以把网页保存到桌面，当一个app一样
     '@vuepress/pwa': {
@@ -37,10 +45,11 @@ module.exports = {
   },
   // 主题配置
   themeConfig: {
-    editLinks: true,
+    repo: 'https://github.com/zhoubichuan/web-vue', // 源码地址
+    repoLabel: '查看源码', // (查看源码的)组件名称
+    docsBranch: 'master', // git 源仓库 仓库分支
+    editLinks: true, // 编辑链接
     docsDir: 'src', // 假如文档不是放在仓库的根目录下
-    docsBranch: 'master', // 假如文档放在一个特定的分支下
-    editLinks: true, // 启用编辑
     editLinkText: '在github上编辑此页',
     sidebarDepth: 2,
     lastUpdated: '上次更新', // 获取每个文件最后一次 git 提交的时间戳
