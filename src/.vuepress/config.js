@@ -5,7 +5,7 @@ module.exports = {
   port: 3009,
   dest: 'dist', // 指定 vuepress 的输出目录
   markdown: {
-    toc: { includeLevel: [2,3] },
+    toc: { includeLevel: [2, 3] },
     lineNumbers: true // 代码块显示行号
   },
   // head: [
