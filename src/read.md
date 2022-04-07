@@ -35,3 +35,13 @@ meta:
 - **《Vue.js 权威指南》：由浅入深地讲解了 Vue.js 基本语 法及源码解析[参考文档]()**
 
 - **《Vue 企业开发实战》：以项目实战的方式引导读者渐进式学习 Vue.js 框架[参考文档]()**
+
+- [Vue 官方中文文档](https://cn.vuejs.org/)
+- [Vue 技术内幕](http://hcysun.me/vue-design/)
+- [Vue 技术揭秘](https://ustbhuangyi.github.io/vue-analysis/)
+
+- [TypeScript 中文文档](https://www.tslang.cn/docs/home.html)
+- [TypeScript Handbook](https://zhongsp.gitbooks.io/typescript-handbook/content/)
+- [TypeScript 入门教程](https://ts.xcatliu.com/)
+- [深入理解 TypeScript（英文版）](https://basarat.gitbooks.io/typescript/content/docs/getting-started.html)
+- [深入理解 TypeScript（中文版）](https://jkchao.github.io/typescript-book-chinese/)

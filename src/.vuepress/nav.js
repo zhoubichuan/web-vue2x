@@ -97,7 +97,7 @@ const nav = [{
 //     ]
 // },
 {
-    text: 'Vue相关资料推荐',
+    text: 'Vue资料',
     link: '/read',
 }
 ]
