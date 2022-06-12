@@ -3,7 +3,7 @@ module.exports = {
   description: '风浪没平息 我宣告奔跑的意义',
   base: '/web-vue/', // 部署站点的基础路径
   port: 3009,
-  dest: 'dist', // 指定 vuepress 的输出目录
+  dest: 'web-vue', // 指定 vuepress 的输出目录
   markdown: {
     toc: { includeLevel: [2, 3] },
     lineNumbers: true // 代码块显示行号
