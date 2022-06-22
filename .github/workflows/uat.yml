@@ -1,4 +1,4 @@
-name: build deploy
+name: uat
 on:
   push:
     branches:

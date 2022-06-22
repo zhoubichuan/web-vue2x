@@ -1,4 +1,4 @@
-name: build deploy
+name: sit
 on:
   push:
     branches:
