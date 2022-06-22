@@ -19,7 +19,7 @@ jobs:
     - name: Deploy to Server
       uses: easingthemes/ssh-deploy@v2.1.5
       env:
-          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+          SSH_PRIVATE_KEY: ${{ secrets.ID_RSA }}
           ARGS: '-rltgoDzvO --delete'
           SOURCE: 'web-vue/'
           REMOTE_HOST: ${{ secrets.HOST }}
