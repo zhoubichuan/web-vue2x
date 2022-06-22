@@ -24,4 +24,4 @@ jobs:
           SOURCE: web-vue
           REMOTE_HOST: ${{ secrets.HOST }}
           REMOTE_USER: ${{ secrets.USER }}
-          TARGET: /usr/zhoubichuan/uat
+          TARGET: '/usr/src/zhoubichuan/uat/'
