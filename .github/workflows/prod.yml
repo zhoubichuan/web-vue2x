@@ -2,7 +2,7 @@ name: prod
 on:
   push:
     branches:
-      - prod
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest
