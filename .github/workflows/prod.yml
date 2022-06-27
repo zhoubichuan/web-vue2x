@@ -24,4 +24,4 @@ jobs:
           target: "/usr/src/zhoubichuan/prod/"
           port: 22
           username: ${{ secrets.USER }}
-          key: ${{ secrets.ID_RSA }}
+          password: ${{ secrets.PASSWORD }}
