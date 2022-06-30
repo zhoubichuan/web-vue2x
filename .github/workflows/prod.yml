@@ -22,6 +22,6 @@ jobs:
           source: "web-vue/*"
           host: ${{ secrets.HOST }}
           target: "/usr/src/zhoubichuan/prod/"
-          port: 22
+          port:  ${{ secrets.PORT }}
           username: ${{ secrets.USER }}
           password: ${{ secrets.PASSWORD }}
