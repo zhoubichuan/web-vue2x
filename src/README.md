@@ -41,11 +41,11 @@ meta:
       </div>
       <div class="feature">
         <h2><a href="/web-vue/source/vue2.x/1.index.html">Vue 2.x源码实现</a></h2> 
-        <p>深入了解Vue/cli2.x原理、Vue 2.x原理剖析、Vue-router3.x原理剖析、Vuex3.x原理剖析 </p>
+        <p>深入了解VueCLI2.x原理、Vue 2.x原理剖析、Vue-router3.x原理剖析、Vuex3.x原理剖析 </p>
       </div>
       <div class="feature">
         <h2><a href="/web-vue/source/vue3.x/1.index.html">Vue 3.x源码实现</a></h2> 
-        <p>深入了解Vue/cli3.x原理、Vue 3.x原理剖析、Vue-router4.x理剖析、Vuex4.x理剖析</p>
+        <p>深入了解VueCLI3.x原理、Vue 3.x原理剖析、Vue-router4.x理剖析、Vuex4.x理剖析</p>
       </div>
       <div class="feature">
         <h2><a href="https://cn.vuejs.org">Vue 相关资料</a></h2> 
