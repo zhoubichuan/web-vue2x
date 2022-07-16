@@ -8,11 +8,6 @@ module.exports = {
     toc: { includeLevel: [2, 3] },
     lineNumbers: true // 代码块显示行号
   },
-  // head: [
-  //   ['link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css' }],
-  //   ['link', { rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css" }]
-  // ],
-
   plugins: {
     // 'vuepress-plugin-mermaidjs': {},
     // "vuepress-plugin-auto-sidebar": {},
@@ -39,7 +34,7 @@ module.exports = {
       repo: 'web-vue', //github一个项目的名称
       clientId: 'Iv1.2923ba5d4de48a3c', //注册的Client ID
       clientSecret: '110210', //注册的Client Secret
-      autoCreateIssue: true // 自动创建评论，默认是false，最好开启，这样首次进入页面的时候就不用去点击创建评论的按钮了。
+      autoCreateIssue: true // 自动创建评论，默认是false，最好开启，这样首次进入页面的时候就不用去点击创建评论的按钮了
     },
     "vuepress-plugin-boxx": ["vuepress-plugin-boxx"]
   },
