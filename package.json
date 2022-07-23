@@ -16,16 +16,22 @@
     "gitee": "bash gitee.sh"
   },
   "devDependencies": {
-    "@vuepress/plugin-active-header-links": "^1.8.2", 
+    "@vuepress/plugin-active-header-links": "^1.8.2",
     "@vuepress/plugin-back-to-top": "^1.8.2",
     "@vuepress/plugin-blog": "^1.9.4",
     "@vuepress/plugin-medium-zoom": "^1.8.2",
     "@vuepress/plugin-nprogress": "^1.8.2",
     "@vuepress/plugin-pwa": "^1.8.2",
-    "vuepress": "^1.8.2",
+    "async-validator": "^1.11.5",
+    "element-ui": "^2.3.7",
+    "less-loader": "^4.1.0",
+    "vue": "^2.5.16",
     "vuepress-plugin-boxx": "0.0.7"
   },
   "dependencies": {
+    "less": "^3.0.2",
+    "vue-echarts": "^3.0.7",
+    "vuepress": "^1.9.7",
     "vuepress-plugin-demo-container": "^0.2.0"
   }
 }
