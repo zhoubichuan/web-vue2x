@@ -19,7 +19,7 @@ const sidebar = {
         '1.index',
         '1.config',
         '2.skill',
-        '3.configureWebpack',
+        '3.login',
         '4.projectMonitor',
         '5.test',
         '6.configurePrem',
