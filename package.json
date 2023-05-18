@@ -30,7 +30,6 @@
   },
   "dependencies": {
     "less": "^3.0.2",
-    "vue-echarts": "^3.0.7",
     "vuepress": "^1.9.7",
     "vuepress-plugin-demo-container": "^0.2.0"
   }

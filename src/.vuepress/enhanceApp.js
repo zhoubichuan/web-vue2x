@@ -3,7 +3,6 @@ import TableRender from '../senior/4.component/TableRender.vue';
 import xminder from './xmind.vue';
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import VueECharts from 'vue-echarts' //注册图表
 
 export default ({
     Vue
@@ -11,5 +10,4 @@ export default ({
     Vue.component('TableRender', TableRender);
     Vue.component('xminder', xminder);
     Vue.use(Element)
-    Vue.component('chart', VueECharts)
 }

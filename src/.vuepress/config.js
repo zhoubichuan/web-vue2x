@@ -10,6 +10,8 @@ module.exports = {
   },
   head: [
     ['script', { src: 'https://unpkg.com/axios/dist/axios.min.js' }],
+    ['script', { src: '/echarts.min.js' }],
+    ['script', { src: '/china.js' }],
   ],
   plugins: {
     // 'vuepress-plugin-mermaidjs': {},
