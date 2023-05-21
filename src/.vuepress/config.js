@@ -1,18 +1,22 @@
+const path = require("path");
 module.exports = {
   title: 'Vue学习笔记',
   description: '风浪没平息 我宣告奔跑的意义',
   base: '/web-vue/', // 部署站点的基础路径
   port: 3009,
+  configureWebpack: {
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "../../src"),
+        vue$: "vue/dist/vue.esm.js",
+      },
+    },
+  },
   dest: 'web-vue', // 指定 vuepress 的输出目录
   markdown: {
     toc: { includeLevel: [2, 3] },
     lineNumbers: true // 代码块显示行号
   },
-  head: [
-    ['script', { src: 'https://unpkg.com/axios/dist/axios.min.js' }],
-    ['script', { src: '/echarts.min.js' }],
-    ['script', { src: '/china.js' }],
-  ],
   plugins: {
     // 'vuepress-plugin-mermaidjs': {},
     // "vuepress-plugin-auto-sidebar": {},
