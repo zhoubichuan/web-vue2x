@@ -12,7 +12,7 @@ export default {
     Vue.prototype.$china = china.default
     Vue.prototype.$world = world.default
     Vue.prototype._ = _
-    window._ = _
+    // window._ = _
     // window.$env = process.env
     // Vue.prototype.$SliderRight = SliderRight
     Vue.prototype.$service = service
