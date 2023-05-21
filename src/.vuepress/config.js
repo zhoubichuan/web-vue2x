@@ -6,12 +6,6 @@ module.exports = {
   base: "/web-vue/", // 部署站点的基础路径
   port: 3009,
   configureWebpack: () => {
-    const NODE_ENV = process.env.NODE_ENV;
-    new webpack.ProvidePlugin({
-      "process.env": {
-        NODE_ENV: process.env,
-      },
-    })
     let target = {
       resolve: {
         alias: {
@@ -20,17 +14,6 @@ module.exports = {
         },
       },
     };
-    console.log(process.env,'dddd999999999999dd')
-    //判断是否是生产环境
-    if (NODE_ENV === "production") {
-      let newConfig = {
-        output: {
-          publicPath: "https://cdn.jsdelivr.net/gh/",
-        },
-      };
-      target = { ...target, ...newConfig };
-    } else {
-    }
     return target;
   },
   dest: "web-vue", // 指定 vuepress 的输出目录
