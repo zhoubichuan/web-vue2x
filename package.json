@@ -30,7 +30,6 @@
   },
   "dependencies": {
     "axios": "0.21.1",
-    "echarts": "4.9.0",
     "less": "^3.0.2",
     "lodash": "4.17.21",
     "vuepress": "^1.9.7",
