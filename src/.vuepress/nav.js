@@ -83,19 +83,6 @@ const nav = [{
         }
     ]
 },
-// {
-//     text: 'Vue项目',
-//     items: [
-//         {
-//             text: '一.点餐系统',
-//             link: 'https://github.com/zhoubichuan/order-vue.git'
-//         },
-//         {
-//             text: '二.ElementUI 组件',
-//             link: 'https://github.com/zhoubichuan/Web-ElementUI.git'
-//         }
-//     ]
-// },
 {
     text: 'Vue资料',
     link: '/read',

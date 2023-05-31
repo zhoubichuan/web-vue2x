@@ -29,7 +29,7 @@ const sidebar = {
         '10.server',
         '11.pwa',
         '12.upload',
-        // '13.video'
+        '13.video'
     ],
     '/base/vue2.x/': [
         '1.index',
