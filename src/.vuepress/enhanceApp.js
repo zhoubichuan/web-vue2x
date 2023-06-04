@@ -3,12 +3,13 @@ import TableRender from '../senior/4.component/TableRender.vue';
 import xminder from './xmind.vue';
 import config from '@/config'
 import ui from '@/ui'
-
+import directive from '@/directive'
 export default ({
     Vue
 }) => {
     Vue.component('TableRender', TableRender);
     Vue.component('xminder', xminder);
+    Vue.use(directive)
     Vue.use(ui)
     Vue.use(config)
 }

@@ -37,7 +37,6 @@ const sidebar = {
         '2.vue',
         '2.message',
         '2.directive',
-        '2.vue3',
         '2.vue4',
         '3.vue-router',
         '4.vuex',
