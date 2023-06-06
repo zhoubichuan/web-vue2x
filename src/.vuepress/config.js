@@ -1,5 +1,5 @@
 const path = require("path");
-// const httpRequest = require("../../mock/http.js");
+const httpRequest = require("../../mock/http.js");
 // const WebPack = require('webpack')
 module.exports ={
   title: "Vue学习笔记",
@@ -11,9 +11,9 @@ module.exports ={
       NODE_ENV: process.env.NODE_ENV
     },
   },
-  // beforeDevServer(app, server) {
-  //   httpRequest(app);
-  // },
+  beforeDevServer(app, server) {
+    httpRequest(app);
+  },
   alias: {
     '@': path.resolve(__dirname, "../../src/"),
     vue$: "vue/dist/vue.esm.js",

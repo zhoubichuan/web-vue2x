@@ -19,7 +19,7 @@ export default {
         )
         .catch((err) => ({ err }));
     };
-    Vue.prototype.$ajax = axios;
+    Vue.prototype.$axios = axios;
     Vue.prototype.$devideArr = function (arr, num) {
       let index = 0;
       let items = [];
