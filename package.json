@@ -30,9 +30,13 @@
   },
   "dependencies": {
     "axios": "0.21.1",
+    "i18n": "^0.15.1",
     "less": "^3.0.2",
     "lodash": "4.17.21",
+    "moment": "^2.29.4",
+    "qs": "^6.11.2",
     "vuepress": "^1.9.7",
-    "vuepress-plugin-demo-container": "^0.2.0"
+    "vuepress-plugin-demo-container": "^0.2.0",
+    "vuex": "^4.1.0"
   }
 }

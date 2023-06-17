@@ -2,14 +2,18 @@ import * as api from "@/api/index.js";
 import * as _ from "lodash";
 import axios from "axios";
 import service from "@/util/request.js";
+import moment from 'moment'
+const qs = require('qs')
 
 export default {
   install(Vue) {
+    Vue.prototype.$moment = moment;
     Vue.prototype._ = _;
     // window._ = _
     // window.$env = process.env
     // Vue.prototype.$SliderRight = SliderRight
     Vue.prototype.$service = service;
+    Vue.prototype.$qs = qs;
     Vue.prototype.$api = api;
     Vue.prototype.$awaitWarp = function (promise) {
       return promise
