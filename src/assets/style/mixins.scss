@@ -1,0 +1,9 @@
+@mixin flexLayout($j: unset, $a: unset, $dir: unset) {
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+  flex-direction: $dir;
+}
+@mixin commonTransition() {
+  transition: .3s all cubic-bezier(0.165, 0.84, 0.44, 1)
+}

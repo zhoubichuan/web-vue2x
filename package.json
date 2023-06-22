@@ -1,7 +1,7 @@
 {
   "name": "web-vue",
   "version": "1.0.0",
-  "description": "",
+  "description": "vue学习笔记",
   "main": "index.js",
   "author": "zhoubichaun@icloud.com",
   "hommepage": "https://github.com/zhoubichuan/web-vue/",
@@ -10,7 +10,6 @@
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src",
-    "src:build": "vuepress build src",
     "deploy": "bash deploy.sh",
     "github": "bash github.sh",
     "gitee": "bash gitee.sh",
@@ -41,6 +40,7 @@
     "qs": "^6.11.2",
     "vuepress": "^1.9.7",
     "vuepress-plugin-demo-container": "^0.2.0",
-    "vuex": "^4.1.0"
+    "vuex": "^4.1.0",
+    "web-elementui": "1.1.3"
   }
 }

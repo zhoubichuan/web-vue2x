@@ -1,0 +1,142 @@
+
+//ScreenSize
+$mobile-max-width:            850px;
+$mobile-mid-width:            720px;
+$mobile-min-width:            320px;
+
+//font
+$font-family-default: -apple-system, BlinkMacSystemFont,Arial,sans-serif !default;
+
+//Transition
+$transition-base:             all .2s ease-in-out !default;
+
+$scrollbar-width: 7px;
+
+//Color
+$color-main:#47a369;//主色
+$color-1: #20702e;
+$color-2: #13581F;
+$color-3: #F5F5F5;
+$color-b1: rgba(#111,1);
+$color-ff: rgba(#fff,1);
+$black:    rgba(#000,1);
+$color-wu: rgba(#555,1);
+$color-qi: rgba(#777,1);
+$color-cc: rgba(#ccc,1);
+$color-dd: rgba(#ddd,1);
+$color-pp: rgba(#0099cc,1);
+$color-ee: rgba(#eee,1);
+$color-aa: rgba(#aaa,1);
+$color-e0: rgba(#34404D,1);
+$color-f1: rgba(#f1f1f1,1);
+$color-f2: rgba(#F2F2F2,1);
+$color-f3: rgba(#F3F3F3,1);
+$color-f4: rgba(#F4F4F4,1);
+$color-f5: rgba(#F5F5F5,1);
+$color-f6: rgba(#F6F6F6,1);
+$color-f7: rgba(#F7F7F7,1);
+$color-f8: rgba(#f8f9fa,1);
+$color-f9: rgba(#f9f9f9,1);
+$color-c9:rgba(#C9C9C9,1);
+$color-fc: rgba(#f8fafc,1);
+$color-e5: rgba(#E5E5E5,1);
+$color-e7: rgba(#E7E7E7,1);
+$color-e8: rgba(#00A0E8,1);
+$color-e9: rgba(#027cb3,1);
+$color-d1: rgba(#D1D1D1,1);
+$color-d4: rgba(#DADADA,1);
+$color-d8: rgba(#D8D8D8,1);
+$color-99: rgba(#999999,1);
+$color-re: rgba(#58585A,1);  //Secu365 mobile sidebar bg
+$color-d0: rgba(#D0021B,1);  //Secu365 主色
+$color-3b: rgba(#67C13B,1);
+$color-f60: rgba(#ff9600,1);
+$ac-color: rgba(#EB720F,1);
+$color-menu-hover: #ddffe3; // 目录hover
+$color-button-hover-bgc: #13581f;  // 按钮hover背景色
+// 文字按钮颜色
+$text-color-1: #319542; // 编辑
+$text-color-2: #2B98ED; // 查看
+$text-color-3:#23B7F0; // 启用/禁用
+$text-color-4:#F14747; // 删除
+
+$box-shadow-around: rgba($black, .15) 0 0 6px;
+// background
+$bg1:rgba(0,0,0,0.55);
+
+//Font Size
+$input-fontsize: 14px !default;
+$icon-size5: 2rem !default;
+// icon size
+.icon-size{
+  font-size: 16px;
+  &:before{
+          font-size: 1.5rem;
+          vertical-align: middle;
+  }
+}
+//省略号
+.senluehao{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+
+// sidebar
+$sideBarWidth: 100%;
+$sideBarHeight: 70px;
+$sideBarBg: rgba(#303030,1);
+$sideBarBgMobile: rgba(#58585A,1);
+$menuText:#f1f1f1;
+$menuActiveText:#47a369;
+$subMenuActiveText:#f4f4f5; //https://github.com/ElemeFE/element/issues/12951
+
+$menuBg:rgba(0,0,0,0);
+$menuHover:#000;
+
+$subMenuBg:#303030;
+$subMenuHover:#47a369;
+
+@keyframes small-spot {
+  0%,
+  100% {
+    box-shadow: 0 -1.2em 0 0.2em, 1em -1em 0 0em, 1.2em 0 0 -1em, 1em 1em 0 -1em, 0 1.2em 0 -1em, -1em 1em 0 -1em, -1.2em 0 0 -1em, -1em -1em 0 0;
+  }
+  12.5% {
+    box-shadow: 0 -1.2em 0 0, 1em -1em 0 0.2em, 1.2em 0 0 0, 1em 1em 0 -1em, 0 1.2em 0 -1em, -1em 1em 0 -1em, -1.2em 0 0 -1em, -1em -1em 0 -1em;
+  }
+  25% {
+    box-shadow: 0 -1.2em 0 -0.5em, 1em -1em 0 0, 1.2em 0 0 0.2em, 1em 1em 0 0, 0 1.2em 0 -1em, -1em 1em 0 -1em, -1.2em 0 0 -1em, -1em -1em 0 -1em;
+  }
+  37.5% {
+    box-shadow: 0 -1.2em 0 -1em, 1em -1em 0 -1em, 1.2em 0em 0 0, 1em 1em 0 0.2em, 0 1.2em 0 0em, -1em 1em 0 -1em, -1.2em 0em 0 -1em, -1em -1em 0 -1em;
+  }
+  50% {
+    box-shadow: 0 -1.2em 0 -1em, 1em -1em 0 -1em, 1.2em 0 0 -1em, 1em 1em 0 0em, 0 1.2em 0 0.2em, -1em 1em 0 0, -1.2em 0em 0 -1em, -1em -1em 0 -1em;
+  }
+  62.5% {
+    box-shadow: 0 -1.2em 0 -1em, 1em -1em 0 -1em, 1.2em 0 0 -1em, 1em 1em 0 -1em, 0 1.2em 0 0, -1em 1em 0 0.2em, -1.2em 0 0 0, -1em -1em 0 -1em;
+  }
+  75% {
+    box-shadow: 0em -1.2em 0 -1em, 1em -1em 0 -1em, 1.2em 0em 0 -1em, 1em 1em 0 -1em, 0 1.2em 0 -1em, -1em 1em 0 0, -1.2em 0em 0 0.2em, -1em -1em 0 0;
+  }
+  87.5% {
+    box-shadow: 0em -1.2em 0 0, 1em -1em 0 -1em, 1.2em 0 0 -1em, 1em 1em 0 -1em, 0 1.2em 0 -1em, -1em 1em 0 0, -1.2em 0em 0 0, -1em -1em 0 0.2em;
+  }
+}
+
+
+// the :export directive is the magic sauce for webpack
+:export {
+  menuText: $menuText;
+  menuActiveText: $menuActiveText;
+  subMenuActiveText: $subMenuActiveText;
+  menuBg: $menuBg;
+  menuHover: $menuHover;
+  subMenuBg: $subMenuBg;
+  subMenuHover: $subMenuHover;
+  sideBarWidth: $sideBarWidth;
+}

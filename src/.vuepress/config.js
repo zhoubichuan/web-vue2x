@@ -22,10 +22,20 @@ module.exports = {
   },
   scss: {
     data: `
-    @import "../../../components/variables.scss";
+    @import "~@/assets/style/var.scss";
+    @import "~@/assets/style/variables.scss";
+    @import "~@/assets/style/reset.scss";
+    @import "~@/assets/style/mixins.scss";
     `,
   },
   plugins: [
+    // 设置环境变量
+    new Webpack.DefinePlugin({
+      "process.env": {
+        NODE_ENV: "production",
+        BASE_API: "/",
+      },
+    }),
     new Webpack.DllReferencePlugin({
       manifest: require(path.resolve(
         __dirname,

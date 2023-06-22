@@ -3,8 +3,12 @@ import { Message, MessageBox } from "element-ui";
 import { getToken } from "@/util/auth";
 
 // 创建axios实例
+let baseURL = "/";
+try {
+  baseURL = process ? process.env?.BASE_API : "/";
+} catch (e) {}
 const service = axios.create({
-  baseURL: process ? process.env?.BASE_API : "/", // api 的 base_url
+  baseURL,
   timeout: 5000, // 请求超时时间
 });
 

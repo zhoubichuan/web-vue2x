@@ -1,0 +1,658 @@
+@import "@/assets/style/var.scss";
+@import "@/assets/style/font.scss";
+@import "@/assets/style/common.scss";
+
+*{
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 14px;
+}
+body {
+  font-family: "微软雅黑", "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #F0F0F0;
+  overflow: hidden;
+}
+a{
+  text-decoration: none;
+  color: initial;
+}
+table {
+  thead {
+    tr {
+      th {
+        font-size: 16px;
+        font-weight: normal;
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        padding-top: 6px !important;
+        padding-bottom: 6px !important;
+      }
+    }
+  }
+}
+
+
+// 文字操作按钮
+.text-edit {
+  color: $text-color-1 !important;
+}
+.text-delete {
+  color: $text-color-4 !important;
+}
+
+
+
+.monitor-title{
+  width: 100%;
+  height: 40px;
+  background: #1A4728;
+  position: relative;
+  line-height: 40px;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 28px;
+  box-sizing: border-box;
+  &::after,
+  &::before{
+    content: " ";
+    height: 40px;
+    width: 8px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url("~@/assets/dataScreen/title-decorate.png");
+    background-size: contain;
+  }
+  &::before{
+    left: initial;
+    right: 0;
+  }
+  .text{
+    font-size: 22px;
+    padding-left: 32px;
+  }
+  .option{
+    display: flex;
+    padding: 5px 0px;
+    >div{
+      margin-left: 28px;
+      cursor: pointer;
+    }
+    img{
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+
+#app {
+  font-family: "微软雅黑", "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {
+  width: $scrollbar-width;
+  height: $scrollbar-width;
+  background-color: transparent;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #dedfe1;
+}
+
+::-webkit-input-placeholder{
+  font-size: 14px;
+}
+
+
+
+.el-table__body-wrapper {
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      background-color: #dedfe1;
+    }
+  }
+}
+.el-table--border::after {
+  width: 0px !important;
+}
+.el-table::before {
+  height: 0px !important;
+}
+.el-table--border {
+  border-top: none !important;
+}
+.el-table__fixed-right-patch {
+  border-bottom: none !important;
+  top: 0px !important;
+}
+.el-table th {
+  border-top: 1px solid #EBEEF5;
+}
+.table-wrap {
+  margin-right: -$scrollbar-width;
+}
+
+
+
+.admin {
+  height: 100%;
+}
+
+.btn-primary-light{
+  background-color: #91DB7E;
+  border-color: #91DB7E;
+  &:hover,
+  &:focus,
+  &:active{
+    background: #a2e890;
+    border-color: #a2e890;
+  }
+}
+
+.btn-primary-cyan{
+  background-color: #52CFC5;
+  border-color: #52CFC5;
+  &:hover,
+  &:focus,
+  &:active{
+    background: #70e2d9;
+    border-color: #70e2d9;
+  }
+}
+
+.btn-primary-danger{
+  background-color: #FF5F5F;
+  border-color: #FF5F5F;
+  &:hover,
+  &:focus,
+  &:active{
+    background: #fb7878;
+    border-color: #fb7878;
+  }
+}
+
+.el-button.el-button--info{
+  background: $color-3;
+  border-color: $color-3;
+  color: #666666;
+  .export{
+    display: inline-block;
+    background: url(~@/assets/export-icon.svg);
+    width: 16px;
+    height: 14px;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: -2px;
+  }
+  &:focus {
+    background-color: $color-3;
+    border-color: $color-3;  
+    color: #666666;  
+  }
+  &:hover{
+    background: $color-1;
+    border-color: $color-1;
+    color: #ffffff;
+    .export{
+      background-image: url(~@/assets/export-icon1.svg);
+    }
+  }
+}
+.el-button.is-plain {
+  &:hover {
+    background: $color-button-hover-bgc !important;
+    border-color: $color-button-hover-bgc !important;
+    color: #ffffff !important;    
+  }
+}
+
+.hx-table{
+  color: #666;
+  .cell{
+    text-align: center;
+  }
+  thead th{ 
+    background: #F0F0F0;
+    color: #333333;
+    font-size: 16px;
+  }
+  &.el-table--border{
+    th,
+    td{
+      border-color: #D7D7D7;
+    }
+  }
+}
+
+.hx-dialog{
+  .el-dialog__body{
+    padding: 18px 20px;
+  }
+  .el-dialog__headerbtn{
+    font-size: 24px;
+    top: 14px;
+  }
+  .el-dialog__header{
+    border-top: 4px solid #20702e;
+    border-bottom: 1px solid #efefef;
+    padding: 13px 20px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  .el-dialog__footer{
+    border-top: 1px solid #efefef;
+    padding: 12px 30px;
+    .el-button{
+      padding: 8px 18px;
+    }
+  }
+  .el-form-item__content{
+    display: flex;
+  }
+  .inline{
+    display: flex;
+    >span{
+      white-space: nowrap;
+    }
+  }
+  .not-title{
+    .el-dialog{
+      margin-top: 15vh !important;
+    }
+    .el-dialog__header{
+      border-bottom: 0;
+    }
+  }
+  .el-progress-circle{
+    width: 70px !important;
+    height: 70px !important;
+  }
+}
+
+.hx-confirm{
+  border-top: 4px solid #20702E;
+  width: 300px;
+  .el-message-box{
+    &__header{
+      padding: 12px 20px;
+      border-bottom: 1px solid #D7D7D7;
+    }
+    &__title{
+      span{
+        font-weight: 400;
+      }
+    }
+    &__container{
+      display: flex;
+      padding: 24px 14px;
+    }
+    &__content{
+      padding: 0 20px;
+    }
+    &__status{
+      position: relative;
+      top: unset;
+      transform: unset;
+      & + .el-message-box__message{
+        font-size: 16px;
+        padding-left: 17px;
+      }
+    }
+    &__btns{
+      .el-button{
+        border-radius: 4px;
+        &--primary{
+          background-color: $--color-primary;
+          border-color: $--color-primary;
+          color: #fff;
+          &:hover{
+            border-color: #13581f;
+            background-color: #13581f;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.amap-sug-result{
+  z-index: 3000;
+}
+
+.amap-icon img{
+  height: 46px;
+  width: 32px;
+}
+
+.el-submenu__title *{
+  color: #333333;
+  font-weight: 600;
+}
+
+.el-menu-item-group__title{
+  padding: 0 !important;
+}
+
+.el-menu-item{
+  font-weight: 600; 
+}
+
+.el-submenu .el-menu-item{
+  padding-left: 60px !important;
+}
+
+input[type=number] {  
+  -moz-appearance:textfield;  
+}  
+input[type=number]::-webkit-inner-spin-button,  
+input[type=number]::-webkit-outer-spin-button {  
+  -webkit-appearance: none;  
+  margin: 0;  
+}
+
+.hx-table.el-table--border th{
+  font-weight: normal;
+}
+
+
+.custom-select .el-select-dropdown__item.selected {
+  color: #fff;
+  background-color: #91DB7E;
+}
+
+body .el-upload--picture-card{
+  width: 100px;
+  height: 100px;
+  line-height: 106px;
+}
+
+body .el-upload-list--picture-card {
+  .el-upload-list__item{
+    width: 100px;
+    height: 100px;
+    outline-width: inherit !important;
+  }
+  .el-icon-close-tip{
+    display: none !important;
+  }
+  .el-progress{
+    width: 70px;
+  }
+}
+
+
+// transform
+.rotate-180{
+  transform: rotateZ(180deg);
+}
+.common-transition{
+  @include commonTransition();
+}
+.flex1{
+  flex: 1;
+}
+
+.small-ruleForm{
+  .el-form-item{
+    margin-bottom: 20px;
+  }
+  .el-form-item__label{
+    line-height: 36px;
+  }
+  .el-form-item__content{
+    line-height: 36px;
+  }
+  .el-input{
+    line-height: 36px;
+  }
+  .el-input__inner{
+    height: 36px;
+    line-height: 36px;
+  }
+  .el-select{
+    width: 100%;
+  }
+}
+
+.hx-alert{
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.hx-alert-box{
+  width: 400px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+.hx-alert-status{
+  text-align: center;
+  >i{
+    font-size: 40px;
+  }
+  .el-icon-warning {
+    color: #EB2F2F;
+  }
+}
+
+.hx-alert-content{
+  font-size: 14px;
+  color: #333333;
+  line-height: 30px;
+  margin: 25px 0 35px;
+  text-align: center;
+}
+
+.hx-alert-opts{
+  text-align: center;
+  .hx-alert-btn{
+    border-radius: 4px;
+    line-height: 36px;
+    height: 36px;
+    color: #fff;
+    font-size: 14px;
+    display: inline-block;
+    padding: 0px 20px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 1px;
+    border-style: solid;
+    &.hx-alert-primary{
+      background: #20702E;
+      border-color: #20702E;
+    }
+    &.hx-alert-info{
+      margin-right: 20px;
+      color: #333333;
+      border-color: #D7D7D7;
+    }
+  }
+}
+
+// ol custom
+.ol-viewport{
+  &--drawing{
+    cursor: url("~@/assets/mapIco/ruler.cur"),auto;
+  }
+}
+.draw-node-overlay{
+  width: 12px;
+  height: 12px;
+  // background-image: url('~@/assets/mapIco/distance-tools-1x.png');
+  background-position: 0 12px;
+}
+.ol-measure{
+  &-del{
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+    background: url('~@/assets/mapIco/del-draw.png')
+  }
+  &-label{
+    position: relative;
+    &__inner{
+      padding: 0 8px;
+      color: #666;
+      white-space: nowrap;
+      border-radius: 2px;
+      background: #fff;
+    }
+    &-value{
+      color: #ff6319;
+    }
+    &__tooltip{
+      color: #7a7a7a;
+    }
+  }
+}
+
+.table-options{
+  .el-button--mini{
+    padding: 0 10px;
+    margin: 0 !important;
+    position: relative;
+    &::before{
+      content: '';
+      height: 16px;
+      width: 1px;
+      background: #ECECEC;
+      position: absolute;
+      right: 0;
+      top: 5px;
+    }
+    &:last-child{
+      &::before{
+        width: 0;
+      }
+    }
+  }
+}
+body {
+  .el-range-editor--small {
+    line-height: 34px !important;
+    height: 34px !important;
+  }
+  .el-button {
+    min-height: 38px;
+    padding: 10px 17px;
+    font-size: 14px;
+    font-weight: normal;
+  }
+  .el-button--small {
+    padding: 0px 15px;
+    min-height: 34px;
+  }
+  .el-input__inner{
+    border-color: 1px solid #CCC;
+    height: 38px;
+    line-height: 38px;
+    font-size: 14px;
+  }
+  .el-button--primary {
+    padding: 8px 16px;
+    background: $color-1;
+    border-color: $color-1;
+  }
+  .el-button--primary:focus {
+    background: $color-1;
+    border-color: $color-1;
+  }
+  .el-button--text {
+    padding: 0 8px !important;
+  }
+  .el-button--primary:hover {
+    background: $color-2;
+    border-color: $color-2;
+  }
+  .el-input--small .el-input__inner{
+    line-height: 34px;
+    height: 34px;
+  }
+  .el-table .cell{
+    line-height: 30px;
+    white-space: nowrap;
+    .el-button{
+      min-height: 28px;
+      padding: 0 18px;
+    }
+  }
+  .el-button--default {
+    background: #F5F5F5;
+    color: #666;
+    border-color: #F5F5F5;
+    &:hover {
+      background: $--color-primary;
+      border-color: $--color-primary;
+      color: #FFF;
+    }
+  }
+  .el-button--info.is-plain.is-disabled, .el-button--info.is-plain.is-disabled:hover, .el-button--info.is-plain.is-disabled:focus, .el-button--info.is-plain.is-disabled:active {
+    background: #F5F5F5;
+    color: #CCC;
+  }
+  .el-message-box__title{
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .el-pagination {
+    font-weight: normal
+  }
+
+  .el-switch.is-checked .el-switch__core {
+    // border-color: $--color;?
+    // background-color: $--color;?
+  }
+  .el-loading-mask.is-fullscreen {
+    .el-loading-spinner {
+      font-size: 60px;
+      i,
+      p {
+        color: #fff;
+      }
+    }
+  }
+
+
+
+
+}
