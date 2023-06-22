@@ -1,6 +1,7 @@
 const path = require("path");
 const httpRequest = require("../../mock/http.js");
 const Webpack = require("webpack");
+const bodyParser = require('body-parser')
 
 module.exports = {
   title: "Vue学习笔记",
@@ -13,7 +14,10 @@ module.exports = {
       NODE_ENV: process.env.NODE_ENV,
     },
   },
-  beforeDevServer(app, server) {
+  beforeDevServer(app, server, compiler) {
+    app.use(bodyParser.json())
+    app.use(bodyParser.urlencoded({ extended: false }))
+  
     httpRequest(app);
   },
   alias: {
