@@ -13,7 +13,8 @@
     "src:build": "vuepress build src",
     "deploy": "bash deploy.sh",
     "github": "bash github.sh",
-    "gitee": "bash gitee.sh"
+    "gitee": "bash gitee.sh",
+    "dll": "webpack -p --progress --config ./src/.vuepress/webpack.dll.conf.js"
   },
   "devDependencies": {
     "@vuepress/plugin-active-header-links": "^1.8.2",
@@ -23,10 +24,13 @@
     "@vuepress/plugin-nprogress": "^1.8.2",
     "@vuepress/plugin-pwa": "^1.8.2",
     "async-validator": "^1.11.5",
+    "clean-webpack-plugin": "^4.0.0",
     "element-ui": "^2.3.7",
     "less-loader": "^4.1.0",
     "vue": "^2.5.16",
-    "vuepress-plugin-boxx": "0.0.7"
+    "vuepress-plugin-boxx": "0.0.7",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
   },
   "dependencies": {
     "axios": "0.21.1",

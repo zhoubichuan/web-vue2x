@@ -1,22 +1,23 @@
 const path = require("path");
 const httpRequest = require("../../mock/http.js");
-// const WebPack = require('webpack')
+const Webpack = require("webpack");
 
-module.exports ={
+module.exports = {
   title: "Vue学习笔记",
   description: "风浪没平息 我宣告奔跑的意义",
   base: "/web-vue/", // 部署站点的基础路径
   port: 3009,
+  head: [["script", { src: "/dll/vendor.dll.js" }]],
   define: {
     env: {
-      NODE_ENV: process.env.NODE_ENV
+      NODE_ENV: process.env.NODE_ENV,
     },
   },
   beforeDevServer(app, server) {
     httpRequest(app);
   },
   alias: {
-    '@': path.resolve(__dirname, "../../src/"),
+    "@": path.resolve(__dirname, "../../src/"),
     vue$: "vue/dist/vue.esm.js",
   },
   scss: {
@@ -24,14 +25,17 @@ module.exports ={
     @import "../../../components/variables.scss";
     `,
   },
-  // plugins: [
-  //   new WebPack.DllReferencePlugin({
-  //     manifest: require(path.resolve(__dirname, "public/dll/manifest.json")),
-  //     name: '[name]_[hash]',
-  //     context: process.cwd()
-  //   }),
-  // ],
-  dest: "web-elementui", // 指定 vuepress 的输出目录
+  plugins: [
+    new Webpack.DllReferencePlugin({
+      manifest: require(path.resolve(
+        __dirname,
+        "public/dll/vendor-manifest.json"
+      )),
+      name: "[name]_[hash]",
+      context: process.cwd(),
+    }),
+  ],
+  dest: "web-vue", // 指定 vuepress 的输出目录
   markdown: {
     toc: { includeLevel: [2, 3] },
     lineNumbers: true, // 代码块显示行号
@@ -83,10 +87,4 @@ module.exports ={
     sidebar: require("./sidebar.js"),
     searchMaxSuggestoins: 10,
   },
-  // clientDynamicModules() {
-  //   return {
-  //     name: 'constants.js',
-  //     content: `export const SOURCE_DIR = '${context.sourceDir}'`
-  //   }
-  // },
 };
