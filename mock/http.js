@@ -55,8 +55,9 @@ module.exports = function http(app) {
   });
   app.post("/api/change", (req, res) => {
     if (res) {
+      let params = req.body;
       let data = require("./1.json");
-      data.data = Math.random();
+      data.data = params.id;
       let fs = require("fs");
       fs.writeFile("./mock/1.json", JSON.stringify(data), (err) => {
         if (err) {
