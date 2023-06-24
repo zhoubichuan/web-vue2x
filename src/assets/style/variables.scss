@@ -140,3 +140,149 @@ $subMenuHover:#47a369;
   subMenuHover: $subMenuHover;
   sideBarWidth: $sideBarWidth;
 }
+
+
+//边框
+@mixin yjbk ($num) {
+  -moz-border-radius: $num;
+  -webkit-border-radius: $num;
+  border-radius: $num;
+}
+
+//转块元素
+@mixin block ($width, $height) {
+  width: $width;
+  height: $height;
+  display: block;
+}
+
+//转行内块元素
+@mixin inline-block ($width, $height) {
+  width: $width;
+  height: $height;
+  display: inline-block;
+}
+
+
+//屏幕中居中
+@mixin pm-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+//文本省略
+@mixin ellipsis($rowCount: 1) {
+  @if $rowCount <=1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+} @else {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: $rowCount;
+      -webkit-box-orient: vertical;
+  }
+}
+
+//三角形（）
+@mixin sanjiaoxing($size: 5px, $color: rgba(0, 0, 0, 0.6), $dir: bottom) {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  @if (bottom==$dir) {
+      border-width: $size $size 0 $size;
+      border-color: $color transparent transparent transparent;
+  } @else if (top==$dir) {
+      border-width: 0 $size $size $size;
+      border-color: transparent transparent $color transparent;
+  } @else if (right==$dir) {
+      border-width: $size 0 $size $size;
+      border-color: transparent transparent transparent $color;
+  } @else if (left==$dir) {
+      border-width: $size $size $size 0;
+      border-color: transparent $color transparent transparent;
+  }
+}
+
+//元素定位
+@mixin postion ($type, $top, $right, $bottom, $left) {
+  position: $type;
+  top: $top;
+  bottom: $bottom;
+  left: $left;
+  right: $right;
+  & > #{$type} {
+      color: #f00;
+  }
+}
+
+// 隔行换色
+@mixin ghhs($evenColor, $evenBgColor, $oddColor, $oddBgColor) {
+  &:nth-child(2n) {
+      color: $evenColor;
+      background-color: $evenBgColor;
+  }
+  &:nth-child(2n + 1) {
+      color: $oddColor;
+      background-color: $oddBgColor;
+  }
+}
+
+// 禁止文本被选择
+@mixin user-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+//修改input placeholder颜色
+@mixin placeholderColor($color: #fff) {
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+
+  &::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: $color;
+  }
+
+  &:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: $color;
+  }
+
+  &:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $color;
+  }
+}
+
+//元素初始化
+@mixin elinit ($w: auto,$h: auto,$c: #fff) {
+    width: $w;
+    height: $h;
+    background: $c;
+}
+
+//元素居中
+@mixin content ($w,$h) {
+    position: absolute;
+    width: $w;
+    height: $h;
+    top: 50%;
+    left: 50%;
+    margin-top: -$h / 2;
+    margin-left:  -$w / 2;
+}
+
+//阴影
+@mixin boxshadow ($x) {
+    box-shadow: $x;
+}
+

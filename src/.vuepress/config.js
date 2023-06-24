@@ -24,6 +24,10 @@ module.exports = {
     "@": path.resolve(__dirname, "../../src/"),
     vue$: "vue/dist/vue.esm.js",
   },
+  postcss:{
+    plugins: [require('autoprefixer')]
+  },
+  stylus:{ preferPathResolver: 'webpack' },
   scss: {
     data: `
     @import "~@/assets/style/var.scss";
@@ -32,6 +36,8 @@ module.exports = {
     @import "~@/assets/style/mixins.scss";
     `,
   },
+  sass:{ indentedSyntax: true },
+  less:{},
   plugins: [
     // 设置环境变量
     new Webpack.DefinePlugin({
