@@ -45,6 +45,6 @@
     "vuepress": "^1.9.7",
     "vuepress-plugin-demo-container": "^0.2.0",
     "vuex": "^4.1.0",
-    "web-elementui": "1.1.3"
+    "web-elementui": "1.1.4"
   }
 }
