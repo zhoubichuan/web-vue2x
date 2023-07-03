@@ -3,7 +3,7 @@ import cn_ZH from "./cn_ZH";
 import en_US from "./en_US";
 let lang = "cn_ZH";
 try {
-  lang = localStorage.getItem("lang");
+  // lang = localStorage.getItem("lang");
 } catch (error) {
   console.log(error);
 }

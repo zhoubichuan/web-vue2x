@@ -1,7 +1,7 @@
 export const getToken = () => {
     let result = ''
     try {
-        result = localStorage.getItem('token')
+        // result = localStorage.getItem('token')
     } catch (e) {
         console.log(e)
     }
