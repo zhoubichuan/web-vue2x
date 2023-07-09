@@ -4,7 +4,7 @@
 npm run build
 
 # 2.进入打包目录
-cd dist
+cd web-vue
 
 # 3.发布到gh-pages分支
 git init
