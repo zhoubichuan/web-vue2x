@@ -28,12 +28,12 @@ meta:
         <p>掌握Vue2.x全家桶和Vue3.x全家桶中重点知识，对相关官方文档进行一些知识的补充，全面提升Vue的基础知识能力</p>
       </div>
       <div class="feature">
-        <h2><a href="/web-vue/senior/component/1.index.html">Vue组件开发</a></h2> 
-        <p>了解组件设计思路，组件编写工作流搭建，从0编写复杂组件之异步级联组件 单元测试编写及组件的发布</p>
+        <h2><a href="/web-vue/senior/component/1.index.html">Vue的微前端</a></h2> 
+        <p>了解Vue的微前端工具的使用，熟悉并掌握qiankun微前端在Vue中的使用方式 </p>
       </div>
       <div class="feature">
-        <h2><a href="/web-vue/senior/typescript/1.index.html">TypeScript</a></h2> 
-        <p>掌握在Vue3.x项目中配置TypeScript，熟练在不同场景下的用法，以及需要注意的一些问题</p>
+        <h2><a href="/web-vue/senior/component/1.index.html">Vue组件开发</a></h2> 
+        <p>了解组件设计思路，组件编写工作流搭建，从0编写复杂组件之异步级联组件 单元测试编写及组件的发布</p>
       </div>
       <div class="feature">
         <h2><a href="/web-vue/senior/deploy/1.index.html">Vue的构建布署</a></h2> 
@@ -42,10 +42,6 @@ meta:
       <div class="feature">
         <h2><a href="/web-vue/source/vue2.x/1.index.html">Vue 2.x源码实现</a></h2> 
         <p>深入了解VueCLI2.x原理、Vue 2.x原理剖析、Vue-router3.x原理剖析、Vuex3.x原理剖析 </p>
-      </div>
-      <div class="feature">
-        <h2><a href="/web-vue/source/vue3.x/1.index.html">Vue 3.x源码实现</a></h2> 
-        <p>深入了解VueCLI3.x原理、Vue 3.x原理剖析、Vue-router4.x理剖析、Vuex4.x理剖析</p>
       </div>
       <div class="feature">
         <h2><a href="https://cn.vuejs.org">Vue 相关资料</a></h2> 

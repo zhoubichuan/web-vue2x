@@ -4,7 +4,7 @@ const Webpack = require("webpack");
 const bodyParser = require('body-parser')
 
 module.exports = {
-  title: "Vue学习笔记",
+  title: "Vue2.x学习笔记",
   description: "风浪没平息 我宣告奔跑的意义",
   base: "/web-vue/", // 部署站点的基础路径
   port: 3009,
