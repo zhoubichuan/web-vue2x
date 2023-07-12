@@ -16,6 +16,7 @@
     "dll": "webpack -p --progress --config ./src/.vuepress/webpack.dll.conf.js"
   },
   "devDependencies": {
+    "@vuepress-reco/vuepress-plugin-kan-ban-niang": "1.0.5",
     "@vuepress/plugin-active-header-links": "1.8.2",
     "@vuepress/plugin-back-to-top": "1.8.2",
     "@vuepress/plugin-blog": "1.9.4",
@@ -25,12 +26,12 @@
     "async-validator": "1.11.5",
     "body-parser": "1.20.2",
     "clean-webpack-plugin": "4.0.0",
-    "less-loader": "4.1.0",
     "less": "3.0.2",
+    "less-loader": "4.1.0",
     "node-sass": "4.14.1",
     "sass-loader": "7.3.1",
-    "vue": "2.7.14",
     "vuepress-plugin-boxx": "0.0.7",
+    "vuepress-plugin-dynamic-title": "1.0.0",
     "webpack": "4.29.6",
     "webpack-cli": "3.3.0"
   },
@@ -42,7 +43,6 @@
     "element-ui": "2.3.7",
     "qs": "6.11.2",
     "vuepress": "1.9.7",
-    "vuepress-plugin-demo-container": "0.2.0",
     "vuex": "3.1.0",
     "web-elementui": "1.1.5"
   }

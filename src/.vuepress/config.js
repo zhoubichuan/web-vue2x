@@ -1,33 +1,35 @@
 const path = require("path");
-const httpRequest = require("../../mock/http.js");
+const httpRequest = require("./public/mock/http.js");
 const Webpack = require("webpack");
-const bodyParser = require('body-parser')
+const bodyParser = require("body-parser");
 
 module.exports = {
   title: "Vue2.x学习笔记",
   description: "风浪没平息 我宣告奔跑的意义",
   base: "/web-vue/", // 部署站点的基础路径
   port: 3009,
-  head: [["script", { src: "/dll/vendor.dll.js" }]],
+  head: [
+    ["script", { src: "/dll/vendor.dll.js" }]
+  ],
   define: {
     env: {
       NODE_ENV: process.env.NODE_ENV,
     },
   },
   beforeDevServer(app, server, compiler) {
-    app.use(bodyParser.json())
-    app.use(bodyParser.urlencoded({ extended: false }))
-  
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({ extended: false }));
+
     httpRequest(app);
   },
   alias: {
+    mock: path.resolve(__dirname, "../../mock/"),
     "@": path.resolve(__dirname, "../../src/"),
-    vue$: "vue/dist/vue.esm.js",
   },
-  postcss:{
-    plugins: [require('autoprefixer')]
+  postcss: {
+    plugins: [require("autoprefixer")],
   },
-  stylus:{ preferPathResolver: 'webpack' },
+  stylus: { preferPathResolver: "webpack" },
   scss: {
     data: `
     @import "~@/assets/style/var.scss";
@@ -36,8 +38,8 @@ module.exports = {
     @import "~@/assets/style/mixins.scss";
     `,
   },
-  sass:{ indentedSyntax: true },
-  less:{},
+  sass: { indentedSyntax: true },
+  less: {},
   plugins: [
     // 设置环境变量
     new Webpack.DefinePlugin({
@@ -60,39 +62,106 @@ module.exports = {
     toc: { includeLevel: [2, 3] },
     lineNumbers: true, // 代码块显示行号
   },
-  plugins: {
-    // 'vuepress-plugin-mermaidjs': {},
-    // "vuepress-plugin-auto-sidebar": {},
-    "demo-container": true,
-    // 名称：@vuepress/plugin-pwa 网页内容有更新的时候有刷新按钮。可以把网页保存到桌面，当一个app一样
-    "@vuepress/pwa": {
-      serviceWorker: true,
-      updatePopup: {
-        message: "有新的内容更新",
-        buttonText: "刷新",
+  plugins: [
+    [require("./demo-preview")],
+    [
+      "vuepress-plugin-anchor-toc",
+      {
+        showDepth: 1,
+        customClass: "your-customClass",
+        ignore: ["/", "/api/"],
       },
-    },
-    // 名称：@vuepress/plugin-back-to-top 效果：文章看到下面的时候，点击一个图标会回到顶部
-    "@vuepress/back-to-top": true,
-    "@vuepress/medium-zoom": true,
-    "@vuepress/nprogress": true,
-    // 名称：@vuepress/plugin-active-header-links 效果：页面滚动时自动激活侧边栏链接的插件，效果就是右边内容滚动的时候，看到哪里了，左侧菜单会自动高亮显示当前看的目录。
-    "@vuepress/active-header-links": {
-      sidebarLinkSelector: ".sidebar-link",
-      headerAnchorSelector: ".header-anchor",
-    },
-    "@vssue/vuepress-plugin-vssue": {
-      platform: "github", //v3的platform是github，v4的是github-v4
-      locale: "zh", //语言
-      // 其他的 Vssue 配置
-      owner: "zhoubichuan", //github账户名
-      repo: "web-vue", //github一个项目的名称
-      clientId: "Iv1.2923ba5d4de48a3c", //注册的Client ID
-      clientSecret: "110210", //注册的Client Secret
-      autoCreateIssue: true, // 自动创建评论，默认是false，最好开启，这样首次进入页面的时候就不用去点击创建评论的按钮了
-    },
-    "vuepress-plugin-boxx": ["vuepress-plugin-boxx"],
-  },
+    ],
+    [
+      "@vuepress-reco/vuepress-plugin-kan-ban-niang",
+      {
+        theme: ["blackCat"],
+        clean: false,
+        info: "https://github.com/zhoubichuan",
+        // messages: {
+        //   welcome: "",
+        //   home: "心里的花，我想要带你回家",
+        //   theme: "好吧，希望你能喜欢我的其他小伙伴。",
+        //   close: "再见哦",
+        // },
+      },
+    ],
+    // 只要把这个放进 config的plugins中就可以了
+    [
+      "sakura",
+      {
+        num: 20, // 默认数量
+        show: true, //  是否显示
+        zIndex: -1, // 层级
+        img: {
+          replace: false, // false 默认图 true 换图 需要填写httpUrl地址
+          httpUrl: "...", // 绝对路径
+        },
+      },
+    ],
+    [
+      // 名称：@vuepress/plugin-pwa 网页内容有更新的时候有刷新按钮。可以把网页保存到桌面，当一个app一样
+      "@vuepress/pwa",
+      {
+        serviceWorker: true,
+        updatePopup: {
+          message: "有新的内容更新",
+          buttonText: "刷新",
+        },
+      },
+    ],
+    [
+      "dynamic-title",
+      {
+        // showIcon: 'https://www.typescriptlang.org/favicon-32x32.png?v=8944a05a8b601855de116c8a56d3b3ae',
+        showText: "(/≧▽≦/)欢迎回来~",
+        // hideIcon: 'https://www.typescriptlang.org/favicon-32x32.png?v=8944a05a8b601855de116c8a56d3b3ae',
+        hideText: "(●—●)bye bye~",
+        recoverTime: 1000,
+      },
+    ],
+    [
+      "copyright",
+      {
+        authorName: "zhoubichuan@icloud.com", // 选中的文字将无法被复制
+        minLength: 30, // 如果长度超过  30 个字符
+      },
+    ],
+    // [
+    //   "vuepress-plugin-nuggets-style-copy",
+    //   {
+    //     copyText: "复制代码",
+    //     tip: {
+    //       content: "复制成功",
+    //     },
+    //   },
+    // ],
+    ["@vuepress/back-to-top"],
+    ["@vuepress/medium-zoom"],
+    ["@vuepress/nprogress"],
+    [
+      // 名称：@vuepress/plugin-active-header-links 效果：页面滚动时自动激活侧边栏链接的插件，效果就是右边内容滚动的时候，看到哪里了，左侧菜单会自动高亮显示当前看的目录。
+      "@vuepress/active-header-links",
+      {
+        sidebarLinkSelector: ".sidebar-link",
+        headerAnchorSelector: ".header-anchor",
+      },
+    ],
+    [
+      "@vssue/vuepress-plugin-vssue",
+      {
+        platform: "github", //v3的platform是github，v4的是github-v4
+        locale: "zh", //语言
+        // 其他的 Vssue 配置
+        owner: "zhoubichuan", //github账户名
+        repo: "web-vue", //github一个项目的名称
+        clientId: "Iv1.2923ba5d4de48a3c", //注册的Client ID
+        clientSecret: "110210", //注册的Client Secret
+        autoCreateIssue: true, // 自动创建评论，默认是false，最好开启，这样首次进入页面的时候就不用去点击创建评论的按钮了
+      },
+    ],
+    ["vuepress-plugin-boxx"],
+  ],
   // 主题配置
   themeConfig: {
     repo: "https://github.com/zhoubichuan/web-vue", // 源码地址
