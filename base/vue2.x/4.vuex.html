@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>四.Vuex 3.x | Vue2.x学习笔记</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <script src="/web-vue/dll/vendor.dll.js"></script>
+    <meta name="description" content="Vue2.x 全家桶相关知识点总结">
+    <meta name="keywords" content="Vuex 3.x相关规范与技巧介绍">
+    
+    <link rel="preload" href="/web-vue/assets/css/0.styles.8ac29a9f.css" as="style"><link rel="preload" href="/web-vue/assets/js/app.534afc23.js" as="script"><link rel="preload" href="/web-vue/assets/js/2.22582969.js" as="script"><link rel="preload" href="/web-vue/assets/js/58.cb167fae.js" as="script"><link rel="preload" href="/web-vue/assets/js/8.ea88b51a.js" as="script"><link rel="prefetch" href="/web-vue/assets/js/10.063d34e2.js"><link rel="prefetch" href="/web-vue/assets/js/100.4cd9542c.js"><link rel="prefetch" href="/web-vue/assets/js/101.2280b386.js"><link rel="prefetch" href="/web-vue/assets/js/102.6b986f74.js"><link rel="prefetch" href="/web-vue/assets/js/103.add62e2c.js"><link rel="prefetch" href="/web-vue/assets/js/104.907d0691.js"><link rel="prefetch" href="/web-vue/assets/js/105.33d49d1d.js"><link rel="prefetch" href="/web-vue/assets/js/106.1d5c6085.js"><link rel="prefetch" href="/web-vue/assets/js/107.aa5cc00d.js"><link rel="prefetch" href="/web-vue/assets/js/108.c2ac1bb6.js"><link rel="prefetch" href="/web-vue/assets/js/11.65f7a28f.js"><link rel="prefetch" href="/web-vue/assets/js/12.718e6402.js"><link rel="prefetch" href="/web-vue/assets/js/13.00fa8039.js"><link rel="prefetch" href="/web-vue/assets/js/14.7e7e1008.js"><link rel="prefetch" href="/web-vue/assets/js/15.6ddb5943.js"><link rel="prefetch" href="/web-vue/assets/js/16.0e807c8f.js"><link rel="prefetch" href="/web-vue/assets/js/17.7c202740.js"><link rel="prefetch" href="/web-vue/assets/js/18.53075584.js"><link rel="prefetch" href="/web-vue/assets/js/19.1788e617.js"><link rel="prefetch" href="/web-vue/assets/js/20.df5af8ee.js"><link rel="prefetch" href="/web-vue/assets/js/21.48c79b2a.js"><link rel="prefetch" href="/web-vue/assets/js/22.f10c4bb5.js"><link rel="prefetch" href="/web-vue/assets/js/23.471a070d.js"><link rel="prefetch" href="/web-vue/assets/js/24.38f9e9d0.js"><link rel="prefetch" href="/web-vue/assets/js/25.8b858670.js"><link rel="prefetch" href="/web-vue/assets/js/26.7dc1a597.js"><link rel="prefetch" href="/web-vue/assets/js/27.c270d3ec.js"><link rel="prefetch" href="/web-vue/assets/js/28.eaac85ad.js"><link rel="prefetch" href="/web-vue/assets/js/29.70ed5a61.js"><link rel="prefetch" href="/web-vue/assets/js/3.a86dc4d9.js"><link rel="prefetch" href="/web-vue/assets/js/30.0ed13b0b.js"><link rel="prefetch" href="/web-vue/assets/js/31.027271e3.js"><link rel="prefetch" href="/web-vue/assets/js/32.dc9d5edb.js"><link rel="prefetch" href="/web-vue/assets/js/33.65c5c7c6.js"><link rel="prefetch" href="/web-vue/assets/js/34.f9c88461.js"><link rel="prefetch" href="/web-vue/assets/js/35.d3519395.js"><link rel="prefetch" href="/web-vue/assets/js/36.f6327ed9.js"><link rel="prefetch" href="/web-vue/assets/js/37.ff88258c.js"><link rel="prefetch" href="/web-vue/assets/js/38.bc1881c4.js"><link rel="prefetch" href="/web-vue/assets/js/39.35db82d6.js"><link rel="prefetch" href="/web-vue/assets/js/4.b10f320c.js"><link rel="prefetch" href="/web-vue/assets/js/40.71896d5d.js"><link rel="prefetch" href="/web-vue/assets/js/41.6cd0968d.js"><link rel="prefetch" href="/web-vue/assets/js/42.e0b9f01e.js"><link rel="prefetch" href="/web-vue/assets/js/43.f908748f.js"><link rel="prefetch" href="/web-vue/assets/js/44.b580f1df.js"><link rel="prefetch" href="/web-vue/assets/js/45.9ea16de4.js"><link rel="prefetch" href="/web-vue/assets/js/46.2d850cb0.js"><link rel="prefetch" href="/web-vue/assets/js/47.85e4d318.js"><link rel="prefetch" href="/web-vue/assets/js/48.56db9021.js"><link rel="prefetch" href="/web-vue/assets/js/49.ab3637ca.js"><link rel="prefetch" href="/web-vue/assets/js/5.f465be90.js"><link rel="prefetch" href="/web-vue/assets/js/50.10c2a90c.js"><link rel="prefetch" href="/web-vue/assets/js/51.ff457161.js"><link rel="prefetch" href="/web-vue/assets/js/52.1224982d.js"><link rel="prefetch" href="/web-vue/assets/js/53.ee39f13b.js"><link rel="prefetch" href="/web-vue/assets/js/54.e15538c7.js"><link rel="prefetch" href="/web-vue/assets/js/55.dc4b4c7e.js"><link rel="prefetch" href="/web-vue/assets/js/56.54620c47.js"><link rel="prefetch" href="/web-vue/assets/js/57.1af87681.js"><link rel="prefetch" href="/web-vue/assets/js/59.24af605c.js"><link rel="prefetch" href="/web-vue/assets/js/6.86442150.js"><link rel="prefetch" href="/web-vue/assets/js/60.e57f44db.js"><link rel="prefetch" href="/web-vue/assets/js/61.4a0aea98.js"><link rel="prefetch" href="/web-vue/assets/js/62.4a97e688.js"><link rel="prefetch" href="/web-vue/assets/js/63.e7f59ac7.js"><link rel="prefetch" href="/web-vue/assets/js/64.1a19b92a.js"><link rel="prefetch" href="/web-vue/assets/js/65.ecc3bf26.js"><link rel="prefetch" href="/web-vue/assets/js/66.cbb844be.js"><link rel="prefetch" href="/web-vue/assets/js/67.0d85225f.js"><link rel="prefetch" href="/web-vue/assets/js/68.a1d1905e.js"><link rel="prefetch" href="/web-vue/assets/js/69.be2a589c.js"><link rel="prefetch" href="/web-vue/assets/js/7.b9d09d00.js"><link rel="prefetch" href="/web-vue/assets/js/70.28280014.js"><link rel="prefetch" href="/web-vue/assets/js/71.4207539e.js"><link rel="prefetch" href="/web-vue/assets/js/72.f1d361e2.js"><link rel="prefetch" href="/web-vue/assets/js/73.3e735ac6.js"><link rel="prefetch" href="/web-vue/assets/js/74.087699fb.js"><link rel="prefetch" href="/web-vue/assets/js/75.f48aec79.js"><link rel="prefetch" href="/web-vue/assets/js/76.1da79326.js"><link rel="prefetch" href="/web-vue/assets/js/77.a9fbfcf1.js"><link rel="prefetch" href="/web-vue/assets/js/78.4db05c55.js"><link rel="prefetch" href="/web-vue/assets/js/79.f4d13dc0.js"><link rel="prefetch" href="/web-vue/assets/js/80.ac21418f.js"><link rel="prefetch" href="/web-vue/assets/js/81.6b014660.js"><link rel="prefetch" href="/web-vue/assets/js/82.78f984ef.js"><link rel="prefetch" href="/web-vue/assets/js/83.cd22d264.js"><link rel="prefetch" href="/web-vue/assets/js/84.66583cee.js"><link rel="prefetch" href="/web-vue/assets/js/85.c37c97b9.js"><link rel="prefetch" href="/web-vue/assets/js/86.5c7aefbf.js"><link rel="prefetch" href="/web-vue/assets/js/87.48532005.js"><link rel="prefetch" href="/web-vue/assets/js/88.356c1630.js"><link rel="prefetch" href="/web-vue/assets/js/89.1101a31f.js"><link rel="prefetch" href="/web-vue/assets/js/9.4fa7ae0e.js"><link rel="prefetch" href="/web-vue/assets/js/90.832e47bf.js"><link rel="prefetch" href="/web-vue/assets/js/91.000e548a.js"><link rel="prefetch" href="/web-vue/assets/js/92.2c45ae3d.js"><link rel="prefetch" href="/web-vue/assets/js/93.a690475d.js"><link rel="prefetch" href="/web-vue/assets/js/94.a40a8143.js"><link rel="prefetch" href="/web-vue/assets/js/95.e3ab863b.js"><link rel="prefetch" href="/web-vue/assets/js/96.b952ef7d.js"><link rel="prefetch" href="/web-vue/assets/js/97.4c5c1d59.js"><link rel="prefetch" href="/web-vue/assets/js/98.e85ac4b3.js"><link rel="prefetch" href="/web-vue/assets/js/99.cc611ab8.js">
+    <link rel="stylesheet" href="/web-vue/assets/css/0.styles.8ac29a9f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/web-vue/" class="home-link router-link-active"><!----> <span class="site-name">Vue2.x学习笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础知识" class="dropdown-title"><span class="title">基础知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础知识" class="mobile-dropdown-title"><span class="title">基础知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-vue/base/engine/1.index.html" class="nav-link">
+  一.Vue 的工程化
+</a></li><li class="dropdown-item"><!----> <a href="/web-vue/base/project/1.index.html" class="nav-link">
+  二.Vue 功能模块
+</a></li><li class="dropdown-item"><!----> <a href="/web-vue/base/vue2.x/1.index.html" class="nav-link">
+  三.Vue 2.x全家桶
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="高级知识" class="dropdown-title"><span class="title">高级知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="高级知识" class="mobile-dropdown-title"><span class="title">高级知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-vue/senior/1.micro/1.index.html" class="nav-link">
+  一.微前端
+</a></li><li class="dropdown-item"><!----> <a href="/web-vue/senior/2.deploy/1.index.html" class="nav-link">
+  二.构建部署
+</a></li><li class="dropdown-item"><!----> <a href="/web-vue/senior/3.component/1.index.html" class="nav-link">
+  三.组件开发
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue 2.x源码" class="dropdown-title"><span class="title">Vue 2.x源码</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vue 2.x源码" class="mobile-dropdown-title"><span class="title">Vue 2.x源码</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-vue/source/vue-cli2.x/1.index.html" class="nav-link">
+  一.Vue/cli2.x
+</a></li><li class="dropdown-item"><!----> <a href="/web-vue/source/vue2.x/1.index.html" class="nav-link">
+  二.Vue 2.x
+</a></li><li class="dropdown-item"><!----> <a href="/web-vue/source/vue-router3.x/1.index.html" class="nav-link">
+  三.Vue-Router3.x
+</a></li><li class="dropdown-item"><!----> <a href="/web-vue/source/vuex3.x/1.index.html" class="nav-link">
+  四.Vuex3.x
+</a></li></ul></div></div><div class="nav-item"><a href="/web-vue/read.html" class="nav-link">
+  Vue资料
+</a></div> <a href="https://github.com/zhoubichuan/web-vue" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础知识" class="dropdown-title"><span class="title">基础知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础知识" class="mobile-dropdown-title"><span class="title">基础知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-vue/base/engine/1.index.html" class="nav-link">
+  一.Vue 的工程化
+</a></li><li class="dropdown-item"><!----> <a href="/web-vue/base/project/1.index.html" class="nav-link">
+  二.Vue 功能模块
+</a></li><li class="dropdown-item"><!----> <a href="/web-vue/base/vue2.x/1.index.html" class="nav-link">
+  三.Vue 2.x全家桶
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="高级知识" class="dropdown-title"><span class="title">高级知识</span> <span class="arrow down"></span></button> <button type="button" aria-label="高级知识" class="mobile-dropdown-title"><span class="title">高级知识</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-vue/senior/1.micro/1.index.html" class="nav-link">
+  一.微前端
+</a></li><li class="dropdown-item"><!----> <a href="/web-vue/senior/2.deploy/1.index.html" class="nav-link">
+  二.构建部署
+</a></li><li class="dropdown-item"><!----> <a href="/web-vue/senior/3.component/1.index.html" class="nav-link">
+  三.组件开发
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue 2.x源码" class="dropdown-title"><span class="title">Vue 2.x源码</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vue 2.x源码" class="mobile-dropdown-title"><span class="title">Vue 2.x源码</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web-vue/source/vue-cli2.x/1.index.html" class="nav-link">
+  一.Vue/cli2.x
+</a></li><li class="dropdown-item"><!----> <a href="/web-vue/source/vue2.x/1.index.html" class="nav-link">
+  二.Vue 2.x
+</a></li><li class="dropdown-item"><!----> <a href="/web-vue/source/vue-router3.x/1.index.html" class="nav-link">
+  三.Vue-Router3.x
+</a></li><li class="dropdown-item"><!----> <a href="/web-vue/source/vuex3.x/1.index.html" class="nav-link">
+  四.Vuex3.x
+</a></li></ul></div></div><div class="nav-item"><a href="/web-vue/read.html" class="nav-link">
+  Vue资料
+</a></div> <a href="https://github.com/zhoubichuan/web-vue" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/web-vue/base/vue2.x/1.index.html" class="sidebar-link">Vue2.x 全家桶</a></li><li><a href="/web-vue/base/vue2.x/1.vue-cli.html" class="sidebar-link">一.Vue/cli 2.x</a></li><li><a href="/web-vue/base/vue2.x/2.vue-base.html" class="sidebar-link">二.Vue2.x（基础）</a></li><li><a href="/web-vue/base/vue2.x/2.vue-message.html" class="sidebar-link">二.Vue2.x（组件通信）</a></li><li><a href="/web-vue/base/vue2.x/2.vue-directive.html" class="sidebar-link">二.Vue2.x（自定义指令）</a></li><li><a href="/web-vue/base/vue2.x/2.vue-lifecycle.html" class="sidebar-link">二.Vue2.x（生命周期）</a></li><li><a href="/web-vue/base/vue2.x/3.vue-router.html" class="sidebar-link">三.Vue-Router 3.x</a></li><li><a href="/web-vue/base/vue2.x/4.vuex.html" aria-current="page" class="active sidebar-link">四.Vuex 3.x</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web-vue/base/vue2.x/4.vuex.html#_1-安装-vuex" class="sidebar-link">1.安装 vuex</a></li><li class="sidebar-sub-header"><a href="/web-vue/base/vue2.x/4.vuex.html#_2-使用-vuex" class="sidebar-link">2.使用 vuex</a></li><li class="sidebar-sub-header"><a href="/web-vue/base/vue2.x/4.vuex.html#_3-配置-vuex" class="sidebar-link">3.配置 vuex</a></li></ul></li><li><a href="/web-vue/base/vue2.x/5.ui.html" class="sidebar-link">五.UI 库</a></li><li><a href="/web-vue/base/vue2.x/6.utils.html" class="sidebar-link">六.开发工具</a></li><li><a href="/web-vue/base/vue2.x/7.style.html" class="sidebar-link">七.css 预处理器</a></li><li><a href="/web-vue/base/vue2.x/8.eslint.html" class="sidebar-link">八.代码校验</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="四-vuex-3-x"><a href="#四-vuex-3-x" class="header-anchor">#</a> 四.Vuex 3.x</h1> <div class="custom-block tip"><p class="custom-block-title">前言</p> <p>补充一些官方文档中没有的，但是实际开发中最好需要了解的内容</p></div> <h2 id="_1-安装-vuex"><a href="#_1-安装-vuex" class="header-anchor">#</a> 1.安装 vuex</h2> <div class="language-sh line-numbers-mode"><pre class="language-sh"><code><span class="token function">npm</span> i vuex <span class="token parameter variable">-S</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="_2-使用-vuex"><a href="#_2-使用-vuex" class="header-anchor">#</a> 2.使用 vuex</h2> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">import</span> store <span class="token keyword">from</span> <span class="token string">&quot;./store&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  store<span class="token punctuation">,</span>
+  <span class="token function-variable function">render</span><span class="token operator">:</span> <span class="token punctuation">(</span>h<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">h</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token string">&quot;#app&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h2 id="_3-配置-vuex"><a href="#_3-配置-vuex" class="header-anchor">#</a> 3.配置 vuex</h2> <blockquote><p>/store</p> <ul><li><p>index.ts</p> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">import</span> vuex <span class="token keyword">from</span> <span class="token string">&quot;vuex&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">&quot;vue&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> state <span class="token keyword">from</span> <span class="token string">&quot;./state&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> getters <span class="token keyword">from</span> <span class="token string">&quot;./getters&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> mutations <span class="token keyword">from</span> <span class="token string">&quot;./mutations&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> actions <span class="token keyword">from</span> <span class="token string">&quot;./actions&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> modules <span class="token keyword">from</span> <span class="token string">&quot;./modules&quot;</span><span class="token punctuation">;</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>vuex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">new</span> <span class="token class-name">vuex</span><span class="token punctuation">.</span><span class="token function">Store</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  state<span class="token punctuation">,</span>
+  getters<span class="token punctuation">,</span>
+  mutations<span class="token punctuation">,</span>
+  actions<span class="token punctuation">,</span>
+  modules<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div></li></ul> <blockquote><ul><li>state.ts</li></ul> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  navData<span class="token operator">:</span> <span class="token punctuation">{</span>
+    name1<span class="token operator">:</span> <span class="token string">&quot;Resume&quot;</span><span class="token punctuation">,</span>
+    name2<span class="token operator">:</span> <span class="token string">&quot;resume&quot;</span><span class="token punctuation">,</span>
+    title<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">&quot;aboutMe&quot;</span><span class="token punctuation">,</span> link<span class="token operator">:</span> <span class="token string">&quot;about&quot;</span><span class="token punctuation">,</span> active<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">&quot;frontEndSkill&quot;</span><span class="token punctuation">,</span> link<span class="token operator">:</span> <span class="token string">&quot;skill&quot;</span><span class="token punctuation">,</span> active<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">&quot;worksShow&quot;</span><span class="token punctuation">,</span> link<span class="token operator">:</span> <span class="token string">&quot;project&quot;</span><span class="token punctuation">,</span> active<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">&quot;note&quot;</span><span class="token punctuation">,</span> link<span class="token operator">:</span> <span class="token string">&quot;note&quot;</span><span class="token punctuation">,</span> active<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">// { name: &quot;myExperience&quot;, link: &quot;experience&quot;, active: false },</span>
+      <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">&quot;linkMe&quot;</span><span class="token punctuation">,</span> link<span class="token operator">:</span> <span class="token string">&quot;link&quot;</span><span class="token punctuation">,</span> active<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">&quot;leaveMessage&quot;</span><span class="token punctuation">,</span> link<span class="token operator">:</span> <span class="token string">&quot;message&quot;</span><span class="token punctuation">,</span> active<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><ul><li><p>getters.ts</p> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li><p>mutations.ts</p> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li><p>actions.ts</p> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li></ul></blockquote> <ul><li><p>modules</p> <blockquote><ul><li><p>index.ts</p> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">import</span> introduce <span class="token keyword">from</span> <span class="token string">&quot;./introduce&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> aboutMe <span class="token keyword">from</span> <span class="token string">&quot;./aboutMe&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> skill <span class="token keyword">from</span> <span class="token string">&quot;./skill&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> project <span class="token keyword">from</span> <span class="token string">&quot;./project&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> note <span class="token keyword">from</span> <span class="token string">&quot;./note&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> link <span class="token keyword">from</span> <span class="token string">&quot;./link&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> message <span class="token keyword">from</span> <span class="token string">&quot;./message&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  introduce<span class="token punctuation">,</span>
+  aboutMe<span class="token punctuation">,</span>
+  skill<span class="token punctuation">,</span>
+  project<span class="token punctuation">,</span>
+  note<span class="token punctuation">,</span>
+  link<span class="token punctuation">,</span>
+  message<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div></li></ul> <details class="custom-block details"><summary>aboutMe.ts</summary> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  namespaced<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  state<span class="token operator">:</span> <span class="token punctuation">{</span>
+    content<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    op<span class="token operator">:</span> <span class="token punctuation">{</span>
+      id<span class="token operator">:</span> <span class="token string">&quot;about&quot;</span><span class="token punctuation">,</span>
+      title<span class="token operator">:</span> <span class="token string">&quot;关于我&quot;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    cardOp<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        title<span class="token operator">:</span> <span class="token string">&quot;个人信息&quot;</span><span class="token punctuation">,</span>
+        content<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;性名: 周必川&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;性别：男&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;籍贯：湖北孝感&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;年龄: 29岁&quot;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        title<span class="token operator">:</span> <span class="token string">&quot;学历信息&quot;</span><span class="token punctuation">,</span>
+        content<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;湖北工业大学工程技术学院&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;学历：本科&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;毕业时间：2015/06&quot;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        title<span class="token operator">:</span> <span class="token string">&quot;工作经验&quot;</span><span class="token punctuation">,</span>
+        content<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;4年web开发经验&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        title<span class="token operator">:</span> <span class="token string">&quot;求职意向&quot;</span><span class="token punctuation">,</span>
+        content<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;高级前端开发&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div></details> <details class="custom-block details"><summary>introduce.ts</summary> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  namespaced<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  state<span class="token operator">:</span> <span class="token punctuation">{</span>
+    op<span class="token operator">:</span> <span class="token punctuation">{</span>
+      id<span class="token operator">:</span> <span class="token string">&quot;introduce&quot;</span><span class="token punctuation">,</span>
+      title<span class="token operator">:</span> <span class="token string">&quot;Hell Word&quot;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    content<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">&quot;我叫周必川&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;一名前端工程师&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;zhoubichuan@icloud.com&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;生活不止眼前的苟且&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;坐标：佛山&quot;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div></details> <details class="custom-block details"><summary>link.ts</summary> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  namespaced<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  state<span class="token operator">:</span> <span class="token punctuation">{</span>
+    op<span class="token operator">:</span> <span class="token punctuation">{</span>
+      id<span class="token operator">:</span> <span class="token string">&quot;link&quot;</span><span class="token punctuation">,</span>
+      title<span class="token operator">:</span> <span class="token string">&quot;联系我&quot;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    linkOp<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">&quot;我的gitHub：&quot;</span><span class="token punctuation">,</span>
+        img<span class="token operator">:</span> <span class="token string">&quot;github&quot;</span><span class="token punctuation">,</span>
+        link<span class="token operator">:</span> <span class="token string">&quot;https://github.com/zhoubichuan&quot;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">&quot;我的微博：&quot;</span><span class="token punctuation">,</span>
+        img<span class="token operator">:</span> <span class="token string">&quot;weibo&quot;</span><span class="token punctuation">,</span>
+        link<span class="token operator">:</span> <span class="token string">&quot;https://github.com/zhoubichuan&quot;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">&quot;我的微信：&quot;</span><span class="token punctuation">,</span>
+        img<span class="token operator">:</span> <span class="token string">&quot;weixin&quot;</span><span class="token punctuation">,</span>
+        text<span class="token operator">:</span> <span class="token string">&quot;zbc159x&quot;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">&quot;我的掘金:&quot;</span><span class="token punctuation">,</span>
+        img<span class="token operator">:</span> <span class="token string">&quot;juejin&quot;</span><span class="token punctuation">,</span>
+        link<span class="token operator">:</span> <span class="token string">&quot;https://juejin.im/user/5aabd522f265da237a4cc764/posts&quot;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div></details> <details class="custom-block details"><summary>message.ts</summary> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  namespaced<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  state<span class="token operator">:</span> <span class="token punctuation">{</span>
+    imgUrl<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">&quot;https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg&quot;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    ico<span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+    name<span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+    content<span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+    op<span class="token operator">:</span> <span class="token punctuation">{</span>
+      id<span class="token operator">:</span> <span class="token string">&quot;message&quot;</span><span class="token punctuation">,</span>
+      title<span class="token operator">:</span> <span class="token string">&quot;留言板&quot;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    message<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        img<span class="token operator">:</span> <span class="token string">&quot;https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg&quot;</span><span class="token punctuation">,</span>
+        name<span class="token operator">:</span> <span class="token string">&quot;李白&quot;</span><span class="token punctuation">,</span>
+        content<span class="token operator">:</span> <span class="token string">&quot;床前明月光&quot;</span><span class="token punctuation">,</span>
+        time<span class="token operator">:</span> <span class="token string">&quot;2019年5月26日 18:30&quot;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        img<span class="token operator">:</span> <span class="token string">&quot;https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg&quot;</span><span class="token punctuation">,</span>
+        name<span class="token operator">:</span> <span class="token string">&quot;杜甫&quot;</span><span class="token punctuation">,</span>
+        content<span class="token operator">:</span> <span class="token string">&quot;安得广厦千万间&quot;</span><span class="token punctuation">,</span>
+        time<span class="token operator">:</span> <span class="token string">&quot;2019年5月26日 18:30&quot;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        img<span class="token operator">:</span> <span class="token string">&quot;https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg&quot;</span><span class="token punctuation">,</span>
+        name<span class="token operator">:</span> <span class="token string">&quot;杜牧&quot;</span><span class="token punctuation">,</span>
+        content<span class="token operator">:</span> <span class="token string">&quot;清明时节雨纷纷&quot;</span><span class="token punctuation">,</span>
+        time<span class="token operator">:</span> <span class="token string">&quot;2019年5月26日 18:30&quot;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br></div></div></details> <details class="custom-block details"><summary>note.ts</summary> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  namespaced<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  state<span class="token operator">:</span> <span class="token punctuation">{</span>
+    op<span class="token operator">:</span> <span class="token punctuation">{</span>
+      id<span class="token operator">:</span> <span class="token string">&quot;note&quot;</span><span class="token punctuation">,</span>
+      title<span class="token operator">:</span> <span class="token string">&quot;我的笔记&quot;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    currentDate<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    workOp<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">&quot;javaScript相关&quot;</span><span class="token punctuation">,</span>
+        items<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;我的博客&quot;</span><span class="token punctuation">,</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;javaScript+css&quot;</span><span class="token punctuation">,</span>
+            img<span class="token operator">:</span> <span class="token string">&quot;zhoubichuan.github.io&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;https://github.com/zhoubichuan/zhoubichuan.github.io&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;javascript笔记&quot;</span><span class="token punctuation">,</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;javaScript+css&quot;</span><span class="token punctuation">,</span>
+            img<span class="token operator">:</span> <span class="token string">&quot;Web-JavaScript&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;https://zhoubichuan.github.io/Web-JavaScript/&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">&quot;Vue相关&quot;</span><span class="token punctuation">,</span>
+        items<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;Web-Vue&quot;</span><span class="token punctuation">,</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;Vuepress&quot;</span><span class="token punctuation">,</span>
+            img<span class="token operator">:</span> <span class="token string">&quot;Web-Vue&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;https://zhoubichuan.github.io/Web-Vue/&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">&quot;React相关&quot;</span><span class="token punctuation">,</span>
+        items<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;Web-Vue&quot;</span><span class="token punctuation">,</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;Vuepress&quot;</span><span class="token punctuation">,</span>
+            img<span class="token operator">:</span> <span class="token string">&quot;Web-React&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;https://zhoubichuan.github.io/Web-React/&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">&quot;Angular&quot;</span><span class="token punctuation">,</span>
+        items<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">&quot;Node相关&quot;</span><span class="token punctuation">,</span>
+        items<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;Web-Node&quot;</span><span class="token punctuation">,</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;Vuepress&quot;</span><span class="token punctuation">,</span>
+            img<span class="token operator">:</span> <span class="token string">&quot;Web-Node&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;https://zhoubichuan.github.io/Web-Node/&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">&quot;Express相关&quot;</span><span class="token punctuation">,</span>
+        items<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;Web-Express&quot;</span><span class="token punctuation">,</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;Vuepress&quot;</span><span class="token punctuation">,</span>
+            img<span class="token operator">:</span> <span class="token string">&quot;Web-Express&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;https://zhoubichuan.github.io/Web-Express/&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">&quot;Koa相关&quot;</span><span class="token punctuation">,</span>
+        items<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;Web-Koa&quot;</span><span class="token punctuation">,</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;Vuepress&quot;</span><span class="token punctuation">,</span>
+            img<span class="token operator">:</span> <span class="token string">&quot;Web-Koa&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;https://zhoubichuan.github.io/Web-Koa/&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">&quot;Egg相关&quot;</span><span class="token punctuation">,</span>
+        items<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;Web-Egg&quot;</span><span class="token punctuation">,</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;Vuepress&quot;</span><span class="token punctuation">,</span>
+            img<span class="token operator">:</span> <span class="token string">&quot;Web-Egg&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;https://zhoubichuan.github.io/Web-Egg/&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">&quot;Webpack相关&quot;</span><span class="token punctuation">,</span>
+        items<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;Web-Webpack&quot;</span><span class="token punctuation">,</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;Vuepress&quot;</span><span class="token punctuation">,</span>
+            img<span class="token operator">:</span> <span class="token string">&quot;Web-Webpack&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;https://zhoubichuan.github.io/Web-Webpack/&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br></div></div></details> <details class="custom-block details"><summary>project.ts</summary> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  namespaced<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  state<span class="token operator">:</span> <span class="token punctuation">{</span>
+    op<span class="token operator">:</span> <span class="token punctuation">{</span>
+      id<span class="token operator">:</span> <span class="token string">&quot;project&quot;</span><span class="token punctuation">,</span>
+      title<span class="token operator">:</span> <span class="token string">&quot;开源项目&quot;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    currentDate<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    workOp<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">&quot;javaScript&quot;</span><span class="token punctuation">,</span>
+        items<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;企业网站&quot;</span><span class="token punctuation">,</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;javaScript+css&quot;</span><span class="token punctuation">,</span>
+            img<span class="token operator">:</span> <span class="token string">&quot;Project-JavaScript-CompanyWebsite&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;https://zhoubichuan.github.io/Project-JavaScript-CompanyWebsite/&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;后台管理系统&quot;</span><span class="token punctuation">,</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;jQuery+BootStrapt&quot;</span><span class="token punctuation">,</span>
+            img<span class="token operator">:</span> <span class="token string">&quot;Project-Bootstrapt-BackManagmentSystem&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;https://zhoubichuan.github.io/Project-Bootstrapt-BackManagmentSystem/&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;flybird游戏&quot;</span><span class="token punctuation">,</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;canvas+css&quot;</span><span class="token punctuation">,</span>
+            img<span class="token operator">:</span> <span class="token string">&quot;fly-bird&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;https://zhoubichuan.github.io/Project-JavaScript.Canvas-Flybird/&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;微信跳一跳游戏&quot;</span><span class="token punctuation">,</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;webGL(three.js)+css&quot;</span><span class="token punctuation">,</span>
+            img<span class="token operator">:</span> <span class="token string">&quot;Project-Three.js-TiaoYiTiao&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;https://zhoubichuan.github.io/Project-Three.js-TiaoYiTiao/&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;微信小程序&quot;</span><span class="token punctuation">,</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;---&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;wwww.123.com&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;微信公众号&quot;</span><span class="token punctuation">,</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;---&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;wwww.123.com&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">&quot;Vue&quot;</span><span class="token punctuation">,</span>
+        items<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;微信&quot;</span><span class="token punctuation">,</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;Vue+less&quot;</span><span class="token punctuation">,</span>
+            img<span class="token operator">:</span> <span class="token string">&quot;Project-Vue-weChat&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;https://zhoubichuan.github.io/Project-Vue-weChat/&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;饿了么&quot;</span><span class="token punctuation">,</span>
+            img<span class="token operator">:</span> <span class="token string">&quot;Project-Vue-eleSell&quot;</span><span class="token punctuation">,</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;Vue+less&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;https://zhoubichuan.github.io/Project-Vue-eleSell&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;点餐系统&quot;</span><span class="token punctuation">,</span>
+            img<span class="token operator">:</span> <span class="token string">&quot;Project-Vue-Ordering&quot;</span><span class="token punctuation">,</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;Vue+less&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;https://zhoubichuan.github.io/Project-Vue-Ordering/&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">&quot;React&quot;</span><span class="token punctuation">,</span>
+        items<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;zhufengCourseApp&quot;</span><span class="token punctuation">,</span>
+            img<span class="token operator">:</span> <span class="token string">&quot;Project-React.TS-app&quot;</span><span class="token punctuation">,</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;React+TS+less&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;https://zhoubichuan.github.io/Project-React.TS-app/&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;weChatApp&quot;</span><span class="token punctuation">,</span>
+            img<span class="token operator">:</span> <span class="token string">&quot;Project-React-weChat&quot;</span><span class="token punctuation">,</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;React+less&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;http://zhoubichuan.github.io/Project-React-weChat&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">&quot;Angular&quot;</span><span class="token punctuation">,</span>
+        items<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;珠峰课堂&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;https://zhoubichuan.github.io/Project-React.TS-app/&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">&quot;node.js&quot;</span><span class="token punctuation">,</span>
+        items<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;CMS系统&quot;</span><span class="token punctuation">,</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;Egg.js+AntDesignPro+MySQL&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;wwww.123.com&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">&quot;express&quot;</span><span class="token punctuation">,</span>
+        items<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;CMS系统&quot;</span><span class="token punctuation">,</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;Egg.js+AntDesignPro+MySQL&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;wwww.123.com&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">&quot;koa&quot;</span><span class="token punctuation">,</span>
+        items<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;CMS系统&quot;</span><span class="token punctuation">,</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;Egg.js+AntDesignPro+MySQL&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;wwww.123.com&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">&quot;全栈项目&quot;</span><span class="token punctuation">,</span>
+        items<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;CMS系统&quot;</span><span class="token punctuation">,</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;Egg.js+AntDesignPro+MySQL&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;wwww.123.com&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;多人聊天室&quot;</span><span class="token punctuation">,</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;React+Mongodb+websocket&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;wwww.123.com&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;新闻爬虫&quot;</span><span class="token punctuation">,</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;cheerio+mysql+nodemailer&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;wwww.123.com&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            title<span class="token operator">:</span> <span class="token string">&quot;珠峰课堂&quot;</span><span class="token punctuation">,</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;React+Redux&quot;</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;wwww.123.com&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br></div></div></details> <details class="custom-block details"><summary>skill.ts</summary> <div class="language-ts line-numbers-mode"><pre class="language-ts"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  namespaced<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  state<span class="token operator">:</span> <span class="token punctuation">{</span>
+    op<span class="token operator">:</span> <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token string">&quot;skill&quot;</span><span class="token punctuation">,</span> title<span class="token operator">:</span> <span class="token string">&quot;前端技能&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    knowledgeOp<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        title<span class="token operator">:</span> <span class="token string">&quot;静态页面&quot;</span><span class="token punctuation">,</span>
+        introduce<span class="token operator">:</span>
+          <span class="token string">&quot;熟练使用css+html快速构建页面，对Web标准和兼容性有良好认识&quot;</span><span class="token punctuation">,</span>
+        content<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;css&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;css&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">95</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;css3&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;css3&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">95</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;less&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;less&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">90</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;sass&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;sass&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">90</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;stylus&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;stylus&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">90</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;html&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;html&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">95</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;html5&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;html5&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">95</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;bootStrap&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;bootstrap&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">80</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;elementUI&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;element-ui&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">80</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;antDesign&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;antdesign&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">80</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        title<span class="token operator">:</span> <span class="token string">&quot;jascript&quot;</span><span class="token punctuation">,</span>
+        introduce<span class="token operator">:</span>
+          <span class="token string">&quot;对原生js有深刻的认识，对设计模式、性能优化、监控、安全、可视化有一定的理解和项目实践&quot;</span><span class="token punctuation">,</span>
+        content<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;原生js&quot;</span><span class="token punctuation">,</span>
+            ico<span class="token operator">:</span> <span class="token string">&quot;javascript&quot;</span><span class="token punctuation">,</span>
+            score<span class="token operator">:</span> <span class="token number">90</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;https://github.com/zhoubichuan/Web-JavaScript&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;ES6&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;es6&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">90</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;jQuery&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;jquery&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">90</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;ajax&quot;</span><span class="token punctuation">,</span>
+            ico<span class="token operator">:</span> <span class="token string">&quot;ajax&quot;</span><span class="token punctuation">,</span>
+            score<span class="token operator">:</span> <span class="token number">90</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;https://github.com/zhoubichuan/Web-Ajax&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;正则&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;regexp&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">80</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;设计模式&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;design-mode&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">70</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;TypeScript&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;typescript&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">70</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;算法&quot;</span><span class="token punctuation">,</span>
+            ico<span class="token operator">:</span> <span class="token string">&quot;calculate&quot;</span><span class="token punctuation">,</span>
+            score<span class="token operator">:</span> <span class="token number">60</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;https://github.com/zhoubichuan/Web-Arithmetic&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;单元测试&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;test&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">70</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        title<span class="token operator">:</span> <span class="token string">&quot;框架&quot;</span><span class="token punctuation">,</span>
+        introduce<span class="token operator">:</span> <span class="token string">&quot;熟练使用常见的框架及相关插件&quot;</span><span class="token punctuation">,</span>
+        content<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;Vue&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;vue&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">90</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;React&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">80</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;Dva&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;dva&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">80</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;Angular&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;angular&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">60</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;Ionic&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;ionic&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">60</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;微信小程序&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;css&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">70</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;微信公众号&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;css&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">70</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        title<span class="token operator">:</span> <span class="token string">&quot;构建工具：&quot;</span><span class="token punctuation">,</span>
+        introduce<span class="token operator">:</span>
+          <span class="token string">&quot;能够熟练使用webpack搭建项目，提高开发效率，对应特殊的功能能够编写简单的插件&quot;</span><span class="token punctuation">,</span>
+        content<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;Rollup&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;rollup&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">50</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;Webpack&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;webpack&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">70</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        title<span class="token operator">:</span> <span class="token string">&quot;node&quot;</span><span class="token punctuation">,</span>
+        introduce<span class="token operator">:</span>
+          <span class="token string">&quot;能够熟练使用webpack搭建项目，提高开发效率，对应特殊的功能能够编写简单的插件&quot;</span><span class="token punctuation">,</span>
+        content<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;tcp/ip协议&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;tcp-ip&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">70</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;安全防范&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;safe&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">80</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span> skill<span class="token operator">:</span> <span class="token string">&quot;服务端渲染&quot;</span><span class="token punctuation">,</span> ico<span class="token operator">:</span> <span class="token string">&quot;ssr&quot;</span><span class="token punctuation">,</span> score<span class="token operator">:</span> <span class="token number">80</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        title<span class="token operator">:</span> <span class="token string">&quot;node框架&quot;</span><span class="token punctuation">,</span>
+        introduce<span class="token operator">:</span> <span class="token string">&quot;能够熟练使用node框架，擅长使用常见的功能如：ssr&quot;</span><span class="token punctuation">,</span>
+        content<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;Express&quot;</span><span class="token punctuation">,</span>
+            ico<span class="token operator">:</span> <span class="token string">&quot;express&quot;</span><span class="token punctuation">,</span>
+            score<span class="token operator">:</span> <span class="token number">70</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;https://github.com/zhoubichuan/Web-Express&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;Koa&quot;</span><span class="token punctuation">,</span>
+            ico<span class="token operator">:</span> <span class="token string">&quot;koa&quot;</span><span class="token punctuation">,</span>
+            score<span class="token operator">:</span> <span class="token number">70</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;https://github.com/zhoubichuan/Web-Koa&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;Egg&quot;</span><span class="token punctuation">,</span>
+            ico<span class="token operator">:</span> <span class="token string">&quot;egg&quot;</span><span class="token punctuation">,</span>
+            score<span class="token operator">:</span> <span class="token number">70</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;https://github.com/zhoubichuan/Web-Egg&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        title<span class="token operator">:</span> <span class="token string">&quot;数据库&quot;</span><span class="token punctuation">,</span>
+        introduce<span class="token operator">:</span> <span class="token string">&quot;能够熟练使用常见的数据库，&quot;</span><span class="token punctuation">,</span>
+        content<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;mySql&quot;</span><span class="token punctuation">,</span>
+            ico<span class="token operator">:</span> <span class="token string">&quot;mysql&quot;</span><span class="token punctuation">,</span>
+            score<span class="token operator">:</span> <span class="token number">60</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;https://github.com/zhoubichuan/Web-MySql&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;mongoDB&quot;</span><span class="token punctuation">,</span>
+            ico<span class="token operator">:</span> <span class="token string">&quot;mongo-db&quot;</span><span class="token punctuation">,</span>
+            score<span class="token operator">:</span> <span class="token number">70</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;https://github.com/zhoubichuan/Web-MongoDB&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            skill<span class="token operator">:</span> <span class="token string">&quot;Redis&quot;</span><span class="token punctuation">,</span>
+            ico<span class="token operator">:</span> <span class="token string">&quot;redis&quot;</span><span class="token punctuation">,</span>
+            score<span class="token operator">:</span> <span class="token number">80</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">&quot;https://github.com/zhoubichuan/Web-Redis&quot;</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br></div></div></details></blockquote></li></ul></blockquote></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/zhoubichuan/web-vue/edit/master/src/base/vue2.x/4.vuex.md" target="_blank" rel="noopener noreferrer">在github上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2023/6/23 上午10:54:13</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/web-vue/base/vue2.x/3.vue-router.html" class="prev">
+        三.Vue-Router 3.x
+      </a></span> <span class="next"><a href="/web-vue/base/vue2.x/5.ui.html">
+        五.UI 库
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><div class="kanbanniang" data-v-ee8d62e6><div class="banniang-container" style="display:;" data-v-ee8d62e6><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-ee8d62e6>
+      欢迎来到 Vue2.x学习笔记
+    </div> <div class="operation" style="right:90px;bottom:40px;display:;" data-v-ee8d62e6><i class="kbnfont kbn-ban-home ban-home" data-v-ee8d62e6></i> <i class="kbnfont kbn-ban-message message" data-v-ee8d62e6></i> <i class="kbnfont kbn-ban-close close" data-v-ee8d62e6></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-ee8d62e6><i class="kbnfont kbn-ban-info info" data-v-ee8d62e6></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:none;" data-v-ee8d62e6></i></div> <canvas id="banniang" width="150" height="220" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-ee8d62e6></canvas></div> <div class="showBanNiang" style="display:none;" data-v-ee8d62e6>
+    看板娘
+  </div></div><!----><div></div><!----></div></div>
+    <script src="/web-vue/assets/js/app.534afc23.js" defer></script><script src="/web-vue/assets/js/2.22582969.js" defer></script><script src="/web-vue/assets/js/58.cb167fae.js" defer></script><script src="/web-vue/assets/js/8.ea88b51a.js" defer></script>
+  </body>
+</html>
