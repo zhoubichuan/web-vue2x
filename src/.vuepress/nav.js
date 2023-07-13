@@ -20,7 +20,7 @@ const nav = [
     text: "高级知识",
     items: [
       {
-        text: "一.微前端",
+        text: "一.Vue微前端",
         link: "/senior/1.micro/1.index",
       },
       {

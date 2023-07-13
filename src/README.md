@@ -28,7 +28,7 @@ meta:
         <p>掌握Vue2.x全家桶和Vue3.x全家桶中重点知识，对相关官方文档进行一些知识的补充，全面提升Vue的基础知识能力</p>
       </div>
       <div class="feature">
-        <h2><a href="/web-vue/senior/component/1.index.html">Vue的微前端</a></h2> 
+        <h2><a href="/web-vue/senior/component/1.index.html">Vue 微前端</a></h2> 
         <p>了解Vue的微前端工具的使用，熟悉并掌握qiankun微前端在Vue中的使用方式 </p>
       </div>
       <div class="feature">
