@@ -76,14 +76,14 @@ module.exports = {
       "@vuepress-reco/vuepress-plugin-kan-ban-niang",
       {
         theme: ["blackCat"],
-        clean: false,
+        clean: true,
         info: "https://github.com/zhoubichuan",
-        // messages: {
-        //   welcome: "",
-        //   home: "心里的花，我想要带你回家",
-        //   theme: "好吧，希望你能喜欢我的其他小伙伴。",
-        //   close: "再见哦",
-        // },
+        messages: {
+          welcome: "",
+          home: "心里的花，我想要带你回家",
+          theme: "好吧，希望你能喜欢我的其他小伙伴。",
+          close: "再见哦",
+        },
       },
     ],
     // 只要把这个放进 config的plugins中就可以了
@@ -108,16 +108,6 @@ module.exports = {
           message: "有新的内容更新",
           buttonText: "刷新",
         },
-      },
-    ],
-    [
-      "dynamic-title",
-      {
-        // showIcon: 'https://www.typescriptlang.org/favicon-32x32.png?v=8944a05a8b601855de116c8a56d3b3ae',
-        showText: "(/≧▽≦/)欢迎回来~",
-        // hideIcon: 'https://www.typescriptlang.org/favicon-32x32.png?v=8944a05a8b601855de116c8a56d3b3ae',
-        hideText: "(●—●)bye bye~",
-        recoverTime: 1000,
       },
     ],
     [
