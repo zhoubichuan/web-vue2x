@@ -15,4 +15,3 @@
   - [二.Vue 2.x](./source/vue2.x/1.index.html)
   - [三.Vue-Router3.x](./source/vue-router3.x/1.index.html)
   - [四.Vuex3.x](./source/vuex3.x/1.index.html)
-- [Vue 相关资料](./source/vuex4.x/1.index.html)
