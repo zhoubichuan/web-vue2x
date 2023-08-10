@@ -30,6 +30,7 @@ const sidebar = {
     "11.pwa",
     "12.upload",
     "13.video",
+    "14.map",
   ],
   "/base/vue2.x/": [
     "1.index",

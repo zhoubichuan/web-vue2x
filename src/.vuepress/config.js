@@ -9,7 +9,8 @@ module.exports = {
   base: "/web-vue/", // 部署站点的基础路径
   port: 3009,
   head: [
-    ["script", { src: "/dll/vendor.dll.js" }]
+    ["script", { src: "/dll/vendor.dll.js" }],
+    ["script", { src: "https://webapi.amap.com/maps?v=2.0&key=46c9ed4e2d25a0e0ee7c883fd5b1a0c8" }]
   ],
   define: {
     env: {
