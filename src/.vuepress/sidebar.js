@@ -31,6 +31,7 @@ const sidebar = {
     "12.upload",
     "13.video",
     "14.map",
+    "15.rich",
   ],
   "/base/vue2.x/": [
     "1.index",

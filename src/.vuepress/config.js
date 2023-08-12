@@ -31,6 +31,8 @@ module.exports = {
     plugins: [require("autoprefixer")],
   },
   stylus: { preferPathResolver: "webpack" },
+  stylus:{},
+  less:{},
   scss: {
     data: `
     @import "~@/assets/style/var.scss";
@@ -41,23 +43,29 @@ module.exports = {
   },
   sass: { indentedSyntax: true },
   less: {},
-  plugins: [
-    // 设置环境变量
-    new Webpack.DefinePlugin({
-      "process.env": {
-        NODE_ENV: "production",
-        BASE_API: "/",
-      },
-    }),
-    new Webpack.DllReferencePlugin({
-      manifest: require(path.resolve(
-        __dirname,
-        "public/dll/vendor-manifest.json"
-      )),
-      name: "[name]_[hash]",
-      context: process.cwd(),
-    }),
-  ],
+  configureWebpack: (config, isServer) => {
+    if (!isServer) {
+      return {
+        plugins: [
+          // 设置环境变量
+          new Webpack.DefinePlugin({
+            "process.env": {
+              NODE_ENV: "'production'",
+              BASE_API: "'/'",
+            },
+          }),
+          new Webpack.DllReferencePlugin({
+            manifest: require(path.resolve(
+              __dirname,
+              "public/dll/vendor-manifest.json"
+            )),
+            name: "[name]_[hash]",
+            context: process.cwd(),
+          }),
+        ],
+      }
+    }
+  },
   dest: "web-vue", // 指定 vuepress 的输出目录
   markdown: {
     toc: { includeLevel: [2, 3] },
