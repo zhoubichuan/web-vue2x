@@ -3,10 +3,12 @@ import * as _ from "lodash";
 import axios from "axios";
 import service from "@/util/request.js";
 import moment from 'moment'
+import DecoupledEditor from "@ckeditor/ckeditor5-build-decoupled-document";
 const qs = require('qs')
 
 export default {
   install(Vue) {
+    Vue.prototype.$DecoupledEditor=DecoupledEditor
     Vue.prototype.$moment = moment;
     Vue.prototype._ = _;
     // window._ = _
