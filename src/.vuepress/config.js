@@ -20,7 +20,6 @@ module.exports = {
   beforeDevServer(app, server, compiler) {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }));
-
     httpRequest(app);
   },
   alias: {
@@ -31,7 +30,6 @@ module.exports = {
     plugins: [require("autoprefixer")],
   },
   stylus: { preferPathResolver: "webpack" },
-  stylus:{},
   less:{},
   scss: {
     data: `
@@ -42,8 +40,6 @@ module.exports = {
     `,
   },
   sass: { indentedSyntax: true },
-  less: {},
-  },
   dest: "web-vue", // 指定 vuepress 的输出目录
   markdown: {
     toc: { includeLevel: [2, 3] },
