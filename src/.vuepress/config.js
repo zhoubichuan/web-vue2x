@@ -43,11 +43,14 @@ module.exports = {
   },
   sass: { indentedSyntax: true },
   less: {},
-  configureWebpack: (config, isServer) => {
-    if (!isServer) {
-      return {
-        plugins: [
-          // 设置环境变量
+  },
+  dest: "web-vue", // 指定 vuepress 的输出目录
+  markdown: {
+    toc: { includeLevel: [2, 3] },
+    lineNumbers: true, // 代码块显示行号
+  },
+  plugins: [
+     // 设置环境变量
           new Webpack.DefinePlugin({
             "process.env": {
               NODE_ENV: "'production'",
@@ -62,16 +65,6 @@ module.exports = {
             name: "[name]_[hash]",
             context: process.cwd(),
           }),
-        ],
-      }
-    }
-  },
-  dest: "web-vue", // 指定 vuepress 的输出目录
-  markdown: {
-    toc: { includeLevel: [2, 3] },
-    lineNumbers: true, // 代码块显示行号
-  },
-  plugins: [
     [require("./demo-preview")],
     [
       "vuepress-plugin-anchor-toc",
