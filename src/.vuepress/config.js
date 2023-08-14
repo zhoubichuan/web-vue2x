@@ -74,20 +74,6 @@ module.exports = {
         ignore: ["/", "/api/"],
       },
     ],
-    [
-      "@vuepress-reco/vuepress-plugin-kan-ban-niang",
-      {
-        theme: ["blackCat"],
-        clean: true,
-        info: "https://github.com/zhoubichuan",
-        messages: {
-          welcome: "",
-          home: "心里的花，我想要带你回家",
-          theme: "好吧，希望你能喜欢我的其他小伙伴。",
-          close: "再见哦",
-        },
-      },
-    ],
     // 只要把这个放进 config的plugins中就可以了
     [
       "sakura",
