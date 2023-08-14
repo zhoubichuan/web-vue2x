@@ -51,20 +51,20 @@ module.exports = {
   },
   plugins: [
      // 设置环境变量
-          new Webpack.DefinePlugin({
+          [new Webpack.DefinePlugin({
             "process.env": {
               NODE_ENV: "'production'",
               BASE_API: "'/'",
             },
-          }),
-          new Webpack.DllReferencePlugin({
+          })],
+          [new Webpack.DllReferencePlugin({
             manifest: require(path.resolve(
               __dirname,
               "public/dll/vendor-manifest.json"
             )),
             name: "[name]_[hash]",
             context: process.cwd(),
-          }),
+          })],
     [require("./demo-preview")],
     [
       "vuepress-plugin-anchor-toc",
