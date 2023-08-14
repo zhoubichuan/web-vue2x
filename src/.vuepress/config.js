@@ -10,7 +10,12 @@ module.exports = {
   port: 3009,
   head: [
     ["script", { src: "/dll/vendor.dll.js" }],
-    ["script", { src: "https://webapi.amap.com/maps?v=2.0&key=46c9ed4e2d25a0e0ee7c883fd5b1a0c8" }]
+    [
+      "script",
+      {
+        src: "https://webapi.amap.com/maps?v=2.0&key=46c9ed4e2d25a0e0ee7c883fd5b1a0c8",
+      },
+    ],
   ],
   define: {
     env: {
@@ -30,7 +35,7 @@ module.exports = {
     plugins: [require("autoprefixer")],
   },
   stylus: { preferPathResolver: "webpack" },
-  less:{},
+  less: {},
   scss: {
     data: `
     @import "~@/assets/style/var.scss";
@@ -46,21 +51,21 @@ module.exports = {
     lineNumbers: true, // 代码块显示行号
   },
   plugins: [
-     // 设置环境变量
-          [new Webpack.DefinePlugin({
-            "process.env": {
-              NODE_ENV: "'production'",
-              BASE_API: "'/'",
-            },
-          })],
-          [new Webpack.DllReferencePlugin({
-            manifest: require(path.resolve(
-              __dirname,
-              "public/dll/vendor-manifest.json"
-            )),
-            name: "[name]_[hash]",
-            context: process.cwd(),
-          })],
+    // 设置环境变量
+    new Webpack.DefinePlugin({
+      "process.env": {
+        NODE_ENV: "'production'",
+        BASE_API: "'/'",
+      },
+    }),
+    new Webpack.DllReferencePlugin({
+      manifest: require(path.resolve(
+        __dirname,
+        "public/dll/vendor-manifest.json"
+      )),
+      name: "[name]_[hash]",
+      context: process.cwd(),
+    }),
     [require("./demo-preview")],
     [
       "vuepress-plugin-anchor-toc",
