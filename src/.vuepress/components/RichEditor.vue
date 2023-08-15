@@ -5,7 +5,11 @@
 </template>
   
 <script>
+import "@ckeditor/ckeditor5-build-decoupled-document/build/translations/zh-cn";
+import ckeditor from "@ckeditor/ckeditor5-vue2";
 import DecoupledEditor from "@ckeditor/ckeditor5-build-decoupled-document";
+import Vue from "vue";
+Vue.use(ckeditor);  //全局注册
 export default {
   data() {
     return {
