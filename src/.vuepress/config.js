@@ -31,6 +31,23 @@ module.exports = {
     mock: path.resolve(__dirname, "../../mock/"),
     "@": path.resolve(__dirname, "../../src/"),
   },
+  plugins: [
+    // 设置环境变量
+    new Webpack.DefinePlugin({
+      "process.env": {
+        NODE_ENV: "'production'",
+        BASE_API: "'/'",
+      },
+    }),
+    new Webpack.DllReferencePlugin({
+      manifest: require(path.resolve(
+        __dirname,
+        "public/dll/vendor-manifest.json"
+      )),
+      name: "[name]_[hash]",
+      context: process.cwd(),
+    })
+  ],
   postcss: {
     plugins: [require("autoprefixer")],
   },
@@ -51,21 +68,6 @@ module.exports = {
     lineNumbers: true, // 代码块显示行号
   },
   plugins: [
-    // 设置环境变量
-    new Webpack.DefinePlugin({
-      "process.env": {
-        NODE_ENV: "'production'",
-        BASE_API: "'/'",
-      },
-    }),
-    new Webpack.DllReferencePlugin({
-      manifest: require(path.resolve(
-        __dirname,
-        "public/dll/vendor-manifest.json"
-      )),
-      name: "[name]_[hash]",
-      context: process.cwd(),
-    }),
     [require("./demo-preview")],
     [
       "vuepress-plugin-anchor-toc",
