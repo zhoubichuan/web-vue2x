@@ -24,7 +24,7 @@ const sidebar = {
     "5.test",
     "6.configurePrem",
     "7.internationalization",
-    "8.errorCollection",
+    "8.viewFile",
     "9.optimize",
     "10.server",
     "11.pwa",
