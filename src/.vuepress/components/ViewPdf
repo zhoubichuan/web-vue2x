@@ -39,47 +39,31 @@
 </template>
   
   <script>
-/* eslint-disable */
-import pdf from "vue-pdf";
 export default {
   name: "vue_pdf_preview",
   props: {
-    // 当前pdf路径
     pdfUrl: {
       type: String,
       default: "/web-vue/阿里前端开发规范.pdf",
     },
   },
   components: {
-    pdf,
+    pdf: () => import("vue-pdf"),
   },
   data() {
     return {
-      // 总页数
       pageTotalNum: 1,
-      // 当前页数
       pageNum: 1,
-      // 加载进度
       loadedRatio: 0,
-      // 页面加载完成
       curPageNum: 0,
-      // 放大系数 默认百分百
       scale: 100,
-      // 旋转角度 ‘90’的倍数才有效
       pageRotate: 0,
-      // 单击内部链接时触发 (目前我没有遇到使用场景)
       page: 0,
     };
   },
-  watch: {},
-  computed: {},
-  created() {},
-  mounted() {},
   methods: {
-    //下载PDF
     fileDownload(data, fileName) {
       let blob = new Blob([data], {
-        //type类型后端返回来的数据中会有，根据自己实际进行修改
         type: "application/pdf;charset-UTF-8",
       });
       let filename = fileName || "pdf.pdf";
@@ -87,7 +71,6 @@ export default {
         window.navigator.msSaveBlob(blob, filename);
       } else {
         var blobURL = window.URL.createObjectURL(blob);
-        // 创建隐藏<a>标签进行下载
         var tempLink = document.createElement("a");
         tempLink.style.display = "none";
         tempLink.href = blobURL;
@@ -101,16 +84,11 @@ export default {
         window.URL.revokeObjectURL(blobURL);
       }
     },
-
-    //放大
     scaleD() {
       this.scale += 5;
       this.$refs.pdf.$el.style.width = parseInt(this.scale) + "%";
     },
-
-    //缩小
     scaleX() {
-      // scale 是百分百展示 不建议缩放
       if (this.scale == 100) {
         return;
       }
@@ -118,53 +96,41 @@ export default {
       console.log(parseInt(this.scale) + "%");
       this.$refs.pdf.$el.style.width = parseInt(this.scale) + "%";
     },
-    // 切换上一页
     prePage() {
       var p = this.pageNum;
       p = p > 1 ? p - 1 : this.pageTotalNum;
       this.pageNum = p;
     },
-    // 切换下一页
     nextPage() {
       var p = this.pageNum;
       p = p < this.pageTotalNum ? p + 1 : 1;
       this.pageNum = p;
     },
-    // 顺时针选中角度
     clock() {
       this.pageRotate += 90;
     },
-    // 逆时针旋转角度
     counterClock() {
       this.pageRotate -= 90;
     },
-    // pdf 有密码 则需要输入秘密
     password(updatePassword, reason) {
       updatePassword(prompt('password is "test"'));
       console.log("...reason...");
       console.log(reason);
       console.log("...reason...");
     },
-    // 页面加载成功  当前页数
     pageLoaded(e) {
       this.$emit("current", e);
       this.curPageNum = e;
     },
-    // 异常监听
     pdfError(error) {
       console.error(error);
     },
-    // 打印所有
     pdfPrintAll() {
       this.$refs.pdf.print();
     },
-    // 打印 第一页和第二页
     pdfPrint() {
-      // 第一个参数 文档打印的分辨率
-      // 第二个参数 文档打印的页数
       this.$refs.pdf.print(100, [1, 2]);
     },
-    // 获取当前页面pdf的文字信息内容
     logContent() {
       this.$refs.pdf.pdf.forEachPage(function (page) {
         return page.getTextContent().then(function (content) {
@@ -173,8 +139,6 @@ export default {
             (initVal, item) => (initVal += item.str),
             ""
           );
-          console.log(allStr); // 内容字符串
-          console.log(text); // 内容数组
         });
       });
     },
