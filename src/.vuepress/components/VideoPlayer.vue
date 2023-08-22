@@ -111,39 +111,40 @@ export default {
     }
     /*
       自定义设置播放速度，经测试：
-      在vue2中需设置：this.$refs.video.playbackRate = 2
+      在vue2中需设置：this.$refs.veo.playbackRate = 2
       在vue3中需设置：veo.value.defaultPlaybackRate = 2
     */
-    // this.$refs.video.playbackRate = 2
+    // this.$refs.veo.playbackRate = 2
   },
   methods: {
     /*
       loadeddata 事件在媒体当前播放位置的视频帧（通常是第一帧）加载完成后触发
       preload为none时不会触发
     */
-    getPoster () { // 在未设置封面时，自动获取视频0.5s对应帧作为视频封面
+    getPoster () { 
+      // 在未设置封面时，自动获取视频0.5s对应帧作为视频封面
       // 由于不少视频第一帧为黑屏，故设置视频开始播放时间为0.5s，即取该时刻帧作为封面图
-      this.$refs.video.currentTime = this.second
+      this.$refs.veo.currentTime = this.second
       // 创建canvas元素
       const canvas = document.createElement('canvas')
       const ctx = canvas.getContext('2d')
       // canvas画图
-      canvas.width = this.$refs.video.videoWidth
-      canvas.height = this.$refs.video.videoHeight
+      canvas.width = this.$refs.veo.videoWidth
+      canvas.height = this.$refs.veo.videoHeight
       ctx.drawImage(this.$refs.veo, 0, 0, canvas.width, canvas.height)
       // 把canvas转成base64编码格式
       this.veoPoster = canvas.toDataURL('image/png')
     },
     onPlay () {
       if (this.originPlay) {
-        this.$refs.video.currentTime = 0
+        this.$refs.veo.currentTime = 0
         this.originPlay = false
       }
       if (this.autoplay) {
-        this.$refs.video.pause()
+        this.$refs.veo.pause()
       } else {
         this.hidden = true
-        this.$refs.video.play()
+        this.$refs.veo.play()
       }
     },
     onPause () {
