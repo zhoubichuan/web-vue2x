@@ -84,6 +84,7 @@ const sidebar = {
     "4.render",
     "9.alert",
     "13.publish",
+    "14.fitimg",
   ],
   "/source/vue-cli2.x/": ["1.index"],
   "/source/vue2.x/": [
