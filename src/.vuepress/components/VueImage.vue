@@ -13,6 +13,8 @@ export default {
 
 <style lang="scss" scoped>
 .image-fit {
+  width: 100%;
+  height: 100%;
   position: relative;
   img {
     max-height: 100%;
