@@ -7,7 +7,7 @@ export * from "./dtaInstance";
 export * from "./systemTag";
 function ip(params) {
   return request({
-    url: "http://zhoubichuan.com/antdpro-express/api/rule7",
+    url: "https://zhoubichuan.com/antdpro-express/api/rule7",
     method: "post",
     params,
   });
