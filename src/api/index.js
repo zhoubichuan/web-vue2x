@@ -14,16 +14,16 @@ function ip(params) {
 }
 export const loadApi = () => {
   // 使用API获取IP地址
-  fetch("https://api.ipify.org?format=json")
-    .then((response) => response.json())
-    .then((data) => {
-      // 使用IP地址获取地理位置
-      fetch(`https://ipapi.co/${data.ip}/json`)
-        .then((response) => response.json())
-        .then((data) => {
-          ip(data);
-        })
-        .catch((error) => console.log(error));
-    })
-    .catch((error) => console.log(error, "-----------------------"));
+  // fetch("https://api.ipify.org?format=json")
+  //   .then((response) => response.json())
+  //   .then((data) => {
+  //     // 使用IP地址获取地理位置
+  //     fetch(`https://ipapi.co/${data.ip}/json`)
+  //       .then((response) => response.json())
+  //       .then((data) => {
+  //         ip(data);
+  //       })
+  //       .catch((error) => console.log(error));
+  //   })
+  //   .catch((error) => console.log(error, "-----------------------"));
 };
