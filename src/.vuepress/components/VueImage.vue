@@ -22,7 +22,7 @@ export default {
     -webkit-user-drag: none;
     vertical-align: middle;
     position: absolute;
-    top: 0;
+    top: 0; 
     left: 0;
     right: 0;
     bottom: 0;
