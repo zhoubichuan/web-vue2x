@@ -1,17 +1,23 @@
 <template>
   <div
+    :key="pageIndex"
     ref="code"
-    class="demo-block"
-    :class="[blockClass, { 'hover': hovering }]"
+    :class="{
+      'demo-block': true,
+      blockClass: true,
+      'full-screen': open,
+      hover: hovering,
+    }"
     @mouseenter="hovering = true"
     @mouseleave="hovering = false"
-    @dblclick="handleClick"
   >
-    <div v-if="!show" style="height: 348px;"></div>
-    <div v-else :class="{'demo-content':true,open:open}">
+    <div @click="pageIndex++" class="reflesh">刷新</div>
+    <div @click="handleClick" class="screen">全屏/自适应</div>
+    <div v-if="!show" class="content"></div>
+    <div v-else :class="{ 'demo-content': true }">
       <slot name="demo"></slot>
     </div>
-    <div  v-if="show" class="meta" ref="meta">
+    <div v-if="show" class="meta" ref="meta">
       <div class="description" v-if="$slots.description">
         <slot name="description"></slot>
       </div>
@@ -23,12 +29,12 @@
       v-if="show"
       class="demo-block-control"
       :class="{ 'is-fixed': fixedControl }"
-      :style="{ 'width': fixedControl ? `${codeContentWidth}px` : 'unset' }"
+      :style="{ width: fixedControl ? `${codeContentWidth}px` : 'unset' }"
       ref="control"
       @click="isExpanded = !isExpanded"
     >
       <transition name="arrow-slide">
-        <i :class="[iconClass, { 'hovering': hovering }, 'icon']"></i>
+        <i :class="[iconClass, { hovering: hovering }, 'icon']"></i>
       </transition>
       <transition name="text-slide">
         <span v-show="hovering">{{ controlText }}</span>
@@ -37,43 +43,49 @@
         v-show="!copied"
         :class="['copy-action', { 'copying ': copied }]"
         @click.stop="copyCode"
-      >{{ copiedText }}</span>
+        >{{ copiedText }}</span
+      >
       <transition name="bounce">
-        <span v-show="copied" class="copy-action copy-action-success">{{ copiedText }}</span>
+        <span v-show="copied" class="copy-action copy-action-success">{{
+          copiedText
+        }}</span>
       </transition>
     </div>
   </div>
 </template>
 
 <script type="text/babel">
-import defaultLang from './i18n/default_lang.json';
+import defaultLang from "./i18n/default_lang.json";
 export default {
   data() {
     return {
-      show:false,
-      open:false,
+      show: false,
+      open: false,
       hovering: false,
       copied: false,
       isExpanded: false,
       fixedControl: false,
       codeContentWidth: 0,
-      scrollParent: null
+      scrollParent: null,
+      pageIndex: 0,
     };
   },
   props: {
     options: {
       type: Object,
       default: () => {
-        return {}
-      }
-    }
+        return {};
+      },
+    },
   },
   computed: {
     compoLang() {
-      return this.options.locales || defaultLang
+      return this.options.locales || defaultLang;
     },
     langConfig() {
-        return this.compoLang.filter(config => config.lang === this.$lang)[0]['demo-block'];
+      return this.compoLang.filter((config) => config.lang === this.$lang)[0][
+        "demo-block"
+      ];
     },
     blockClass() {
       return `demo-${this.$lang} demo-${this.$router.currentRoute.path
@@ -84,10 +96,14 @@ export default {
       return this.isExpanded ? "caret-top" : "caret-bottom";
     },
     controlText() {
-      return this.isExpanded ? this.langConfig['hide-text'] : this.langConfig['show-text'];
+      return this.isExpanded
+        ? this.langConfig["hide-text"]
+        : this.langConfig["show-text"];
     },
     copiedText() {
-      return this.copied ? this.langConfig['copy-success'] : this.langConfig['copy-text'];
+      return this.copied
+        ? this.langConfig["copy-success"]
+        : this.langConfig["copy-text"];
     },
     codeArea() {
       return this.$el.getElementsByClassName("meta")[0];
@@ -101,22 +117,23 @@ export default {
         );
       }
       return this.$el.getElementsByClassName("code-content")[0].clientHeight;
-    }
+    },
   },
   methods: {
-    handleScroll(){
-      let judge = window.innerHeight+window.scrollY>this.$refs.code.offsetTop
-        if(judge){
-          this.show = true
-          window.removeEventListener('scroll',this.handleScroll)
-        }
+    handleScroll() {
+      let judge =
+        window.innerHeight + window.scrollY > this.$refs.code.offsetTop + 100;
+      if (judge) {
+        this.show = true;
+        window.removeEventListener("scroll", this.handleScroll);
+      }
     },
-    handleClick(){
-      this.open=!this.open
-      this.show = !this.show
-      this.$nextTick(()=>{
-        this.show = !this.show
-      })
+    handleClick() {
+      this.open = !this.open;
+      this.show = !this.show;
+      this.$nextTick(() => {
+        this.show = !this.show;
+      });
     },
     copyCode() {
       if (this.copied) {
@@ -141,8 +158,8 @@ export default {
     },
     removeScrollHandler() {
       this.scrollParent &&
-        this.scrollParent.removeEventListener('scroll', this.scrollHandler);
-    }
+        this.scrollParent.removeEventListener("scroll", this.scrollHandler);
+    },
   },
   watch: {
     isExpanded(val) {
@@ -156,18 +173,18 @@ export default {
       setTimeout(() => {
         this.scrollParent = document;
         this.scrollParent &&
-          this.scrollParent.addEventListener('scroll', this.scrollHandler);
+          this.scrollParent.addEventListener("scroll", this.scrollHandler);
         this.scrollHandler();
       }, 200);
-    }
+    },
   },
   mounted() {
-    this.handleScroll()
-    window.addEventListener('scroll',this.handleScroll)
+    this.handleScroll();
+    window.addEventListener("scroll", this.handleScroll);
     this.$nextTick(() => {
-      let codeContent = this.$el.getElementsByClassName('code-content')[0];
-      this.codeContentWidth = this.$el.offsetWidth
-      if (this.$el.getElementsByClassName('description').length === 0) {
+      let codeContent = this.$el.getElementsByClassName("code-content")[0];
+      this.codeContentWidth = this.$el.offsetWidth;
+      if (this.$el.getElementsByClassName("description").length === 0) {
         codeContent.style.width = "100%";
         codeContent.borderRight = "none";
       }
@@ -175,40 +192,96 @@ export default {
   },
   beforeDestroy() {
     this.removeScrollHandler();
-  }
+  },
 };
 </script>
-<style scoped>
-.open {
-  position: fixed;
-  height: calc(100vh - 48px)!important;
-  width: calc(100vw - 48px);
-  left: 0;
-  top: 0;
-  background: white;
-  z-index: 1000;
-}
+<style scoped lang="less">
 .demo-block {
+  position: relative;
   border: solid 1px #ebebeb;
   border-radius: 3px;
   transition: 0.2s;
   margin-top: 15px;
   margin-bottom: 15px;
+  &.full-screen {
+    position: fixed;
+    height: 100vh !important;
+    width: 100vw !important;
+    left: 0;
+    top: 0;
+    background: white;
+    z-index: 100000;
+    margin: 0;
+    padding: 0;
+    border: none;
+    .demo-content {
+      padding: 24px;
+      height: calc(100% - 48px);
+      & > div {
+        height: 100%;
+        border: 1px solid red;
+      }
+    }
+  }
+  .reflesh {
+    left: 24px;
+    top: 0;
+    position: absolute;
+    line-height: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 10000;
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      margin-right: 10px;
+    }
+  }
+  .screen {
+    right: 24px;
+    top: 0;
+    position: absolute;
+    line-height: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 10000;
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      margin-right: 10px;
+    }
+  }
+  .content {
+    height: 100%;
+    width: 100%;
+  }
+  .demo-content {
+    padding: 24px;
+    & > div {
+      height: 100%;
+    }
+  }
 }
+
 .demo-block.hover {
-  box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6), 0 2px 4px 0 rgba(232, 237, 250, 0.5);
+  box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6),
+    0 2px 4px 0 rgba(232, 237, 250, 0.5);
 }
 .demo-block code {
   font-family: Menlo, Monaco, Consolas, Courier, monospace;
 }
 .demo-block .demo-button {
   float: right;
-}
-.demo-block .demo-content {
-  padding: 24px;
-}
-.demo-block .demo-content>div {
-  height: 100%;
 }
 .demo-block .meta {
   background-color: #282c34;
@@ -338,5 +411,4 @@ export default {
   padding-left: 5px;
   padding-right: 25px;
 }
-
 </style>
