@@ -32,6 +32,7 @@ const sidebar = {
     "13.video",
     "14.map",
     "15.rich",
+    "16.export",
   ],
   "/base/vue2.x/": [
     "1.index",
