@@ -11,15 +11,6 @@ export function getLocation(params) {
   return request({
     url: "https://zhoubichuan.com/antdpro-express/api/list/data/8",
     method: "post",
-    params: {
-      filterField: "map2",
-      name: "1",
-      time: new Date().toLocaleDateString() + "",
-      city: params.address,
-      latitude: params.latitude,
-      longitude: params.longitude,
-      descript: "1",
-      detail: "1",
-    },
+    params,
   });
 }
