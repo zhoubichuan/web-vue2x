@@ -91,7 +91,8 @@ const sidebar = {
   "/source/vue-cli2.x/": ["1.index"],
   "/source/vue2.x/": [
     "1.index",
-    "1.entry",
+    "2.source",
+    "3.project",
     "2.initMixin",
     "3.stateMixin",
     "4.eventsMixin",
