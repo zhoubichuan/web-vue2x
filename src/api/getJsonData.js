@@ -7,7 +7,7 @@ export function getChinaJson() {
   });
 }
 // 存储定位
-export function getLocation(params) {
+export function addLocation(params) {
   return request({
     url: "https://zhoubichuan.com/antdpro-express/api/list/data/8",
     method: "post",
