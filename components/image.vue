@@ -1,13 +1,18 @@
 <template>
   <div class="image-fit">
-    <img src="/web-vue/assets/img/13.deploy1.1.a358a790.png/" alt="" srcset="">
+    <img :src="url" alt="" srcset="" />
   </div>
 </template>
   
 <script>
-
 export default {
-
+  name: "FitImage",
+  props: {
+    url: {
+      type: String,
+      default: "/web-vue/assets/img/13.deploy1.1.a358a790.png",
+    },
+  },
 };
 </script>
 
@@ -22,7 +27,7 @@ export default {
     -webkit-user-drag: none;
     vertical-align: middle;
     position: absolute;
-    top: 0; 
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;

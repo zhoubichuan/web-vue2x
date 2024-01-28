@@ -12,6 +12,7 @@ import DecoupledEditor from "@ckeditor/ckeditor5-build-decoupled-document";
 import Vue from "vue";
 Vue.use(ckeditor); //全局注册
 export default {
+  name:'RichEditor',
   data() {
     return {
       editor: DecoupledEditor,
