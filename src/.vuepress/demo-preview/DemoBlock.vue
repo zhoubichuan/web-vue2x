@@ -226,7 +226,8 @@ export default {
   .reflesh {
     left: 24px;
     top: 0;
-    position: absolute;
+    // position: absolute;
+    float: left;
     line-height: 20px;
     cursor: pointer;
     display: flex;
@@ -245,7 +246,8 @@ export default {
   .screen {
     right: 24px;
     top: 0;
-    position: absolute;
+    // position: absolute;
+    float: right;
     line-height: 20px;
     cursor: pointer;
     display: flex;
@@ -263,7 +265,6 @@ export default {
   }
   .content {
     height: 100%;
-    width: 100%;
   }
   .demo-content {
     padding: 24px;
