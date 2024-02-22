@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[20],{625:function(t,n,u){},687:function(t,n,u){"use strict";u(625)},712:function(t,n,u){"use strict";u.r(n);var s={name:"VueButton"},e=(u(687),u(3)),c=Object(e.a)(s,(function(){return(0,this._self._c)("div",{staticClass:"vue-button"},[this._t("default")],2)}),[],!1,null,"57c72d8f",null);n.default=c.exports}}]);
