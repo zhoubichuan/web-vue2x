@@ -40,7 +40,7 @@
   
   <script>
 export default {
-  name: "vue_pdf_preview",
+  name: "PreviewPdf",
   props: {
     pdfUrl: {
       type: String,

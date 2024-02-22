@@ -1,28 +1,25 @@
 <template>
-  <div id="ck-editer">
+  <div class="ck-editer">
     <ckeditor v-bind="$attrs" v-on="$listeners" :editor="editor"></ckeditor>
-    <web-button class="btn" @click="handleSave">保存</web-button>
+    <web-button class="save" @click="handleSave">保存</web-button>
   </div>
 </template>
   
 <script>
 import "@ckeditor/ckeditor5-build-decoupled-document/build/translations/zh-cn";
-import ckeditor from "@ckeditor/ckeditor5-vue2";
 import DecoupledEditor from "@ckeditor/ckeditor5-build-decoupled-document";
-import Vue from "vue";
-Vue.use(ckeditor); //全局注册
 export default {
-  name:'RichEditor',
+  name: "RichEditor",
   data() {
     return {
       editor: DecoupledEditor,
     };
   },
-  methods:{
-    handleSave(){
-      this.$emit('save')
-    }
-  }
+  methods: {
+    handleSave() {
+      this.$emit("save");
+    },
+  },
 };
 </script>
 
@@ -46,7 +43,7 @@ export default {
   min-height: 300px;
   line-height: normal;
 }
-.btn{
+.save {
   display: inherit;
   margin: 10px auto;
 }

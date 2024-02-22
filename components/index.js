@@ -1,6 +1,7 @@
 import image from "./image";
-import RichEditor from "./RichEditor";
+// import RichEditor from "./RichEditor";
 import VideoPlayer from "./VideoPlayer";
+// import PreviewPdf from "./PreviewPdf";
 import table from "./table";
 import dialog from "./dialog";
 import cascader from "./cascader";
@@ -21,8 +22,9 @@ import input from './input'
 import form from './form'
 let components = {
   image,
-  RichEditor,
+  // RichEditor,
   VideoPlayer,
+  // PreviewPdf,
   // table,
   // dialog,
   // cascader,
