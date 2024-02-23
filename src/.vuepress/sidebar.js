@@ -50,16 +50,15 @@ const sidebar = {
     "7.style",
     "8.eslint",
   ],
-  "/senior/1.micro/": [
+  "/senior/1.mobile/": [
     "1.index",
-    "1.singlespa",
-    "1.singlespa2",
-    "2.qiankun",
-    "2.qiankun2",
-    "3.share",
-    "4.dev",
+    "1.local",
+    "2.gitlab",
+    "3.genkins",
+    "4.centos",
+    "5.nginx",
   ],
-  "/senior/2.deploy/": [
+  "/senior/2.pc/": [
     "1.index",
     "1.local",
     "2.gitlab",
@@ -80,13 +79,13 @@ const sidebar = {
     "9.dynamics",
     "1.env",
     "10.tree",
-    "12.table",
+    "3.table",
+    "3.fitimg",
     "1.recursion",
     "3.dialog",
     "4.render",
     "9.alert",
     "13.publish",
-    "14.fitimg",
   ],
   "/source/vue-cli2.x/": ["1.index"],
   "/source/vue2.x/": [
@@ -107,8 +106,26 @@ const sidebar = {
     "13._render",
     "14._update",
   ],
-  "/source/vue-router3.x/": ["1.index", "2.origin"],
-  "/source/vuex3.x/": ["1.index", "2.use", "3.origin"],
-  "/source/vue-cli3.x/": ["1.index"],
+  "/source/1.micro/": [
+    "1.index",
+    "1.singlespa",
+    "1.singlespa2",
+    "2.qiankun",
+    "2.qiankun2",
+    "3.share",
+    "4.dev",
+  ],
+  "/source/vue-router3.x/": [
+    "1.index",
+    "2.origin"
+  ],
+  "/source/vuex3.x/": [
+    "1.index",
+    "2.use",
+    "3.origin"
+  ],
+  "/source/vue-cli3.x/": [
+    "1.index"
+  ],
 };
 module.exports = sidebar;

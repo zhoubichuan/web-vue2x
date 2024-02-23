@@ -1,4 +1,4 @@
-import image from "./image";
+import image from "./fit-image/image";
 // import RichEditor from "./RichEditor";
 import VideoPlayer from "./VideoPlayer";
 // import PreviewPdf from "./PreviewPdf";

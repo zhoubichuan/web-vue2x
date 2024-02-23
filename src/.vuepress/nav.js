@@ -11,7 +11,7 @@ const nav = [
         link: "/base/project/1.index",
       },
       {
-        text: "三.Vue 2.x全家桶",
+        text: "三.Vue2.x全家桶",
         link: "/base/vue2.x/1.index",
       },
     ],
@@ -20,12 +20,12 @@ const nav = [
     text: "高级知识",
     items: [
       {
-        text: "一.Vue微前端",
-        link: "/senior/1.micro/1.index",
+        text: "一.mobile端规范",
+        link: "/senior/1.mobile/1.index",
       },
       {
-        text: "二.构建部署",
-        link: "/senior/2.deploy/1.index",
+        text: "二.pc端规范",
+        link: "/senior/2.pc/1.index",
       },
       {
         text: "三.组件开发",
@@ -51,6 +51,10 @@ const nav = [
       {
         text: "四.Vuex3.x",
         link: "/source/vuex3.x/1.index",
+      },
+      {
+        text: "五.Vue微前端",
+        link: "/source/1.micro/1.index",
       },
     ],
   },
