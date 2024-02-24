@@ -16,6 +16,12 @@ module.exports = {
         src: "https://webapi.amap.com/maps?v=2.0&key=46c9ed4e2d25a0e0ee7c883fd5b1a0c8",
       },
     ],
+    [
+      "script",
+      {
+        src: "https://webapi.amap.com/ui/1.1/main.js?v=1.1.1",
+      },
+    ],
   ],
   define: {
     env: {
