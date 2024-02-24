@@ -24,24 +24,28 @@ meta:
         <p>掌握一般项目中的配置、包管理、登录、权限、测试、监控、国际化、服务端渲染、富文本、上传下载等常见功能</p>
       </div>
       <div class="feature">
-        <h2><a href="/web-vue/base/vue2.x/1.index.html">Vue基础知识</a></h2> 
+        <h2><a href="/web-vue/base/vue2.x/1.index.html">Vue2.x 全家桶</a></h2> 
         <p>掌握Vue2.x全家桶和Vue3.x全家桶中重点知识，对相关官方文档进行一些知识的补充，全面提升Vue的基础知识能力</p>
       </div>
       <div class="feature">
-        <h2><a href="/web-vue/senior/component/1.index.html">Vue 微前端</a></h2> 
-        <p>了解Vue的微前端工具的使用，熟悉并掌握qiankun微前端在Vue中的使用方式 </p>
+        <h2><a href="/web-vue/senior/mobile/1.index.html">移动端规范</a></h2> 
+        <p>了解移动端设计中的一些通用标准、兼容性问题以及打包成app注意的问题 </p>
+      </div>
+       <div class="feature">
+        <h2><a href="/web-vue/senior/browser/1.index.html">网页端规范</a></h2> 
+        <p>了解网页设计中一个通用标准、大屏开发中需要注意的一些事项 </p>
       </div>
       <div class="feature">
-        <h2><a href="/web-vue/senior/component/1.index.html">Vue组件开发</a></h2> 
+        <h2><a href="/web-vue/senior/component/1.index.html">组件开发</a></h2> 
         <p>了解组件设计思路，组件编写工作流搭建，从0编写复杂组件之异步级联组件 单元测试编写及组件的发布</p>
       </div>
       <div class="feature">
-        <h2><a href="/web-vue/senior/deploy/1.index.html">Vue的构建布署</a></h2> 
-        <p>了解vue项目中使用gitlab、genkins、以及 docker + nginx实现vue的布署和持续集成的一些基本知识</p>
+        <h2><a href="/web-vue/source/vue2.x/1.index.html">Vue 2.x源码实现</a></h2> 
+        <p>深入了解VueCLI2.x原理、Vue 2.x原理剖析、Vue-router3.x原理剖析、Vuex3.x原理剖析、微前端相关原理 </p>
       </div>
       <div class="feature">
-        <h2><a href="/web-vue/source/vue2.x/1.index.html">Vue 2.x源码实现</a></h2> 
-        <p>深入了解VueCLI2.x原理、Vue 2.x原理剖析、Vue-router3.x原理剖析、Vuex3.x原理剖析 </p>
+        <h2><a href="/web-vue/senior/deploy/1.index.html">微前端深入</a></h2> 
+        <p>了解vue项目中使用乾坤（qiankun）作为微前端框架的内部原理</p>
       </div>
       <div class="feature">
         <h2><a href="https://cn.vuejs.org">Vue 相关资料</a></h2> 

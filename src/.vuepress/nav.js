@@ -20,12 +20,12 @@ const nav = [
     text: "高级知识",
     items: [
       {
-        text: "一.mobile端规范",
+        text: "一.移动端规范",
         link: "/senior/1.mobile/1.index",
       },
       {
-        text: "二.pc端规范",
-        link: "/senior/2.pc/1.index",
+        text: "二.网页端规范",
+        link: "/senior/2.browser/1.index",
       },
       {
         text: "三.组件开发",

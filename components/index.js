@@ -8,11 +8,11 @@ import cascader from "./cascader";
 import radar from "./radar";
 import themeRiver from "./themeRiver";
 import treemap from "./treemap";
-import button from "./button";
+import button from "./button/button";
 import menu from "./menu";
 import sunburst from "./sunburst";
 import alert from "./alert";
-import display from "./display";
+import display from "./display/display";
 import pie from "./pie";
 import select from "./select";
 import scatter from "./scatter";
@@ -35,7 +35,7 @@ let components = {
   button,
   // sunburst,
   // alert,
-  // display,
+  display,
   // pie,
   // select,
   // scatter,

@@ -13,7 +13,8 @@ const sidebar = {
     "10.skill",
     "11.mock",
     "12.optimization",
-    "13.deploy",
+    "13.code",
+    "14.deploy",
   ],
   "/base/project/": [
     "1.index",
@@ -42,7 +43,7 @@ const sidebar = {
     "2.vue-directive",
     "2.vue-lifecycle",
     "2.vue-animation",
-    "2.vue-error",
+    "2.vue-keepAlive",
     "3.vue-router",
     "4.vuex",
     "5.ui",
@@ -58,7 +59,7 @@ const sidebar = {
     "4.centos",
     "5.nginx",
   ],
-  "/senior/2.pc/": [
+  "/senior/2.browser/": [
     "1.index",
     "1.local",
     "2.gitlab",

@@ -1,5 +1,7 @@
 <template>
-  <div class="vue-button"><slot></slot></div>
+  <div class="vue-button">
+    <slot></slot>
+  </div>
 </template>
 <script>
 export default {
