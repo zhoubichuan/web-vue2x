@@ -1,17 +1,17 @@
 import image from "./fit-image/image";
-// import RichEditor from "./RichEditor";
-import VideoPlayer from "./VideoPlayer";
-// import PreviewPdf from "./PreviewPdf";
+import button from "./button/button";
+// import RichEditor from "./rich/rich-editor";
+import VideoPlayer from "./video/video-player";
+// import PreviewPdf from "./pdf/preview-pdf";
 import table from "./table";
 import dialog from "./dialog";
-import cascader from "./cascader";
+import component from "./component/component";
 import radar from "./radar";
 import themeRiver from "./themeRiver";
 import treemap from "./treemap";
-import button from "./button/button";
 import menu from "./menu";
 import sunburst from "./sunburst";
-import alert from "./alert";
+import alert from "./alert/alert";
 import display from "./display/display";
 import pie from "./pie";
 import select from "./select";
@@ -27,14 +27,14 @@ let components = {
   // PreviewPdf,
   // table,
   // dialog,
-  // cascader,
+  component,
   // radar,
   // themeRiver,
   // treemap,
   // menu,
   button,
   // sunburst,
-  // alert,
+  alert,
   display,
   // pie,
   // select,

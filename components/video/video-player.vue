@@ -1,5 +1,9 @@
 <template>
-  <div class="m-video" :class="{'u-video-hover': !hidden}" :style="`width: ${width}px; height: ${height}px;`">
+  <div
+    class="m-video"
+    :class="{ 'u-video-hover': !hidden }"
+    :style="`width: ${width}px; height: ${height}px;`"
+  >
     <video
       ref="veo"
       :style="`object-fit: ${zoom};`"
@@ -8,7 +12,7 @@
       :width="width"
       :height="height"
       :autoplay="autoplay"
-      :controls="!originPlay&&controls"
+      :controls="!originPlay && controls"
       :loop="loop"
       :muted="autoplay || muted"
       :preload="preload"
@@ -17,39 +21,61 @@
       @pause="showPlay ? onPause() : () => false"
       @playing="showPlay ? onPlaying() : () => false"
       @click.prevent.once="onPlay"
-      v-bind="$attrs">
+      v-bind="$attrs"
+    >
       您的浏览器不支持video标签。
     </video>
-    <svg v-show="originPlay || showPlay" class="u-play" :class="{'hidden': hidden}" :style="`width: ${playWidth}px; height: ${playWidth}px;`" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.75 6.75C4.75 5.64543 5.64543 4.75 6.75 4.75H17.25C18.3546 4.75 19.25 5.64543 19.25 6.75V17.25C19.25 18.3546 18.3546 19.25 17.25 19.25H6.75C5.64543 19.25 4.75 18.3546 4.75 17.25V6.75Z"></path>
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.25 12L9.75 8.75V15.25L15.25 12Z"></path>
+    <svg
+      v-show="originPlay || showPlay"
+      class="u-play"
+      :class="{ hidden: hidden }"
+      :style="`width: ${playWidth}px; height: ${playWidth}px;`"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1.5"
+        d="M4.75 6.75C4.75 5.64543 5.64543 4.75 6.75 4.75H17.25C18.3546 4.75 19.25 5.64543 19.25 6.75V17.25C19.25 18.3546 18.3546 19.25 17.25 19.25H6.75C5.64543 19.25 4.75 18.3546 4.75 17.25V6.75Z"
+      ></path>
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1.5"
+        d="M15.25 12L9.75 8.75V15.25L15.25 12Z"
+      ></path>
     </svg>
   </div>
 </template>
 <script>
 export default {
-  name: 'VideoPlayer',
+  name: "VideoPlayer",
   props: {
-    src: { // 视频文件url，必传，支持网络地址 https 和相对地址 require('@/assets/files/Bao.mp4')
+    src: {
+      // 视频文件url，必传，支持网络地址 https 和相对地址 require('@/assets/files/Bao.mp4')
       type: String,
       required: true,
-      default: ''
+      default: "",
     },
-    poster: { // 视频封面url，支持网络地址 https 和相对地址 require('@/assets/images/Bao.jpg')
+    poster: {
+      // 视频封面url，支持网络地址 https 和相对地址 require('@/assets/images/Bao.jpg')
       type: String,
-      default: ''
+      default: "",
     },
-    second: { // 在未设置封面时，自动截取视频第 second 秒对应帧作为视频封面
+    second: {
+      // 在未设置封面时，自动截取视频第 second 秒对应帧作为视频封面
       type: Number,
-      default: 0.5
+      default: 0.5,
     },
-    width: { // 视频播放器宽度
+    width: {
+      // 视频播放器宽度
       type: Number,
-      default: 800
+      default: 800,
     },
-    height: { // 视频播放器高度
+    height: {
+      // 视频播放器高度
       type: Number,
-      default: 450
+      default: 450,
     },
     /*
       参考 MDN 自动播放指南：https://developer.mozilla.org/zh-CN/docs/Web/Media/Autoplay_guide
@@ -64,50 +90,58 @@ export default {
       解决方法：设置视频 autoplay 时，视频必须设置为静音 muted: true 即可实现自动播放，
       然后用户可以使用控制栏开启声音，类似某宝商品自动播放的宣传视频逻辑
     */
-    autoplay: { // 视频就绪后是否马上播放
+    autoplay: {
+      // 视频就绪后是否马上播放
       type: Boolean,
-      default: false
+      default: false,
     },
-    controls: { // 是否向用户显示控件，比如进度条，全屏
+    controls: {
+      // 是否向用户显示控件，比如进度条，全屏
       type: Boolean,
-      default: true
+      default: true,
     },
-    loop: { // 视频播放完成后，是否循环播放
+    loop: {
+      // 视频播放完成后，是否循环播放
       type: Boolean,
-      default: false
+      default: false,
     },
-    muted: { // 是否静音
+    muted: {
+      // 是否静音
       type: Boolean,
-      default: false
+      default: false,
     },
-    preload: { // 是否在页面加载后载入视频，如果设置了autoplay属性，则preload将被忽略；
+    preload: {
+      // 是否在页面加载后载入视频，如果设置了autoplay属性，则preload将被忽略；
       type: String,
-      default: 'auto' // auto:一旦页面加载，则开始加载视频; metadata:当页面加载后仅加载视频的元数据 none:页面加载后不应加载视频
+      default: "auto", // auto:一旦页面加载，则开始加载视频; metadata:当页面加载后仅加载视频的元数据 none:页面加载后不应加载视频
     },
-    showPlay: { // 播放暂停时是否显示播放器中间的暂停图标
+    showPlay: {
+      // 播放暂停时是否显示播放器中间的暂停图标
       type: Boolean,
-      default: true
+      default: true,
     },
-    playWidth: { // 中间播放暂停按钮的边长
+    playWidth: {
+      // 中间播放暂停按钮的边长
       type: Number,
-      default: 96
+      default: 96,
     },
-    zoom: { // video的poster默认图片和视频内容缩放规则
+    zoom: {
+      // video的poster默认图片和视频内容缩放规则
       type: String,
-      default: 'contain' // none:(默认)保存原有内容，不进行缩放; fill:不保持原有比例，内容拉伸填充整个内容容器; contain:保存原有比例，内容以包含方式缩放; cover:保存原有比例，内容以覆盖方式缩放
-    }
+      default: "contain", // none:(默认)保存原有内容，不进行缩放; fill:不保持原有比例，内容拉伸填充整个内容容器; contain:保存原有比例，内容以包含方式缩放; cover:保存原有比例，内容以覆盖方式缩放
+    },
   },
-  data () {
+  data() {
     return {
       veoPoster: this.poster,
       originPlay: true,
-      hidden: false
-    }
+      hidden: false,
+    };
   },
-  mounted () {
+  mounted() {
     if (this.autoplay) {
-      this.hidden = true
-      this.originPlay = false
+      this.hidden = true;
+      this.originPlay = false;
     }
     /*
       自定义设置播放速度，经测试：
@@ -121,40 +155,40 @@ export default {
       loadeddata 事件在媒体当前播放位置的视频帧（通常是第一帧）加载完成后触发
       preload为none时不会触发
     */
-    getPoster () { 
+    getPoster() {
       // 在未设置封面时，自动获取视频0.5s对应帧作为视频封面
       // 由于不少视频第一帧为黑屏，故设置视频开始播放时间为0.5s，即取该时刻帧作为封面图
-      this.$refs.veo.currentTime = this.second
+      this.$refs.veo.currentTime = this.second;
       // 创建canvas元素
-      const canvas = document.createElement('canvas')
-      const ctx = canvas.getContext('2d')
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
       // canvas画图
-      canvas.width = this.$refs.veo.videoWidth
-      canvas.height = this.$refs.veo.videoHeight
-      ctx.drawImage(this.$refs.veo, 0, 0, canvas.width, canvas.height)
+      canvas.width = this.$refs.veo.videoWidth;
+      canvas.height = this.$refs.veo.videoHeight;
+      ctx.drawImage(this.$refs.veo, 0, 0, canvas.width, canvas.height);
       // 把canvas转成base64编码格式
-      this.veoPoster = canvas.toDataURL('image/png')
+      this.veoPoster = canvas.toDataURL("image/png");
     },
-    onPlay () {
+    onPlay() {
       if (this.originPlay) {
-        this.$refs.veo.currentTime = 0
-        this.originPlay = false
+        this.$refs.veo.currentTime = 0;
+        this.originPlay = false;
       }
       if (this.autoplay) {
-        this.$refs.veo.pause()
+        this.$refs.veo.pause();
       } else {
-        this.hidden = true
-        this.$refs.veo.play()
+        this.hidden = true;
+        this.$refs.veo.play();
       }
     },
-    onPause () {
-      this.hidden = false
+    onPause() {
+      this.hidden = false;
     },
-    onPlaying () {
-      this.hidden = true
-    }
-  }
-}
+    onPlaying() {
+      this.hidden = true;
+    },
+  },
+};
 </script>
 <style lang="less" scoped>
 * {
@@ -175,12 +209,12 @@ export default {
     left: 0;
     margin: auto;
     fill: none;
-    color: #FFF;
+    color: #fff;
     pointer-events: none;
     opacity: 0.7;
-    transition: opacity .3s;
+    transition: opacity 0.3s;
     path {
-      stroke: #FFF;
+      stroke: #fff;
     }
   }
   .hidden {

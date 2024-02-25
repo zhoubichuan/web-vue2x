@@ -239,7 +239,7 @@ export default {
       display: inline-block;
       width: 20px;
       height: 20px;
-      background-color: red;
+      background-color: lightgray;
       margin-right: 10px;
     }
   }
@@ -259,7 +259,7 @@ export default {
       display: inline-block;
       width: 20px;
       height: 20px;
-      background-color: red;
+      background-color: lightgray;
       margin-right: 10px;
     }
   }
