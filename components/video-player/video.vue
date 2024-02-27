@@ -63,17 +63,14 @@ export default {
       default: "",
     },
     second: {
-      // 在未设置封面时，自动截取视频第 second 秒对应帧作为视频封面
       type: Number,
       default: 0.5,
     },
     width: {
-      // 视频播放器宽度
       type: Number,
       default: 800,
     },
     height: {
-      // 视频播放器高度
       type: Number,
       default: 450,
     },
