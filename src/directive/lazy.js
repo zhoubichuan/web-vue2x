@@ -1,76 +1,82 @@
-export default (Vue, options = {}) => {
-  if (!Array.prototype.remove) {
-    Array.prototype.remove = function (item) {
-      if (!this.length) return;
-      var index = this.indexOf(item);
-      if (index > -1) {
-        this.splice(index, 1);
-        return this;
+export default {
+  // install方法
+  install(Vue, options) {
+    const defaultSrc = options.default
+    Vue.directive('lazy', {
+      bind(el, binding) {
+        LazyLoad.init(el, binding.value, defaultSrc)
+      },
+      inserted(el) {
+        if (IntersectionObserver) {
+          LazyLoad.observe(el)
+        } else {
+          LazyLoad.listenerScroll(el)
+        }
+      },
+    })
+  },
+  // 初始化
+  init(el, val, def) {
+    el.setAttribute('data-src', val)
+    el.setAttribute('src', def)
+  },
+  // 利用IntersectionObserver监听el
+  observe(el) {
+    var io = new IntersectionObserver((entries) => {
+      const realSrc = el.dataset.src
+      if (entries[0].isIntersecting) {
+        if (realSrc) {
+          el.src = realSrc
+          el.removeAttribute('data-src')
+        }
       }
-    };
-  }
-  var init = {
-    lazyLoad: false,
-    default: "https://",
-  };
-
-  var listenList = [];
-  var imageCatcheList = [];
-
-  const isAlredyLoad = (imageSrc) => {
-    if (imageCatcheList.indexOf(imageSrc) > -1) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-  const isCanShow = (item) => {
-    var ele = item.ele;
-    var src = item.src;
-    var top = ele.getBoundingClientRect().top;
-    var windowHeight = window.innerHight;
-    if (top + 10 < window.innerHeight) {
-      var image = new Image();
-      image.src = src;
-      image.onload = function () {
-        ele.src = src;
-        imageCatcheList.push(src);
-        listenList.remove(item);
-      };
-      return true;
-    } else {
-      return false;
-    }
-  };
-
-  const onListenScroll = () => {
-    window.addEventListener("scroll", function () {
-      var length = listenList.length;
-      for (let i = 0; i < length; i++) {
-        isCanShow(listenList[i]);
+    })
+    io.observe(el)
+  },
+  // 监听scroll事件
+  listenerScroll(el) {
+    const handler = LazyLoad.throttle(LazyLoad.load, 300)
+    LazyLoad.load(el)
+    window.addEventListener('scroll', () => {
+      handler(el)
+    })
+  },
+  // 加载真实图片
+  load(el) {
+    const windowHeight = document.documentElement.clientHeight
+    const elTop = el.getBoundingClientRect().top
+    const elBtm = el.getBoundingClientRect().bottom
+    const realSrc = el.dataset.src
+    if (elTop - windowHeight < 0 && elBtm > 0) {
+      if (realSrc) {
+        el.src = realSrc
+        el.removeAttribute('data-src')
       }
-    });
-  };
-  const addListener = (ele, binding) => {
-    var imageSrc = binding.value;
-    if (isAlredyLoad(imageSrc)) {
-      ele.src = imageSrc;
-      return false;
     }
-    var item = {
-      ele: ele,
-      src: imageSrc,
-    };
-    ele.src = init.default;
-    if (isCanShow(item)) {
-      return;
-    }
-    listenList.push(item);
-    onListenScroll();
-  };
+  },
+  // 节流
+  throttle(fn, delay) {
+    let timer
+    let prevTime
+    return function (...args) {
+      const currTime = Date.now()
+      const context = this
+      if (!prevTime) prevTime = currTime
+      clearTimeout(timer)
 
-  Vue.directive("lazy", {
-    inserted: addListener,
-    updated: addListener,
-  });
-};
+      if (currTime - prevTime > delay) {
+        prevTime = currTime
+        fn.apply(context, args)
+        clearTimeout(timer)
+        return
+      }
+
+      timer = setTimeout(function () {
+        prevTime = Date.now()
+        timer = null
+        fn.apply(context, args)
+      }, delay)
+    }
+  },
+}
+

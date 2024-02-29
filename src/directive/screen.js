@@ -1,5 +1,5 @@
 import screenfull from 'screenfull'
- 
+
 export default {
   bind (el, binding) {
     if (binding.modifiers.icon) {
@@ -16,7 +16,7 @@ export default {
     el.addEventListener('click', () => handleClick())
   }
 }
- 
+
 function handleClick () {
   if (!screenfull.isEnabled) {
     alert('浏览器不支持全屏')
