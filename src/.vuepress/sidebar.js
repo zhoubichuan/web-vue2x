@@ -89,7 +89,9 @@ const sidebar = {
     "9.alert",
     "13.publish",
   ],
-  "/source/vue-cli2.x/": ["1.index"],
+  "/source/vue-cli2.x/": [
+    "1.index"
+  ],
   "/source/vue2.x/": [
     "1.index",
     "2.enter",
@@ -119,7 +121,9 @@ const sidebar = {
   ],
   "/source/vue-router3.x/": [
     "1.index",
-    "2.origin"
+    "2.origin",
+    "3.link",
+    "4.view"
   ],
   "/source/vuex3.x/": [
     "1.index",
