@@ -10,14 +10,13 @@ import table from "./table";
 import dialog from "./dialog";
 import radar from "./radar";
 import themeRiver from "./themeRiver";
-import treemap from "./treemap";
 import menu from "./menu";
 import sunburst from "./sunburst";
 import display from "./display/display";
-import pie from "./pie";
+import typer from "./text-typer/typer";
 import select from "./select";
 import scatter from "./scatter";
-import tree from "./tree";
+import tree from "./tree/tree";
 import input from './input'
 import form from './form'
 let components = {
@@ -30,16 +29,15 @@ let components = {
   component,
   // radar,
   // themeRiver,
-  // treemap,
   // menu,
   button,
   // sunburst,
   alert,
   display,
-  // pie,
+  typer,
   // select,
   // scatter,
-  // tree,
+  tree,
   textOverflow,
   // input,
   // form

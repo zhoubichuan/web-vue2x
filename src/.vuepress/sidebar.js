@@ -84,6 +84,7 @@ const sidebar = {
     "3.table",
     "3.fitimg",
     "3.textoverflow",
+    "3.texttyper",
     "1.recursion",
     "3.dialog",
     "9.alert",
