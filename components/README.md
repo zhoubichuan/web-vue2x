@@ -1,6 +1,10 @@
 # web-vue
 
-基于 vue2.x的组件库（练习用）
+基于 vue2.x 的组件库（练习用）
+
+有很多是自定义的一些组件的使用
+
+[查看组件 demo](https://zhoubichuan.com/web-vue/senior/3.component/1.index.html)
 
 ## 1.使用方法
 

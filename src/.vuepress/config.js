@@ -81,6 +81,7 @@ module.exports = {
         ignore: ["/", "/api/"],
       },
     ],
+    ['fulltext-search'],
     // 只要把这个放进 config的plugins中就可以了
     [
       "sakura",

@@ -2,15 +2,14 @@
   <div
     class="m-video"
     :class="{ 'u-video-hover': !hidden }"
-    :style="`width: ${width}px; height: ${height}px;`"
   >
     <video
       ref="veo"
       :style="`object-fit: ${zoom};`"
       :src="src"
       :poster="veoPoster"
-      :width="width"
-      :height="height"
+      width="100%"
+      height="100%"
       :autoplay="autoplay"
       :controls="!originPlay && controls"
       :loop="loop"
@@ -198,6 +197,8 @@ export default {
   position: relative;
   background: #000;
   cursor: pointer;
+  width:100%;
+  height: 100%;
   .u-play {
     position: absolute;
     top: 0;

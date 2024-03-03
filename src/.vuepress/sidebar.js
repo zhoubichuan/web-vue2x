@@ -34,6 +34,11 @@ const sidebar = {
     "14.map",
     "15.rich",
     "16.export",
+    "17.image",
+    "18.lazy",
+    "19.dragger",
+    "20.mobile",
+    "21.scroll"
   ],
   "/base/vue2.x/": [
     "1.index",
