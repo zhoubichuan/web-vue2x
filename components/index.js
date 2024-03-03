@@ -14,6 +14,7 @@ import menu from "./menu";
 import sunburst from "./sunburst";
 import display from "./display/display";
 import typer from "./text-typer/typer";
+// import record from "./record/record";
 import select from "./select";
 import scatter from "./scatter";
 import tree from "./tree/tree";
@@ -35,6 +36,7 @@ let components = {
   alert,
   display,
   typer,
+  // record,
   // select,
   // scatter,
   tree,
