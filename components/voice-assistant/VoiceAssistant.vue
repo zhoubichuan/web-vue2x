@@ -42,7 +42,7 @@ export default {
       this.voice = new VoiceCore(
         {
           onClose: () => {
-            this.tip = "语音助手关闭";
+            this.tip = "语音助手已经关闭";
           },
           onError: (err) => {
             console.info(err);
@@ -65,7 +65,7 @@ export default {
             }
           },
           onStart: () => {
-            this.tip = "语音助手开启";
+            this.tip = "语音助手已经开启";
           },
         },
         this.voiceCommandData(["打开", "切换", "转到", "开启"], list),
@@ -177,8 +177,8 @@ export default {
   display: flex;
   justify-content: space-between;
   .handle {
-    width: 140px;
-    height: 140px;
+    width: 300px;
+    height: 200px;
     position: relative;
     cursor: pointer;
     .img {
@@ -189,6 +189,7 @@ export default {
       justify-content: center;
       align-items: center;
       z-index: 101;
+      font-size: 20px;
       img {
         width: 100%;
         height: 100%;
