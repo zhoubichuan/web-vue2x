@@ -1,13 +1,12 @@
 <template>
   <div class="text-type-writer">
-    <div
-      contenteditable="true"
+    <pre
       class="text-type-writer-line"
       v-for="(item, index) in content"
       :key="index"
     >
       {{ item.typewriter }}
-    </div>
+    </pre>
   </div>
 </template>
 
@@ -81,10 +80,10 @@ export default {
     color: rgb(96, 109, 121);
     white-space: pre-wrap;
     word-wrap: break-word;
-    width: 100%;
-    margin-top: -10px;
-    margin-bottom: -20px;
     border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
   }
   .text-type-writer-cursor {
     width: 0px;

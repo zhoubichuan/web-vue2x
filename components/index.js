@@ -8,18 +8,19 @@ import component from "./component/component";
 import textOverflow from './text-overflow/overflow'
 import table from "./table";
 import dialog from "./dialog";
-import radar from "./radar";
+import VoiceAssistant from "./voice-assistant/VoiceAssistant";
 import themeRiver from "./themeRiver";
 import menu from "./menu";
 import sunburst from "./sunburst";
 import display from "./display/display";
 import typer from "./text-typer/typer";
-// import record from "./record/record";
+import record from "./voice-record/record";
 import select from "./select";
 import scatter from "./scatter";
 import tree from "./tree/tree";
-import input from './input'
-import form from './form'
+import input from './input/input'
+import form from './form/form'
+import formItem from './form/form-item'
 let components = {
   fitImage,
   // RichEditor,
@@ -28,7 +29,7 @@ let components = {
   // table,
   // dialog,
   component,
-  // radar,
+  VoiceAssistant,
   // themeRiver,
   // menu,
   button,
@@ -36,13 +37,14 @@ let components = {
   alert,
   display,
   typer,
-  // record,
+  form,
+  formItem,
+  record,
   // select,
   // scatter,
   tree,
   textOverflow,
-  // input,
-  // form
+  input,
 };
 export default {
   install(Vue) {

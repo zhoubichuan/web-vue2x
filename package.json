@@ -45,6 +45,7 @@
     "node-sass": "4.14.1",
     "sass": "^1.69.5",
     "sass-loader": "7.3.1",
+    "voice-core": "^0.4.0",
     "vuepress-plugin-boxx": "0.0.7",
     "vuepress-plugin-dynamic-title": "1.0.0",
     "webpack": "4.29.6",
