@@ -8,13 +8,13 @@ import component from "./component/component";
 import textOverflow from './text-overflow/overflow'
 import table from "./table";
 import dialog from "./dialog";
-import VoiceAssistant from "./voice-assistant/VoiceAssistant";
+// import VoiceAssistant from "./voice-assistant/VoiceAssistant";
 import themeRiver from "./themeRiver";
 import menu from "./menu";
 import sunburst from "./sunburst";
 import display from "./display/display";
 import typer from "./text-typer/typer";
-import record from "./voice-record/record";
+// import record from "./voice-record/record";
 import select from "./select";
 import scatter from "./scatter";
 import tree from "./tree/tree";
@@ -29,7 +29,7 @@ let components = {
   // table,
   // dialog,
   component,
-  VoiceAssistant,
+  // VoiceAssistant,
   // themeRiver,
   // menu,
   button,
@@ -39,7 +39,7 @@ let components = {
   typer,
   form,
   formItem,
-  record,
+  // record,
   // select,
   // scatter,
   tree,
@@ -48,6 +48,8 @@ let components = {
 };
 export default {
   install(Vue) {
+    Vue.component('VoiceAssistant', () => import("./voice-assistant/VoiceAssistant"));
+    Vue.component('VueRecord', () => import("./voice-record/record"));
     for (let key in components) {
       let item = components[key]
       Vue.component(item.name, item);
