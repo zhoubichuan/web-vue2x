@@ -48,7 +48,7 @@ const sidebar = {
     "2.vue-directive",
     "2.vue-lifecycle",
     "2.vue-transition",
-    "2.vue-keepAlive",
+    "2.vue-component",
     "2.vue-render",
     "3.vue-router",
     "4.vuex",
