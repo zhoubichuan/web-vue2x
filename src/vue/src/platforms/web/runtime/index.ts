@@ -30,9 +30,11 @@ extend(Vue.options.directives, platformDirectives)
 extend(Vue.options.components, platformComponents)
 
 // install platform patch function
+// #region snippet2
 Vue.prototype.__patch__ = inBrowser ? patch : noop
-
+// #endregion snippet2
 // public mount method
+// #region snippet1
 Vue.prototype.$mount = function (
   el?: string | Element,
   hydrating?: boolean
@@ -40,7 +42,7 @@ Vue.prototype.$mount = function (
   el = el && inBrowser ? query(el) : undefined
   return mountComponent(this, el, hydrating)
 }
-
+// #endregion snippet1
 // devtools global hook
 /* istanbul ignore next */
 if (inBrowser) {

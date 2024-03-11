@@ -16,7 +16,7 @@ const idToTemplate = cached(id => {
   const el = query(id)
   return el && el.innerHTML
 })
-
+// #region snippet1
 const mount = Vue.prototype.$mount
 Vue.prototype.$mount = function (
   el?: string | Element,
@@ -90,7 +90,7 @@ Vue.prototype.$mount = function (
   }
   return mount.call(this, el, hydrating)
 }
-
+// #endregion snippet1
 /**
  * Get outerHTML of elements, taking care
  * of SVG elements in IE as well.
@@ -104,7 +104,7 @@ function getOuterHTML(el: Element): string {
     return container.innerHTML
   }
 }
-
+// #region snippet2
 Vue.compile = compileToFunctions
-
+// #endregion snippet2
 export default Vue as GlobalAPI
