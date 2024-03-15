@@ -44,7 +44,7 @@ export default {
   props: {
     pdfUrl: {
       type: String,
-      default: "/web-vue/阿里前端开发规范.pdf",
+      default: "/web-vue2/阿里前端开发规范.pdf",
     },
   },
   components: {

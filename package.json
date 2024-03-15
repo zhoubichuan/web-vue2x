@@ -1,10 +1,10 @@
 {
-  "name": "web-vue",
+  "name": "web-vue2",
   "version": "1.0.0",
   "description": "Vue2.x学习笔记",
   "main": "index.js",
   "author": "zhoubichaun@icloud.com",
-  "hommepage": "https://github.com/zhoubichuan/web-vue/",
+  "hommepage": "https://github.com/zhoubichuan/web-vue2/",
   "private": false,
   "license": "MIT",
   "scripts": {

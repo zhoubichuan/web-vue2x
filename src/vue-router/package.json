@@ -21,7 +21,6 @@
   "_resolved": "https://mirrors.cloud.tencent.com/npm/vue-router/-/vue-router-3.6.5.tgz",
   "_shasum": "95847d52b9a7e3f1361cb605c8e6441f202afad8",
   "_spec": "vue-router@^3.4.5",
-  "_where": "/Users/zhoubichuan/web-vue/node_modules/@vuepress/core",
   "author": {
     "name": "Evan You"
   },
