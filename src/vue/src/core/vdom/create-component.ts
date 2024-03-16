@@ -33,6 +33,7 @@ export function getComponentName(options: ComponentOptions) {
 }
 
 // inline hooks to be invoked on component VNodes during patch
+// #region snippet2
 const componentVNodeHooks = {
   init(vnode: VNodeWithData, hydrating: boolean): boolean | void {
     if (
@@ -95,7 +96,7 @@ const componentVNodeHooks = {
     }
   }
 }
-
+// #endregion snippet2
 const hooksToMerge = Object.keys(componentVNodeHooks)
 // #region snippet1
 export function createComponent(
@@ -209,6 +210,7 @@ export function createComponent(
   return vnode
 }
 // #endregion snippet1
+// #region snippet3
 export function createComponentInstanceForVnode(
   // we know it's MountedComponentVNode but flow doesn't
   vnode: any,
@@ -228,7 +230,8 @@ export function createComponentInstanceForVnode(
   }
   return new vnode.componentOptions.Ctor(options)
 }
-
+// #endregion snippet3
+// #region snippet4
 function installComponentHooks(data: VNodeData) {
   const hooks = data.hook || (data.hook = {})
   for (let i = 0; i < hooksToMerge.length; i++) {
@@ -241,6 +244,7 @@ function installComponentHooks(data: VNodeData) {
     }
   }
 }
+// #endregion snippet4
 
 function mergeHook(f1: any, f2: any): Function {
   const merged = (a, b) => {
