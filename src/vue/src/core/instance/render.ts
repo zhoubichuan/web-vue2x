@@ -17,7 +17,7 @@ import { isUpdatingChildComponent } from './lifecycle'
 import type { Component } from 'types/component'
 import { setCurrentInstance } from 'v3/currentInstance'
 import { syncSetupSlots } from 'v3/apiSetup'
-
+// #region snippet3
 export function initRender(vm: Component) {
   vm._vnode = null // the root of the child tree
   vm._staticTrees = null // v-once cached trees
@@ -84,7 +84,7 @@ export function initRender(vm: Component) {
     )
   }
 }
-
+// #endregion snippet3
 export let currentRenderingInstance: Component | null = null
 
 // for testing only
@@ -99,7 +99,7 @@ export function renderMixin(Vue: typeof Component) {
   Vue.prototype.$nextTick = function (fn: (...args: any[]) => any) {
     return nextTick(fn, this)
   }
-
+  // #region snippet2
   Vue.prototype._render = function (): VNode {
     const vm: Component = this
     const { render, _parentVnode } = vm.$options
@@ -170,5 +170,6 @@ export function renderMixin(Vue: typeof Component) {
     vnode.parent = _parentVnode
     return vnode
   }
+  // #endregion snippet2
 }
 // #endregion snippet1

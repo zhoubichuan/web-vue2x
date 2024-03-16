@@ -59,6 +59,7 @@ export function initLifecycle(vm: Component) {
 }
 // #region snippet1
 export function lifecycleMixin(Vue: typeof Component) {
+  // #region snippet3
   Vue.prototype._update = function (vnode: VNode, hydrating?: boolean) {
     const vm: Component = this
     const prevEl = vm.$el
@@ -96,7 +97,7 @@ export function lifecycleMixin(Vue: typeof Component) {
     // updated hook is called by the scheduler to ensure that children are
     // updated in a parent's updated hook.
   }
-
+  // #endregion snippet3
   Vue.prototype.$forceUpdate = function () {
     const vm: Component = this
     if (vm._watcher) {
@@ -143,6 +144,7 @@ export function lifecycleMixin(Vue: typeof Component) {
   }
 }
 // #endregion snippet1
+// #region snippet2
 export function mountComponent(
   vm: Component,
   el: Element | null | undefined,
@@ -241,7 +243,7 @@ export function mountComponent(
   }
   return vm
 }
-
+// #endregion snippet2
 export function updateChildComponent(
   vm: Component,
   propsData: Record<string, any> | null | undefined,

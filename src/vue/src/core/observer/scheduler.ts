@@ -164,6 +164,7 @@ function callActivatedHooks(queue) {
  * Jobs with duplicate IDs will be skipped unless it's
  * pushed when the queue is being flushed.
  */
+// #region snippet1
 export function queueWatcher(watcher: Watcher) {
   const id = watcher.id
   if (has[id] != null) {
@@ -197,3 +198,4 @@ export function queueWatcher(watcher: Watcher) {
     nextTick(flushSchedulerQueue)
   }
 }
+// #endregion snippet1

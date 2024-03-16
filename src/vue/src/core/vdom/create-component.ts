@@ -97,7 +97,7 @@ const componentVNodeHooks = {
 }
 
 const hooksToMerge = Object.keys(componentVNodeHooks)
-
+// #region snippet1
 export function createComponent(
   Ctor: typeof Component | Function | ComponentOptions | void,
   data: VNodeData | undefined,
@@ -208,7 +208,7 @@ export function createComponent(
 
   return vnode
 }
-
+// #endregion snippet1
 export function createComponentInstanceForVnode(
   // we know it's MountedComponentVNode but flow doesn't
   vnode: any,

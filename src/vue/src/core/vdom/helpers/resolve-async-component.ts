@@ -21,7 +21,7 @@ function ensureCtor(comp: any, base) {
   }
   return isObject(comp) ? base.extend(comp) : comp
 }
-
+// #region snippet2
 export function createAsyncPlaceholder(
   factory: Function,
   data: VNodeData | undefined,
@@ -34,7 +34,8 @@ export function createAsyncPlaceholder(
   node.asyncMeta = { data, context, children, tag }
   return node
 }
-
+// #endregion snippet2
+// #region snippet1
 export function resolveAsyncComponent(
   factory: { (...args: any[]): any; [keye: string]: any },
   baseCtor: typeof Component
@@ -155,3 +156,4 @@ export function resolveAsyncComponent(
     return factory.loading ? factory.loadingComp : factory.resolved
   }
 }
+// #endregion snippet1

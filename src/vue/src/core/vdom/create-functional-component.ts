@@ -96,7 +96,7 @@ export function FunctionalRenderContext(
 }
 
 installRenderHelpers(FunctionalRenderContext.prototype)
-
+// #region snippet1
 export function createFunctionalComponent(
   Ctor: typeof Component,
   propsData: Object | undefined,
@@ -149,7 +149,7 @@ export function createFunctionalComponent(
     return res
   }
 }
-
+// #endregion snippet1
 function cloneAndMarkFunctionalResult(
   vnode,
   data,

@@ -24,6 +24,7 @@ const ALWAYS_NORMALIZE = 2
 
 // wrapper function for providing a more flexible interface
 // without getting yelled at by flow
+// #region snippet1
 export function createElement(
   context: Component,
   tag: any,
@@ -42,7 +43,8 @@ export function createElement(
   }
   return _createElement(context, tag, data, children, normalizationType)
 }
-
+// #endregion snippet1
+// #region snippet2
 export function _createElement(
   context: Component,
   tag?: string | Component | Function | Object,
@@ -138,7 +140,7 @@ export function _createElement(
     return createEmptyVNode()
   }
 }
-
+// #endregion snippet2
 function applyNS(vnode, ns, force?: boolean) {
   vnode.ns = ns
   if (vnode.tag === 'foreignObject') {

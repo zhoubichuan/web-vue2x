@@ -62,7 +62,7 @@ function createKeyToOldIdx(children, beginIdx, endIdx) {
   }
   return map
 }
-
+// #region snippet1
 export function createPatchFunction(backend) {
   let i, j
   const cbs: any = {}
@@ -117,7 +117,7 @@ export function createPatchFunction(backend) {
   }
 
   let creatingElmInVPre = 0
-
+// #region snippet3
   function createElm(
     vnode,
     insertedVnodeQueue,
@@ -183,7 +183,8 @@ export function createPatchFunction(backend) {
       insert(parentElm, vnode.elm, refElm)
     }
   }
-
+// #endregion snippet3
+// #region snippet4
   function createComponent(vnode, insertedVnodeQueue, parentElm, refElm) {
     let i = vnode.data
     if (isDef(i)) {
@@ -205,7 +206,8 @@ export function createPatchFunction(backend) {
       }
     }
   }
-
+// #endregion snippet4
+// #region snippet5
   function initComponent(vnode, insertedVnodeQueue) {
     if (isDef(vnode.data.pendingInsert)) {
       insertedVnodeQueue.push.apply(
@@ -226,7 +228,7 @@ export function createPatchFunction(backend) {
       insertedVnodeQueue.push(vnode)
     }
   }
-
+// #endregion snippet5
   function reactivateComponent(vnode, insertedVnodeQueue, parentElm, refElm) {
     let i
     // hack for #4339: a reactivated component with inner transition
@@ -409,7 +411,7 @@ export function createPatchFunction(backend) {
       removeNode(vnode.elm)
     }
   }
-
+// #region snippet3
   function updateChildren(
     parentElm,
     oldCh,
@@ -555,7 +557,7 @@ export function createPatchFunction(backend) {
       removeVnodes(oldCh, oldStartIdx, oldEndIdx)
     }
   }
-
+// #endregion snippet3
   function checkDuplicateKeys(children) {
     const seenKeys = {}
     for (let i = 0; i < children.length; i++) {
@@ -580,7 +582,7 @@ export function createPatchFunction(backend) {
       if (isDef(c) && sameVnode(node, c)) return i
     }
   }
-
+// #region snippet2
   function patchVnode(
     oldVnode,
     vnode,
@@ -657,7 +659,7 @@ export function createPatchFunction(backend) {
       if (isDef((i = data.hook)) && isDef((i = i.postpatch))) i(oldVnode, vnode)
     }
   }
-
+// #endregion snippet2
   function invokeInsertHook(vnode, queue, initial) {
     // delay insert hooks for component root nodes, invoke them after the
     // element is really inserted
@@ -902,3 +904,4 @@ export function createPatchFunction(backend) {
     return vnode.elm
   }
 }
+// #endregion snippet1

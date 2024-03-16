@@ -38,6 +38,7 @@ export interface WatcherOptions extends DebuggerOptions {
  * This is used for both the $watch() api and directives.
  * @internal
  */
+// #region snippet1
 export default class Watcher implements DepTarget {
   vm?: Component | null
   expression: string
@@ -276,3 +277,4 @@ export default class Watcher implements DepTarget {
     }
   }
 }
+// #endregion snippet1
