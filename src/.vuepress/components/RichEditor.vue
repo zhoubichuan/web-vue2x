@@ -1,7 +1,7 @@
 <template>
   <div id="ck-editer">
     <ckeditor v-bind="$attrs" v-on="$listeners" :editor="editor"></ckeditor>
-    <web-button class="btn" @click="handleSave">保存</web-button>
+    <slot></slot>
   </div>
 </template>
   
@@ -16,11 +16,6 @@ export default {
     return {
       editor: DecoupledEditor,
     };
-  },
-  methods:{
-    handleSave(){
-      this.$emit('save')
-    }
   }
 };
 </script>
