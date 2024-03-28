@@ -1,0 +1,25 @@
+{
+    "name": "周必川",
+    "short_name": "周必川",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#2196f3",
+    "description": "周必川的个人主页",
+    "theme_color": "blue",
+    "icons": [
+      {
+        "src": "/home.png",
+        "sizes": "144x144",
+        "type": "image/png"
+      }
+    ],
+    "related_applications": [
+      {
+        "platform": "web"
+      },
+      {
+        "platform": "play",
+        "url": "https://play.google.com/store/apps/details?id=cheeaun.hackerweb"
+      }
+    ]
+  }
