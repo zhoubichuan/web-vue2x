@@ -7,6 +7,7 @@ const qs = require('qs')
 
 export default {
   install(Vue) {
+    Vue.prototype.$vue = Vue;
     Vue.prototype.$moment = moment;
     Vue.prototype._ = _;
     // window._ = _
