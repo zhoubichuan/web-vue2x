@@ -1,7 +1,7 @@
 ---
 lang: zh-CN
 home: true
-heroImage: ./home.png
+heroImage: ./home.svg
 actionText: 先睹为快 →
 actionLink: /base/engine/1.index
 pageClass: page_index

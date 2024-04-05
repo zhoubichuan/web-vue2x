@@ -9,7 +9,7 @@ module.exports = {
   base: "/web-vue2/", // 部署站点的基础路径
   port: 3009,
   head: [
-    ['link', { rel: 'icon', href: '/home.png' }],
+    ['link', { rel: 'icon', href: '/home.svg' }],
     ['link', { rel: 'manifest', href: '/manifest.json' }],
     ["script", { src: "/dll/vendor.dll.js" }],
     [
