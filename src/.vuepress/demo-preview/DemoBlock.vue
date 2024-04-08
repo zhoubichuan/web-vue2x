@@ -185,8 +185,10 @@ export default {
       let codeContent = this.$el.getElementsByClassName("code-content")[0];
       this.codeContentWidth = this.$el.offsetWidth;
       if (this.$el.getElementsByClassName("description").length === 0) {
-        codeContent.style.width = "100%";
-        codeContent.borderRight = "none";
+        if (codeContent) {
+          codeContent.style.width = "100%";
+          codeContent.borderRight = "none";
+        }
       }
     });
   },
