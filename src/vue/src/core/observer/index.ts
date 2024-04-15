@@ -45,6 +45,7 @@ const mockDep = {
  * object's property keys into getter/setters that
  * collect dependencies and dispatch updates.
  */
+// #region snippet2
 export class Observer {
   dep: Dep
   vmCount: number // number of vms that have this object as root $data
@@ -93,7 +94,7 @@ export class Observer {
     }
   }
 }
-
+// #endregion snippet2
 // helpers
 
 /**
@@ -101,6 +102,7 @@ export class Observer {
  * returns the new observer if successfully observed,
  * or the existing observer if the value already has one.
  */
+// #region snippet3
 export function observe(
   value: any,
   shallow?: boolean,
@@ -121,10 +123,11 @@ export function observe(
     return new Observer(value, shallow, ssrMockReactivity)
   }
 }
-
+// #endregion snippet3
 /**
  * Define a reactive property on an Object.
  */
+// #region snippet1
 export function defineReactive(
   obj: object,
   key: string,
@@ -211,7 +214,7 @@ export function defineReactive(
 
   return dep
 }
-
+// #endregion snippet1
 /**
  * Set a property on an object. Adds the new property and
  * triggers change notification if the property doesn't
