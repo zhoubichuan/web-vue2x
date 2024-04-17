@@ -660,6 +660,7 @@ export function createPatchFunction(backend) {
     }
   }
 // #endregion snippet2
+// #region snippet6
   function invokeInsertHook(vnode, queue, initial) {
     // delay insert hooks for component root nodes, invoke them after the
     // element is really inserted
@@ -671,7 +672,7 @@ export function createPatchFunction(backend) {
       }
     }
   }
-
+// #endregion snippet6
   let hydrationBailed = false
   // list of modules that can skip create hook during hydration because they
   // are already rendered on the client or has no need for initialization

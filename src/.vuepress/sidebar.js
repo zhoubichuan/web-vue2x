@@ -100,8 +100,8 @@ const sidebar = {
   ],
   "/source/vue2.x/": [
     "1.index",
-    "2.vue",
-    "3.project",
+    "2.project",
+    "3.vue",
     "4.init",
     "5.merge",
     "6.state",
