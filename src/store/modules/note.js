@@ -28,10 +28,10 @@ export default {
         name: "Vue相关",
         items: [
           {
-            title: "web-vue2",
+            title: "web-vue2.x",
             skill: "Vuepress",
-            img: "web-vue2",
-            link: "/web-vue2/",
+            img: "web-vue2.x",
+            link: "/web-vue2.x/",
           },
         ],
       },

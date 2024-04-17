@@ -19,7 +19,7 @@ jobs:
       - name: copy file  via ssh key
         uses: appleboy/scp-action@master
         with:
-          source: "web-vue2/*"
+          source: "web-vue2.x/*"
           host: ${{ secrets.HOST }}
           target: "/usr/src/zhoubichuan/sit/"
           port:  ${{ secrets.PORT }}

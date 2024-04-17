@@ -10,7 +10,7 @@ export default {
   props: {
     url: {
       type: String,
-      default: "/web-vue2/assets/img/13.deploy1.1.a358a790.png",
+      default: "/web-vue2.x/assets/img/13.deploy1.1.a358a790.png",
     },
   },
 };

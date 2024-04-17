@@ -1,10 +1,10 @@
-# web-vue2
+# web-vue2.x
 
 基于 vue2.x 的组件库（练习用）
 
 有很多是自定义的一些组件的使用
 
-[查看组件 demo](https://zhoubichuan.com/web-vue2/senior/3.component/1.index.html)
+[查看组件 demo](https://zhoubichuan.com/web-vue2.x/senior/3.component/1.index.html)
 
 ## 1.使用方法
 
@@ -13,7 +13,7 @@
 以 yarn 为例
 
 ```sh
-yarn add web-vue2
+yarn add web-vue2.x
 ```
 
 ## 2.打包方式
