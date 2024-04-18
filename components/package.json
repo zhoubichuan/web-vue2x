@@ -1,10 +1,10 @@
 {
-  "name": "web-vue2.x",
+  "name": "web-vue2x",
   "version": "1.0.1",
-  "description": "web-vue2.x",
+  "description": "web-vue2x",
   "main": "index.js",
   "author": "zhoubichaun@icloud.com",
-  "hommepage": "https://github.com/zhoubichuan/web-vue2.x",
+  "hommepage": "https://github.com/zhoubichuan/web-vue2x",
   "license": "MIT",
   "type":"module",
   "scripts": {

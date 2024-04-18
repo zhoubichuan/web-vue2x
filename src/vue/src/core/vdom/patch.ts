@@ -800,7 +800,7 @@ export function createPatchFunction(backend) {
       return node.nodeType === (vnode.isComment ? 8 : 3)
     }
   }
-
+  // #region snippet7
   return function patch(oldVnode, vnode, hydrating, removeOnly) {
     if (isUndef(vnode)) {
       if (isDef(oldVnode)) invokeDestroyHook(oldVnode)
@@ -904,5 +904,6 @@ export function createPatchFunction(backend) {
     invokeInsertHook(vnode, insertedVnodeQueue, isInitialPatch)
     return vnode.elm
   }
+  // #endregion snippet7
 }
 // #endregion snippet1
