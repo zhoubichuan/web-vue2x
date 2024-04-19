@@ -96,7 +96,8 @@ const sidebar = {
     "13.publish",
   ],
   "/source/vue-cli2.x/": [
-    "1.index"
+    "1.index",
+    "2.myVueCli"
   ],
   "/source/vue2.x/": [
     "1.index",
