@@ -363,7 +363,7 @@ export function createPatchFunction(backend) {
       }
     }
   }
-
+// #region snippet8
   function removeVnodes(vnodes, startIdx, endIdx) {
     for (; startIdx <= endIdx; ++startIdx) {
       const ch = vnodes[startIdx]
@@ -378,7 +378,7 @@ export function createPatchFunction(backend) {
       }
     }
   }
-
+// #endregion snippet8
   function removeAndInvokeRemoveHook(vnode, rm?: any) {
     if (isDef(rm) || isDef(vnode.data)) {
       let i
