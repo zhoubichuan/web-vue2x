@@ -8,9 +8,10 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
-  name: "VueSubMenu", //可以使用递归组件
+  name: "VueSubMenu",
   data() {
     return { flag: false };
   },
@@ -21,7 +22,8 @@ export default {
   },
 };
 </script>
-<style>
+
+<style lang="scss" scoped>
 .sub {
   padding-left: 10px;
 }

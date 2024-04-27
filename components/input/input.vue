@@ -1,12 +1,14 @@
 <template>
   <input
+    class="input"
     type="text"
     :value="currentValue"
     @input="handleInput"
     @blur="handleBlur"
   />
 </template>
-  <script>
+
+<script>
 import Emitter from "../emitter.js";
 export default {
   name: "VueInput",
@@ -40,3 +42,10 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.input{
+  height: 20px;
+  width: 100%;
+}
+</style>

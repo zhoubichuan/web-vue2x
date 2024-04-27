@@ -9,6 +9,7 @@ import textOverflow from './text-overflow/overflow'
 import table from "./table";
 import dialog from "./dialog";
 import checkbox from "./checkbox/checkbox";
+import checkboxGroup from "./checkbox/checkbox-group";
 import menuItem from "./menu/menu-item";
 import menu from "./menu/menu";
 import resubMenu from "./menu/resub-menu";
@@ -33,6 +34,7 @@ let components = {
   component,
   // VoiceAssistant,
   checkbox,
+  checkboxGroup,
   resubMenu,
   subMenu,
   menuItem,
