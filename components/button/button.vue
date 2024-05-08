@@ -1,5 +1,5 @@
 <template>
-  <div class="vue-button">
+  <div class="vue-button" v-bind="$attrs" v-on="$listeners">
     <slot></slot>
   </div>
 </template>
@@ -11,7 +11,7 @@ export default {
 <style lang="scss" scoped>
 .vue-button {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 5px 20px;
   border: 1px solid gray;
   border-radius: 4px;
 }

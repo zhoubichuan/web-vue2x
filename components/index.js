@@ -6,7 +6,7 @@ import VideoPlayer from "./video-player/video";
 import alert from "./alert/alert";
 import component from "./component/component";
 import textOverflow from './text-overflow/overflow'
-import table from "./table";
+import table from "./table/table";
 import dialog from "./dialog";
 import checkbox from "./checkbox/checkbox";
 import checkboxGroup from "./checkbox/checkbox-group";
@@ -29,7 +29,7 @@ let components = {
   // RichEditor,
   VideoPlayer,
   // PreviewPdf,
-  // table,
+  table,
   // dialog,
   component,
   // VoiceAssistant,

@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form class="vue-form">
     <slot></slot>
   </form>
 </template>
@@ -16,3 +16,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.vue-form {
+  margin: 10px 0;
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <li>
+  <li class="item">
     <slot></slot>
   </li>
 </template>
@@ -15,3 +15,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.item {
+  display: block;
+}
+</style>

@@ -81,7 +81,7 @@ export default {
         this.parent.change(this.model);
       } else {
         this.$emit("on-change", value);
-        this.dispatch("iFormItem", "on-form-change", value);
+        this.dispatch("VueFormItem", "on-form-change", value);
       }
     },
   },

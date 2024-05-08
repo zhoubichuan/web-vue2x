@@ -24,6 +24,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.title {
+  &::before {
+    content: "⬇️";
+    display: inline;
+    font-size: 12px;
+  }
+}
 .sub {
   padding-left: 10px;
 }
