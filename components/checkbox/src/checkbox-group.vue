@@ -4,8 +4,8 @@
   </div>
 </template>
 <script>
-import { findComponentsDownward } from "../assist.js"
-import Emitter from "../emitter.js"
+import { findComponentsDownward } from "../../assist.js"
+import Emitter from "../../emitter.js"
 
 export default {
   name: "VueCheckboxGroup",

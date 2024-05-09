@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Emitter from "../emitter.js";
+import Emitter from "../../emitter.js";
 export default {
   name: "VueInput",
   mixins: [Emitter],

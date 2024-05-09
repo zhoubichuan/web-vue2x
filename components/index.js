@@ -1,30 +1,24 @@
-import fitImage from "./fit-image/image";
-import button from "./button/button";
+import fitImage from "./fit-image/index.js";
+import button from "./button/index.js";
 // import RichEditor from "./rich/rich-editor";
-import VideoPlayer from "./video-player/video";
+import VideoPlayer from "./video-player/index.js";
 // import PreviewPdf from "./pdf/preview-pdf";
-import alert from "./alert/alert";
-import component from "./component/component";
-import textOverflow from './text-overflow/overflow'
-import table from "./table/table";
-import dialog from "./dialog";
-import checkbox from "./checkbox/checkbox";
-import checkboxGroup from "./checkbox/checkbox-group";
-import menuItem from "./menu/menu-item";
-import menu from "./menu/menu";
-import resubMenu from "./menu/resub-menu";
-import subMenu from "./menu/sub-menu";
-// import sunburst from "./sunburst";
-import display from "./display/display";
-import typer from "./text-typer/typer";
+import alert from "./alert/index.js";
+import component from "./component/index.js";
+import textOverflow from './text-overflow/index.js'
+import table from "./table/index.js";
+import checkbox from "./checkbox/index.js";
+import CheckboxGroup from "./checkbox-group/index.js";
+import menu from "./menu/index.js";
+import display from "./display/index.js";
+import typer from "./text-typer/index.js";
 // import record from "./voice-record/record";
-import select from "./select";
-import vueChart from "./vue-chart/vue-chart";
-import tree from "./tree/tree";
-import input from './input/input'
-import form from './form/form'
-import formItem from './form/form-item'
-let components = {
+import vueChart from "./vue-chart/index.js";
+import tree from "./tree/index.js";
+import input from './input/index.js'
+import form from './form/index.js'
+import FormItem from './form-item/index.js'
+let components = [
   fitImage,
   // RichEditor,
   VideoPlayer,
@@ -34,32 +28,42 @@ let components = {
   component,
   // VoiceAssistant,
   checkbox,
-  checkboxGroup,
-  resubMenu,
-  subMenu,
-  menuItem,
+  CheckboxGroup,
   menu,
   button,
-  // sunburst,
   alert,
   display,
   typer,
   form,
-  formItem,
+  FormItem,
   // record,
   // select,
   vueChart,
   tree,
   textOverflow,
   input,
-};
+];
+const install = function (Vue, opts = {}) {
+  components.forEach(component => {
+    Vue.component(component.name, component)
+  })
+
+  // Vue.use(InfiniteScroll)
+  // Vue.use(Loading.directive)
+
+  // Vue.prototype.$ELEMENT = {
+  //   size: opts.size || '',
+  //   zIndex: opts.zIndex || 2000
+  // }
+
+  // Vue.prototype.$loading = Loading.service
+  // Vue.prototype.$msgbox = MessageBox
+  // Vue.prototype.$alert = MessageBox.alert
+  // Vue.prototype.$confirm = MessageBox.confirm
+  // Vue.prototype.$prompt = MessageBox.prompt
+  // Vue.prototype.$notify = Notification
+  // Vue.prototype.$message = Message
+}
 export default {
-  install(Vue) {
-    Vue.component('VoiceAssistant', () => import("./voice-assistant/VoiceAssistant"));
-    Vue.component('VueRecord', () => import("./voice-record/record"));
-    for (let key in components) {
-      let item = components[key]
-      Vue.component(item.name, item);
-    }
-  },
+  install
 };

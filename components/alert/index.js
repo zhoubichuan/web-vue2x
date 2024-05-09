@@ -1,4 +1,4 @@
-import Alert from "./alert.vue"
+import Alert from "./src/alert.vue"
 import Vue from "vue"
 
 Alert.newInstance = (properties) => {
@@ -23,5 +23,7 @@ Alert.newInstance = (properties) => {
         },
     }
 }
-
+Alert.install = function (Vue) {
+    Vue.component(Alert.name, Alert)
+}
 export default Alert

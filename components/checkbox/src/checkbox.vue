@@ -22,8 +22,8 @@
 </template>
 
 <script>
-import Emitter from "../emitter.js";
-import { findComponentUpward } from "../assist.js";
+import Emitter from "../../emitter.js";
+import { findComponentUpward } from "../../assist.js";
 export default {
   name: "VueCheckbox",
   mixins: [Emitter],

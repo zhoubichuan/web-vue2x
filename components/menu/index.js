@@ -1,7 +1,7 @@
-import MenuItem from "./menu/menu-item";
-import Menu from "./menu/menu";
-import ResubMenu from "./menu/resub-menu";
-import SubMenu from "./menu/sub-menu";
+import MenuItem from "./src/menu-item.vue";
+import Menu from "./src/menu.vue";
+import ResubMenu from "./src/resub-menu.vue";
+import SubMenu from "./src/sub-menu.vue";
 /* istanbul ignore next */
 Menu.install = function (Vue) {
   Vue.component(ResubMenu.name, ResubMenu)

@@ -4,7 +4,7 @@
 
 有很多是自定义的一些组件的使用
 
-[查看组件 demo](https://zhoubichuan.com/web-vue2x/senior/3.component/1.index.html)
+[查看组件 demo](https://zhoubichuan.com/web-elementui/element-packag/base/1.index.html)
 
 ## 1.使用方法
 

@@ -6,7 +6,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="(row, i) in data" :key="i">
+      <tr v-for="(row, rowIndex) in data" :key="rowIndex">
         <td v-for="(col, j) in columns" :key="j">
           <template v-if="'render' in col">
             <Render
