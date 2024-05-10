@@ -1,18 +1,31 @@
 <template>
-  <div class="vue-button-group" v-bind="$attrs" v-on="$listeners">
-    <slot></slot>
+  <div :class="{ 'button-group': justify === 'center', 'global-group': true }">
+    <el-row type="flex" class="row-bg" :justify="justify">
+      <el-col><slot></slot></el-col>
+    </el-row>
   </div>
 </template>
 <script>
 export default {
   name: "VueButtonGroup",
+  props: {
+    justify: {
+      type: String,
+      default: "center",
+    },
+  },
+  data() {
+    return {
+      addModalFlag: false,
+    };
+  },
 };
 </script>
-<style lang="scss" scoped>
-.vue-button-group {
-  display: inline-block;
-  padding: 5px 20px;
-  border: 1px solid gray;
-  border-radius: 4px;
+<style>
+.button-group {
+  text-align: center;
+}
+.global-group {
+  margin: 10px 0;
 }
 </style>

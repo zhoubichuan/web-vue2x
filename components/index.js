@@ -1,5 +1,6 @@
 import fitImage from "./fit-image/index.js";
 import button from "./button/index.js";
+import ButtonGroup from "./button-group/index.js";
 // import RichEditor from "./rich/rich-editor";
 import VideoPlayer from "./video-player/index.js";
 // import PreviewPdf from "./pdf/preview-pdf";
@@ -31,6 +32,7 @@ let components = [
   CheckboxGroup,
   menu,
   button,
+  ButtonGroup,
   alert,
   display,
   typer,

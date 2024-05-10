@@ -1,10 +1,10 @@
 {
-    "name": "周必川",
-    "short_name": "周必川",
+    "name": "web-vue2.x",
+    "short_name": "web-vue2.x",
     "start_url": "index.html",
     "display": "standalone",
     "background_color": "#2196f3",
-    "description": "周必川的个人主页",
+    "description": "web-vue2.x主页",
     "theme_color": "blue",
     "icons": [
       {
