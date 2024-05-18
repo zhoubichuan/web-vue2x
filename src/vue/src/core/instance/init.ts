@@ -78,6 +78,7 @@ export function initMixin(Vue: typeof Component) {
   }
 }
 // #endregion snippet1
+// #region snippet2
 export function initInternalComponent(
   vm: Component,
   options: InternalComponentOptions
@@ -99,7 +100,7 @@ export function initInternalComponent(
     opts.staticRenderFns = options.staticRenderFns
   }
 }
-
+// #endregion snippet2
 export function resolveConstructorOptions(Ctor: typeof Component) {
   let options = Ctor.options
   if (Ctor.super) {

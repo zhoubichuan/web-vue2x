@@ -2,7 +2,7 @@ import { warn, hasSymbol, isFunction, isObject } from '../util/index'
 import { defineReactive, toggleObserving } from '../observer/index'
 import type { Component } from 'types/component'
 import { resolveProvided } from 'v3/apiInject'
-
+// #region snippet1
 export function initProvide(vm: Component) {
   const provideOption = vm.$options.provide
   if (provideOption) {
@@ -26,7 +26,8 @@ export function initProvide(vm: Component) {
     }
   }
 }
-
+// #endregion snippet1
+// #region snippet2
 export function initInjections(vm: Component) {
   const result = resolveInject(vm.$options.inject, vm)
   if (result) {
@@ -49,7 +50,8 @@ export function initInjections(vm: Component) {
     toggleObserving(true)
   }
 }
-
+// #endregion snippet2
+// #region snippet3
 export function resolveInject(
   inject: any,
   vm: Component
@@ -78,3 +80,4 @@ export function resolveInject(
     return result
   }
 }
+// #endregion snippet3

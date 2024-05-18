@@ -30,7 +30,7 @@ export function setActiveInstance(vm: Component) {
     activeInstance = prevActiveInstance
   }
 }
-
+// #region snippet4
 export function initLifecycle(vm: Component) {
   const options = vm.$options
 
@@ -57,6 +57,7 @@ export function initLifecycle(vm: Component) {
   vm._isDestroyed = false
   vm._isBeingDestroyed = false
 }
+// #endregion snippet4
 // #region snippet1
 export function lifecycleMixin(Vue: typeof Component) {
   // #region snippet3
@@ -98,13 +99,15 @@ export function lifecycleMixin(Vue: typeof Component) {
     // updated in a parent's updated hook.
   }
   // #endregion snippet3
+  // #region snippet5
   Vue.prototype.$forceUpdate = function () {
     const vm: Component = this
     if (vm._watcher) {
       vm._watcher.update()
     }
   }
-
+  // #endregion snippet5
+  // #region snippet6
   Vue.prototype.$destroy = function () {
     const vm: Component = this
     if (vm._isBeingDestroyed) {
@@ -142,6 +145,7 @@ export function lifecycleMixin(Vue: typeof Component) {
       vm.$vnode.parent = null
     }
   }
+  // #endregion snippet6
 }
 // #endregion snippet1
 // #region snippet2
