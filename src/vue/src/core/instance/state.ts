@@ -38,7 +38,8 @@ const sharedPropertyDefinition = {
   get: noop,
   set: noop
 }
-
+// #endregion snippet14
+// #region snippet13
 export function proxy(target: Object, sourceKey: string, key: string) {
   sharedPropertyDefinition.get = function proxyGetter() {
     return this[sourceKey][key]
@@ -48,7 +49,8 @@ export function proxy(target: Object, sourceKey: string, key: string) {
   }
   Object.defineProperty(target, key, sharedPropertyDefinition)
 }
-
+// #endregion snippet13
+// #region snippet12
 export function initState(vm: Component) {
   const opts = vm.$options
   if (opts.props) initProps(vm, opts.props)
@@ -68,7 +70,8 @@ export function initState(vm: Component) {
     initWatch(vm, opts.watch)
   }
 }
-
+// #endregion snippet12
+// #region snippet11
 function initProps(vm: Component, propsOptions: Object) {
   const propsData = vm.$options.propsData || {}
   const props = (vm._props = shallowReactive({}))
@@ -118,7 +121,8 @@ function initProps(vm: Component, propsOptions: Object) {
   }
   toggleObserving(true)
 }
-
+// #endregion snippet11
+// #region snippet10
 function initData(vm: Component) {
   let data: any = vm.$options.data
   data = vm._data = isFunction(data) ? getData(data, vm) : data || {}
@@ -158,7 +162,8 @@ function initData(vm: Component) {
   const ob = observe(data)
   ob && ob.vmCount++
 }
-
+// #endregion snippet10
+// #region snippet9
 export function getData(data: Function, vm: Component): any {
   // #7573 disable dep collection when invoking data getters
   pushTarget()
@@ -171,9 +176,9 @@ export function getData(data: Function, vm: Component): any {
     popTarget()
   }
 }
-
+// #endregion snippet9
 const computedWatcherOptions = { lazy: true }
-
+// #region snippet8
 function initComputed(vm: Component, computed: Object) {
   // $flow-disable-line
   const watchers = (vm._computedWatchers = Object.create(null))
@@ -216,7 +221,8 @@ function initComputed(vm: Component, computed: Object) {
     }
   }
 }
-
+// #endregion snippet8
+// #region snippet7
 export function defineComputed(
   target: any,
   key: string,
@@ -246,7 +252,8 @@ export function defineComputed(
   }
   Object.defineProperty(target, key, sharedPropertyDefinition)
 }
-
+// #endregion snippet7
+// #region snippet6
 function createComputedGetter(key) {
   return function computedGetter() {
     const watcher = this._computedWatchers && this._computedWatchers[key]
@@ -269,13 +276,15 @@ function createComputedGetter(key) {
     }
   }
 }
-
+// #endregion snippet6
+// #region snippet5
 function createGetterInvoker(fn) {
   return function computedGetter() {
     return fn.call(this, this)
   }
 }
-
+// #endregion snippet5
+// #region snippet4
 function initMethods(vm: Component, methods: Object) {
   const props = vm.$options.props
   for (const key in methods) {
@@ -302,7 +311,8 @@ function initMethods(vm: Component, methods: Object) {
     vm[key] = typeof methods[key] !== 'function' ? noop : bind(methods[key], vm)
   }
 }
-
+// #endregion snippet4
+// #region snippet3
 function initWatch(vm: Component, watch: Object) {
   for (const key in watch) {
     const handler = watch[key]
@@ -315,7 +325,8 @@ function initWatch(vm: Component, watch: Object) {
     }
   }
 }
-
+// #endregion snippet3
+// #region snippet2
 function createWatcher(
   vm: Component,
   expOrFn: string | (() => any),
@@ -331,6 +342,7 @@ function createWatcher(
   }
   return vm.$watch(expOrFn, handler, options)
 }
+// #endregion snippet2
 // #region snippet1
 export function stateMixin(Vue: typeof Component) {
   // flow somehow has problems with directly declared definition object
@@ -361,7 +373,7 @@ export function stateMixin(Vue: typeof Component) {
 
   Vue.prototype.$set = set
   Vue.prototype.$delete = del
-
+  // #region snippet15
   Vue.prototype.$watch = function (
     expOrFn: string | (() => any),
     cb: any,
@@ -384,5 +396,6 @@ export function stateMixin(Vue: typeof Component) {
       watcher.teardown()
     }
   }
+  // #endregion snippet15
 }
 // #endregion snippet1
