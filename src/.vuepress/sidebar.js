@@ -143,9 +143,9 @@ const sidebar = {
   ],
   "/source/vue-router3.x/": [
     "1.index",
-    "2.origin",
-    "3.link",
-    "4.view"
+    "2.link",
+    "3.view",
+    "4.origin",
   ],
   "/source/vuex3.x/": [
     "1.index",

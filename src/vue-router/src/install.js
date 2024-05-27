@@ -2,7 +2,7 @@ import View from './components/view'
 import Link from './components/link'
 
 export let _Vue
-
+// #region snippet1
 export function install (Vue) {
   if (install.installed && _Vue === Vue) return
   install.installed = true
@@ -50,3 +50,4 @@ export function install (Vue) {
   // use the same hook merging strategy for route hooks
   strats.beforeRouteEnter = strats.beforeRouteLeave = strats.beforeRouteUpdate = strats.created
 }
+// #endregion snippet1

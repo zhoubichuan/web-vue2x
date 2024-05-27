@@ -16,7 +16,7 @@ import { HTML5History } from './history/html5'
 import { AbstractHistory } from './history/abstract'
 
 import type { Matcher } from './create-matcher'
-
+// #region snippet1
 export default class VueRouter {
   static install: () => void
   static version: string
@@ -268,7 +268,7 @@ export default class VueRouter {
     }
   }
 }
-
+// #endregion snippet1
 function registerHook (list: Array<any>, fn: Function): Function {
   list.push(fn)
   return () => {
