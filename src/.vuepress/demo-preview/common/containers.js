@@ -19,10 +19,12 @@ module.exports = options => {
           const content = tokens[idx + 1].type === 'fence' ? tokens[idx + 1].content : '';
           const encodeOptionsStr = encodeURI(JSON.stringify(options));
           return `<${componentName} :options="JSON.parse(decodeURI('${encodeOptionsStr}'))">
-                    <template slot="demo"><!--pre-render-demo:${content}:pre-render-demo--></template>
-                    ${description ? `<div slot="description">${md.render(description).html}</div>` : ''}
-                    <template slot="source">
-                  `;
+            <template slot="demo">${['js', 'javascript'].includes(tokens[idx + 1].info) ? `<script>/n${content}/n</script>` : (tokens[idx + 1].info === 'html' ? `<div contenteditable>${content}</div>` :
+              `<!--pre-render-demo:${content}:pre-render-demo-->`)
+            }</template>
+            ${description ? `<div slot="description">${md.render(description).html}</div>` : ''}
+            <template slot="source">
+          `;
         }
         return `</template></${componentName}>`;
       }
