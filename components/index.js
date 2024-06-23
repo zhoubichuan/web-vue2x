@@ -7,6 +7,7 @@ import VideoPlayer from "./video-player/index.js";
 import alert from "./alert/index.js";
 import component from "./component/index.js";
 import textOverflow from './text-overflow/index.js'
+import textOverflow2 from './text-overflow2/index.js'
 import table from "./table/index.js";
 import checkbox from "./checkbox/index.js";
 import CheckboxGroup from "./checkbox-group/index.js";
@@ -43,6 +44,7 @@ let components = [
   vueChart,
   tree,
   textOverflow,
+  textOverflow2,
   input,
 ];
 const install = function (Vue, opts = {}) {
