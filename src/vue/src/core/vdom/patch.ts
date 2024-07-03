@@ -411,7 +411,7 @@ export function createPatchFunction(backend) {
       removeNode(vnode.elm)
     }
   }
-// #region snippet3
+// #region snippet9
   function updateChildren(
     parentElm,
     oldCh,
@@ -557,7 +557,7 @@ export function createPatchFunction(backend) {
       removeVnodes(oldCh, oldStartIdx, oldEndIdx)
     }
   }
-// #endregion snippet3
+// #endregion snippet9
   function checkDuplicateKeys(children) {
     const seenKeys = {}
     for (let i = 0; i < children.length; i++) {
