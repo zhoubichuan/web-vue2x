@@ -15,3 +15,15 @@ $sidebarWidth = 18rem
 table{
   margin:auto;
 }
+
+@media print {
+  .navbar,.page-edit,.page-nav{
+    display: none;
+  }
+  .no-print {
+    display: none; /* 隐藏不需要打印的元素 */
+  }
+  .page-break {
+    page-break-before: always; /* 在元素之前插入分页符 */
+  }
+}
