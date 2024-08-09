@@ -20,6 +20,7 @@ import tree from "./tree/index.js";
 import input from './input/index.js'
 import form from './form/index.js'
 import FormItem from './form-item/index.js'
+import List from './list/index.js'
 let components = [
   fitImage,
   // RichEditor,
@@ -46,6 +47,7 @@ let components = [
   textOverflow,
   textOverflow2,
   input,
+  List
 ];
 const install = function (Vue, opts = {}) {
   components.forEach(component => {
