@@ -21,6 +21,7 @@ import input from './input/index.js'
 import form from './form/index.js'
 import FormItem from './form-item/index.js'
 import List from './list/index.js'
+import Guide from './guide/index.js'
 let components = [
   fitImage,
   // RichEditor,
@@ -47,7 +48,8 @@ let components = [
   textOverflow,
   textOverflow2,
   input,
-  List
+  List,
+  Guide
 ];
 const install = function (Vue, opts = {}) {
   components.forEach(component => {

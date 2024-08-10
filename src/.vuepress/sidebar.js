@@ -90,6 +90,7 @@ const sidebar = {
     "3.fitimg",
     "3.textoverflow",
     "3.texttyper",
+    "5.guide",
     "5.list",
     "6.nav",
     "7.dialog",
