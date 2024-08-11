@@ -6,7 +6,7 @@
           <mask id="path" class="mask">
             <rect class="mask" fill="white"></rect>
             <template v-if="steps[value].path">
-              <path v-for="(item, index) in lightAreas" :key="index" :x="item.x" :y="item.y" :d="d" fill="black" />
+              <path v-for="(item, index) in lightAreas" :key="index" :d="d" fill="black" />
             </template>
             <template v-else>
               <rect v-for="(item, index) in lightAreas" :key="index" :x="item.x" :y="item.y" :width="item.width"
@@ -38,6 +38,7 @@ export default {
       d: "",
       lightAreas: [],
       positions: {},
+      index: 0,
     };
   },
   props: {
@@ -56,6 +57,7 @@ export default {
   },
   methods: {
     transformSize(dis) {
+      this.index++
       return (dis / 1920) * document.documentElement.getBoundingClientRect().width;
     },
     getDomInfo(index) {
@@ -99,17 +101,12 @@ export default {
         });
       }
       if (target.path) {
+        let { x, y } = this.lightAreas[0]
+        this.index = 0;
         let d = target.path.replace(/(\d+(\.\d+)?)/g, (match) => {
-          return +this.transformSize(match);
+          return +this.transformSize(match) + [+y, +x][this.index % 2]
         });
-        // let indexL = d.indexOf("L");
-        // let t = d.slice(1, indexL);
-        // let [x, y] = t.split(",");
-        // console.log([x, y]);
-        // let newPositon = [+x + +this.lightAreas[0].x, +y + +this.lightAreas[0].y];
-        // this.d = `M${newPositon.join(",")}${d.slice(indexL)}`;
         this.d = d;
-        console.log(this.d, "dddd");
       }
 
       if (this.lightAreas.length) {
@@ -148,6 +145,9 @@ export default {
     },
   },
   mounted() {
+    window.onresize = () => {
+      this.getDomInfo(this.value);
+    }
     if (this.appendToBody) {
       document.body.appendChild(this.$el);
       this.getDomInfo(0);
