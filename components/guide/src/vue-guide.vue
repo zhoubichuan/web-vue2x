@@ -4,7 +4,7 @@
             <svg class="mask">
                 <defs>
                     <mask id="path" class="mask">
-                        <rect class="mask" fill="white"></rect>
+                        <rect class="mask" fill="white" />
                         <template v-if="steps[value].path">
                             <path
                                 v-for="(item, index) in lightAreas"
@@ -29,9 +29,14 @@
                         </template>
                     </mask>
                 </defs>
-                <rect class="mask" fill="rgba(0, 0, 0, 0.7)" mask="url(#path)"></rect>
+                <rect class="mask" fill="rgba(0, 0, 0, 0.7)" mask="url(#path)" />
             </svg>
-            <div class="content-box" ref="content" :style="`left:${positions.left}px;top:${positions.top}px`">
+            <div
+                v-show="lightAreas.length && lightAreas[0].x"
+                class="content-box"
+                ref="content"
+                :style="`left:${positions.left}px;top:${positions.top}px`"
+            >
                 <div class="title">{{ steps[value].popover.title }}</div>
                 <div class="description">{{ steps[value].popover.description }}</div>
                 <div class="bottom">
@@ -145,8 +150,8 @@ export default {
             }
 
             if (this.lightAreas.length) {
-                this.lightAreas.forEach((item, j) => {
-                    const { x, y, width, height } = item;
+                this.lightAreas.forEach((item) => {
+                    const { x, y, width } = item;
                     const box = this.$refs.content.getBoundingClientRect();
                     const padding = this.transformSize(31);
                     let [ofx, ofy] = [0, 0];
@@ -205,7 +210,13 @@ export default {
         };
         if (this.appendToBody) {
             document.body.appendChild(this.$el);
-            this.getDomInfo(0);
+            let timer = setInterval(() => {
+                if (this.lightAreas.length && this.lightAreas[0].x) {
+                    clearInterval(timer);
+                    timer = null;
+                }
+                this.getDomInfo(0);
+            }, 60);
         }
     },
     destroyed() {
