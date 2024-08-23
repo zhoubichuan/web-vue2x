@@ -1,6 +1,6 @@
 <template>
     <div v-if="value < steps.length" class="web-guide">
-        <div class="content-mask">
+        <div class="content-mask" :class="active">
             <svg class="mask">
                 <defs>
                     <mask id="path" class="mask">
@@ -29,10 +29,15 @@
                         </template>
                     </mask>
                 </defs>
-                <rect class="mask" fill="rgba(0, 0, 0, 0.7)" mask="url(#path)" />
+                <rect
+                    v-show="lightAreas.length && (lightAreas[0].x || lightAreas[0].y)"
+                    class="mask"
+                    fill="rgba(0, 0, 0, 0.7)"
+                    mask="url(#path)"
+                />
             </svg>
             <div
-                v-show="lightAreas.length && lightAreas[0].x"
+                v-show="lightAreas.length && (lightAreas[0].x || lightAreas[0].y)"
                 class="content-box"
                 ref="content"
                 :style="`left:${positions.left}px;top:${positions.top}px`"
@@ -43,7 +48,10 @@
                     <span class="left">{{ value + 1 }}/{{ steps.length }}</span>
                     <div class="right">
                         <span class="skip" @click="handleSkip">跳过</span>
-                        <div class="next" @click="handleClick">
+                        <div v-if="value" class="pre" @click="handlePreSteps">
+                            {{ "上一步" }}
+                        </div>
+                        <div class="next" @click="handleNextSteps">
                             {{ value + 1 === steps.length ? "完成" : "下一步" }}
                         </div>
                     </div>
@@ -65,6 +73,7 @@ export default {
             lightAreas: [],
             positions: {},
             index: 0,
+            active: "",
         };
     },
     props: {
@@ -89,6 +98,11 @@ export default {
         getDomInfo(index) {
             this.lightAreas = [];
             let target = this.steps[index];
+            if (target.class) {
+                this.active = target.class;
+            } else {
+                this.active = "";
+            }
             let offset = [0, 0, 0, 0];
             if (target.xyOffset) {
                 const x = this.transformSize(target.xyOffset[0]);
@@ -104,10 +118,9 @@ export default {
             if (target.index) {
                 for (let i = 0; i < target.index.length; i++) {
                     const dom = document.querySelectorAll(target.element)[target.index[i]];
-                    if (target.click) {
-                        this.$nextTick(() => {
-                            dom.click();
-                        });
+                    if (!dom) return;
+                    if (target.handleBefore) {
+                        target.handleBefore();
                     }
                     const { x, y, width, height } = dom.getBoundingClientRect();
                     const radius = parseFloat(window.getComputedStyle(dom).getPropertyValue("border-radius") || 0);
@@ -122,6 +135,10 @@ export default {
                 }
             } else {
                 const dom = document.querySelector(target.element);
+                if (!dom) return;
+                if (target.handleBefore) {
+                    target.handleBefore();
+                }
                 const { x, y, width, height } = dom.getBoundingClientRect();
                 const radius = parseFloat(window.getComputedStyle(dom).getPropertyValue("border-radius") || 0);
                 this.lightAreas.push({
@@ -152,6 +169,7 @@ export default {
             if (this.lightAreas.length) {
                 this.lightAreas.forEach((item) => {
                     const { x, y, width } = item;
+                    if (!this.$refs.content) return;
                     const box = this.$refs.content.getBoundingClientRect();
                     const padding = this.transformSize(31);
                     let [ofx, ofy] = [0, 0];
@@ -176,27 +194,22 @@ export default {
                 });
             }
         },
-        handleClick() {
+        handlePreSteps() {
+            this.$emit("input", this.value - 1);
+            this.getDomInfo(this.value - 1);
+            if (this.steps[this.value].popover.next) {
+                this.steps[this.value].popover.next();
+            }
+        },
+        handleNextSteps() {
             if (this.value < this.steps.length - 1) {
                 this.$emit("input", this.value + 1);
                 this.getDomInfo(this.value + 1);
             } else {
                 this.handleSkip();
             }
-            if (this.steps[this.value].click) {
-                for (let i = 0; i < this.steps[this.value].index.length; i++) {
-                    console.log(this.value, "this.steps[this.value].element", this.steps[this.value].index[i]);
-                    this.$nextTick(() => {
-                        try {
-                            const dom = document.querySelectorAll(this.steps[this.value].element)[
-                                this.steps[this.value].index[i]
-                            ];
-                            dom.click();
-                        } catch {
-                            console.log("点击事件异常");
-                        }
-                    });
-                }
+            if (this.steps[this.value].popover.next) {
+                this.steps[this.value].popover.next();
             }
         },
         handleSkip() {
@@ -249,7 +262,7 @@ export default {
         z-index: 100000;
 
         .title {
-            font-weight: 500;
+            font-weight: bold;
             font-size: 26px;
             color: #ffffff;
         }
@@ -258,17 +271,21 @@ export default {
             font-weight: 400;
             font-size: 24px;
             color: #ffffff;
+            line-height: 36px;
+            margin-top: 12px;
         }
 
         .bottom {
             margin-top: 40px;
             display: flex;
             justify-content: space-between;
-
+            align-items: center;
             .left {
                 font-weight: 400;
                 font-size: 20px;
                 color: #ffffff;
+                display: inline-block;
+                vertical-align: middle;
             }
 
             .right {
@@ -278,9 +295,10 @@ export default {
 
                 .skip {
                     cursor: pointer;
+                    display: inline-block;
+                    vertical-align: middle;
                 }
-
-                .next {
+                .pre {
                     margin-left: 28px;
                     width: 92px;
                     height: 39px;
@@ -291,6 +309,24 @@ export default {
                     vertical-align: middle;
                     text-align: center;
                     cursor: pointer;
+                    &:hover {
+                        background: #3282df;
+                    }
+                }
+                .next {
+                    margin-left: 6px;
+                    width: 92px;
+                    height: 39px;
+                    line-height: 39px;
+                    background: rgba(255, 255, 255, 0.2);
+                    border-radius: 343px 343px 343px 343px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    text-align: center;
+                    cursor: pointer;
+                    &:hover {
+                        background: #3282df;
+                    }
                 }
             }
         }
