@@ -1,4 +1,4 @@
-import Overflow from './src/overflow.vue'
+import Overflow from './index.vue'
 /* istanbul ignore next */
 Overflow.install = function (Vue) {
   Vue.component(Overflow.name, Overflow)
