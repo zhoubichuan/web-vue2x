@@ -25,7 +25,7 @@
 
 export default {
   name: "VueList",
-  props: {
+    props: {
     title: {
       type: String,
       default: ''
@@ -34,121 +34,165 @@ export default {
       type: Array,
       default: () => []
     },
-  },
-  methods: {
-    handleClick(tip) {
-      if (tip === "left") {
-        this.$refs.body.scrollLeft -= 30;
-      } else {
-        this.$refs.body.scrollLeft += 30;
-      }
-    },
-    handleSelect(item) {
-      item.clickHandler && item.clickHandler();
-    },
-    handleSkip() {
-      this.$router.push({
-        path: "/xxxxx",
-      });
-    },
-  },
+    methods: {
+        transformSize(dis) {
+            return (dis / 1920) * document.documentElement.getBoundingClientRect().width;
+        },
+        handleClick(tip) {
+            let distance = this.$refs.box[0].clientWidth + this.transformSize(12);
+            this.$refs.content.scrollBy({
+                left: (tip === "left" ? -1 : 1) * distance,
+                behavior: "smooth",
+            });
+        },
+        handleSelect(item) {
+            item.clickHandler && item.clickHandler();
+        },
+        handleSkip() {
+          this.$router.push({
+            path: "/xxxxx",
+          });
+        },
 };
 </script>
 
 <style lang="scss" scoped>
 .resource-entry {
-  margin: 0 30px;
-  height: 252px;
-  border-radius: 20px;
-  position: relative;
-  border: 1px solid transparent;
-  background-clip: padding-box, border-box;
-  background-origin: padding-box, border-box;
-  background-image: linear-gradient(45deg, #daf7ff 0%, rgba(205, 238, 255, 0.2) 99%),
-    linear-gradient(45deg,
-      rgba(82.00000271201134, 218.00000220537186, 255, 1),
-      rgba(82.00000271201134, 218.00000220537186, 255, 0.18000000715255737),
-      rgba(82.00000271201134, 218.00000220537186, 255, 0.4000000059604645),
-      rgba(82.00000271201134, 218.00000220537186, 255, 0.75));
+    margin: 0 30px;
+    height: 242px;
+    border-radius: 20px;
+    position: relative;
+    border: 1px solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    background-image: linear-gradient(45deg, rgba(218, 247, 255, 1), rgba(255, 255, 255, 0.85)),
+        linear-gradient(
+            45deg,
+            rgba(82.00000271201134, 218.00000220537186, 255, 1),
+            rgba(82.00000271201134, 218.00000220537186, 255, 0.18000000715255737),
+            rgba(82.00000271201134, 218.00000220537186, 255, 0.4000000059604645),
+            rgba(82.00000271201134, 218.00000220537186, 255, 0.75)
+        );
 
-  .left {
-    position: absolute;
-    left: 0;
-    top: 102px;
-    width: 28px;
-    height: 92px;
-    cursor: pointer;
-  }
-
-  .right {
-    position: absolute;
-    right: 0;
-    top: 102px;
-    width: 28px;
-    height: 92px;
-    cursor: pointer;
-  }
-
-  .header {
-    display: flex;
-    margin: 0 0 12px 20px;
-    padding-top: 16px;
-
-    .title {
-      display: flex;
-      align-items: center;
-      font-weight: 500;
-      font-size: 24px;
-      color: #1c5292;
-      cursor: pointer;
+    .left {
+        position: absolute;
+        left: 0;
+        top: 102px;
+        width: 28px;
+        height: 92px;
+        cursor: pointer;
+        z-index: 1;
     }
 
-    .img {
-      height: 20px;
-      width: 14px;
-      margin-left: 4px;
-    }
-  }
-
-  .body {
-    white-space: nowrap;
-    overflow: auto hidden;
-    padding-bottom: 29px;
-    margin: 0 20px;
-
-    &::-webkit-scrollbar-thumb {
-      background: rgba(58, 148, 254, 0.3);
-      border-radius: 10px;
+    .right {
+        position: absolute;
+        right: 0;
+        top: 102px;
+        width: 28px;
+        height: 92px;
+        cursor: pointer;
+        z-index: 1;
     }
 
-    &::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
+    .header {
+        display: flex;
+        margin: 0 0 12px 20px;
+        padding-top: 16px;
 
-      background-color: #00000040;
+        .title {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 24px;
+            color: #1c5292;
+            cursor: pointer;
 
-    }
-
-    &::-webkit-scrollbar-track {
-      background-color: transparent;
-    }
-
-    .list-box {
-      height: 150px;
-
-      .list-item {
-        width: 201px;
-        height: 150px;
-        background: linear-gradient(180deg, #64b6ff 0%, #2b9bff 100%);
-        border-radius: 16px 16px 16px 16px;
-        margin-left: 12px;
-        display: inline-block;
-
-        &:first-child {
-          margin-left: 0;
+            .u3-icon {
+                margin-left: 4px;
+            }
         }
-      }
+        .img {
+            height: 20px;
+            width: 14px;
+            margin-left: 4px;
+        }
     }
-  }
+
+    .content {
+        white-space: nowrap;
+        overflow: auto hidden;
+        padding-bottom: 19px;
+        margin: 0 20px;
+        &::-webkit-scrollbar-track-piece {
+            background: transparent;
+        }
+        &::-webkit-scrollbar {
+            width: 100px;
+            height: 8px;
+            background-color: transparent;
+            cursor: pointer;
+        }
+        &::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 5px !important;
+            border-radius: 100px 100px 100px 100px;
+            background: #b1daff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .link-list {
+            height: 150px;
+
+            .link-item {
+                width: 201px;
+                height: 150px;
+                background-image: linear-gradient(45deg, rgb(184, 240, 255, 1), rgba(255, 255, 255, 0.9)),
+                    linear-gradient(
+                        45deg,
+                        rgba(82.00000271201134, 218.00000220537186, 255, 1),
+                        rgba(82.00000271201134, 218.00000220537186, 255, 0.18000000715255737),
+                        rgba(82.00000271201134, 218.00000220537186, 255, 0.4000000059604645),
+                        rgba(82.00000271201134, 218.00000220537186, 255, 0.75)
+                    );
+                border-radius: 16px 16px 16px 16px;
+                margin-left: 12px;
+                display: inline-block;
+                position: relative;
+                overflow: hidden;
+                cursor: pointer;
+                &:first-child {
+                    margin-left: 0;
+                }
+                &.no-border {
+                    border: none;
+                }
+                .img {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                }
+                .box {
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    background: rgba(0, 0, 0, 0.2);
+                    padding: 10px;
+                    box-sizing: border-box;
+                    .text {
+                        font-weight: 400;
+                        font-size: 18px;
+                        color: #ffffff;
+                        line-height: 27px;
+                        overflow: hidden;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        word-break: break-all;
+                        white-space: break-spaces;
+                    }
+                }
+            }
+        }
+    }
 }
 </style>
