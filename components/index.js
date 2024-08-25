@@ -47,7 +47,8 @@ let components = [
   textOverflow,
   input,
   List,
-  Guide
+  Guide,
+  Tab
 ];
 const install = function (Vue, opts = {}) {
   components.forEach(component => {
