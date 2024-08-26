@@ -21,6 +21,8 @@ import form from './form/index.js'
 import FormItem from './form-item/index.js'
 import List from './list/index.js'
 import Guide from './guide/index.js'
+import Tab from './tab/index.js'
+
 let components = [
   fitImage,
   // RichEditor,
