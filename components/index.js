@@ -22,7 +22,8 @@ import FormItem from './form-item/index.js'
 import List from './list/index.js'
 import Guide from './guide/index.js'
 import Tab from './tab/index.js'
-
+import ScrollTop from './scroll-top/index.js'
+import Switch from './switch/index.js'
 let components = [
   fitImage,
   // RichEditor,
@@ -50,7 +51,9 @@ let components = [
   input,
   List,
   Guide,
-  Tab
+  Tab,
+  ScrollTop,
+  Switch
 ];
 const install = function (Vue, opts = {}) {
   components.forEach(component => {
