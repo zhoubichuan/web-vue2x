@@ -1,6 +1,6 @@
 <template>
     <div class="web-switch">
-        <img class="icon" :src="src ? src : require(`@/assets/icons/png/${icon}.png`)" @click="$emit('select')" />
+        <img class="icon" :src="src" @click="$emit('select')" />
         <span class="text" @click="$emit('select')">{{ text }}</span>
         <slot></slot>
     </div>
