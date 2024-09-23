@@ -4,16 +4,16 @@
 </template>
 <script>
 export default {
-    name: "VueTextOverflow",
+    name: "VueSwitch",
     props: {
         component: {
             type: String,
-            default: "overflow1",
+            default: "icon-text",
         },
     },
     components: {
-        overflow1: () => import('./src/overflow1.vue'),
-        overflow2: () => import('./src/overflow2.vue')
+        'icon-text': () => import('./src/icon-text.vue'),
+        'text-icon': () => import('./src/text-icon.vue')
     },
 
 };

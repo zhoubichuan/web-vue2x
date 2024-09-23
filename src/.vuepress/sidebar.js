@@ -94,7 +94,7 @@ const sidebar = {
     "3.tree",
     "3.table",
     "3.fitimg",
-    "3.textoverflow",
+    "3.overflow",
     "3.texttyper",
     "4.guide",
     "4.image",

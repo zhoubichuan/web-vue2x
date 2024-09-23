@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <input id="textOverflow" class="text-overflow" type="checkbox" />
+    <input id="textOverflow" class="overflow" type="checkbox" />
     <div class="text">
       <label class="btn" for="textOverflow"></label>
       {{ text }}
@@ -8,9 +8,9 @@
   </div>
 
   <!-- <div class="wrapper">
-    <input id="text-overflow2" class="text-overflow" type="checkbox" />
+    <input id="overflow2" class="overflow" type="checkbox" />
     <div class="text">
-      <label class="btn" for="text-overflow2"></label>
+      <label class="btn" for="overflow2"></label>
       浮动元素是如何定位的
       正如我们前面提到的那样，当一个元素浮动之后，它会被移出正常的文档流，然后向左或者向右平移，一直平移直到碰到了所处的容器的边框，或者碰到另外一个浮动的元素。
     </div>
@@ -43,7 +43,7 @@ export default {
 .text {
   font-size: 20px;
   overflow: hidden;
-  text-overflow: ellipsis;
+  overflow: ellipsis;
   text-align: justify;
   /* display: flex; */
   /*   display: -webkit-box;
@@ -84,19 +84,19 @@ export default {
 .btn::after {
   content: "展开";
 }
-.text-overflow {
+.overflow {
   display: none;
 }
-.text-overflow:checked + .text {
+.overflow:checked + .text {
   max-height: 200px;
 }
-.text-overflow:checked + .text::after {
+.overflow:checked + .text::after {
   visibility: hidden;
 }
-.text-overflow:checked + .text .btn::before {
+.overflow:checked + .text .btn::before {
   visibility: hidden;
 }
-.text-overflow:checked + .text .btn::after {
+.overflow:checked + .text .btn::after {
   content: "收起";
 }
 .btn::before {

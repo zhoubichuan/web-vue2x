@@ -6,7 +6,7 @@ import VideoPlayer from "./video-player/index.js";
 // import PreviewPdf from "./pdf/preview-pdf";
 import alert from "./alert/index.js";
 import component from "./component/index.js";
-import textOverflow from './text-overflow/index.js'
+import Overflow from './overflow/index.js'
 import table from "./table/index.js";
 import checkbox from "./checkbox/index.js";
 import CheckboxGroup from "./checkbox-group/index.js";
@@ -47,7 +47,7 @@ let components = [
   // select,
   vueChart,
   tree,
-  textOverflow,
+  Overflow,
   input,
   List,
   Guide,

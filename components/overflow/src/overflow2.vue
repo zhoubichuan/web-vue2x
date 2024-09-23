@@ -115,7 +115,7 @@ export default {
     text-align: justify;
     line-break: anywhere;
     width: 100%;
-    text-overflow: ellipsis;
+    overflow: ellipsis;
     -webkit-line-clamp: 6;
     display: -webkit-box;
     -webkit-box-orient: vertical;

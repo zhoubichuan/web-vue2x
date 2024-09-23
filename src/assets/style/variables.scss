@@ -78,7 +78,7 @@ $icon-size5: 2rem !default;
 //省略号
 .senluehao{
   overflow: hidden;
-  text-overflow: ellipsis;
+  overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -177,12 +177,12 @@ $subMenuHover:#47a369;
 @mixin ellipsis($rowCount: 1) {
   @if $rowCount <=1 {
   overflow: hidden;
-  text-overflow: ellipsis;
+  overflow: ellipsis;
   white-space: nowrap;
 } @else {
       min-width: 0;
       overflow: hidden;
-      text-overflow: ellipsis;
+      overflow: ellipsis;
       display: -webkit-box;
       -webkit-line-clamp: $rowCount;
       -webkit-box-orient: vertical;
