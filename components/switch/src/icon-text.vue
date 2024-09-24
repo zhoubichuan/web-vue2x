@@ -1,6 +1,6 @@
 <template>
     <div class="web-switch">
-        <img class="icon" :src="src" @click="$emit('select')" />
+        <img class="icon" :src="src ? src : require(`@/assets/icons/png/${icon}.png`)" @click="$emit('select')" />
         <span class="text" @click="$emit('select')">{{ text }}</span>
         <slot></slot>
     </div>
@@ -36,7 +36,7 @@ export default {
     width: 58px;
     height: 29px;
     background: #d0edff;
-    border-radius: 8px 8px 8px 8px;
+    border-radius: 8px;
     text-align: center;
     cursor: pointer;
     & > .icon {

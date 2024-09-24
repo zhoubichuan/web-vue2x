@@ -1,7 +1,7 @@
 <template>
     <div class="web-switch">
-        <img class="icon" :src="src" @click="$emit('select')" />
         <span class="text" @click="$emit('select')">{{ text }}</span>
+        <img class="icon" :src="src ? src : require(`./${icon}.png`)" @click="$emit('select')" />
         <slot></slot>
     </div>
 </template>
@@ -31,25 +31,15 @@ export default {
 </script>
 <style lang="scss" socped>
 .web-switch {
-    display: inline-block;
-    vertical-align: middle;
-    width: 58px;
-    height: 29px;
-    background: #d0edff;
-    border-radius: 8px 8px 8px 8px;
-    text-align: center;
-    cursor: pointer;
-    & > .icon {
-        width: 18px;
-        height: 18px;
-        display: inline-block;
-        vertical-align: middle;
-        margin-bottom: -0.02rem;
-    }
     & > .text {
         font-weight: 400;
-        font-size: 15px;
+        font-size: 16px;
         color: #3a94fe;
+    }
+    & > .icon {
+        width: 10px;
+        height: 10px;
+        margin-left: 4px;
     }
 }
 </style>
