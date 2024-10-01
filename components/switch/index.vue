@@ -22,7 +22,7 @@ export default {
 <template>
     <div class="web-switch" :class="component">
         <template v-if="component === 'icon-text'">
-            <img class="icon" :src="src ? src : require(`@/assets/icons/png/${icon}.png`)" @click="handleSelect" />
+            <img class="icon" :src="src ? src : `./${icon}.png`" @click="handleSelect" />
             <span class="text" @click="handleSelect">{{ text }}</span>
         </template>
         <template v-else>
