@@ -152,12 +152,12 @@ module.exports = {
   ],
   // 主题配置
   themeConfig: {
-    repo: "https://github.com/zhoubichuan/web-vue2x", // 源码地址
+    repo: "https://gitee.com/zhoubichuan/web-vue2x", // 源码地址
     repoLabel: "查看源码", // (查看源码的)组件名称
     docsBranch: "master", // git 源仓库 仓库分支
     editLinks: true, // 编辑链接
     docsDir: "src", // 假如文档不是放在仓库的根目录下
-    editLinkText: "在github上编辑此页",
+    editLinkText: "在gitee上编辑此页",
     sidebarDepth: 2,
     lastUpdated: "上次更新", // 获取每个文件最后一次 git 提交的时间戳
     nav: require("./nav.js"),
