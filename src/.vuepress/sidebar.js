@@ -30,7 +30,7 @@ const sidebar = {
     "7.file",
     "8.skeleton",
     "9.ssr",
-    "11.pwa",
+    "10.pwa",
     "12.lazy",
     "13.scroll",
     "14.message",
