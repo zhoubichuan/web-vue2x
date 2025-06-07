@@ -88,7 +88,7 @@ export default {
   display: none;
 }
 .overflow:checked + .text {
-  max-height: 200px;
+  max-height: 900px;
 }
 .overflow:checked + .text::after {
   visibility: hidden;
