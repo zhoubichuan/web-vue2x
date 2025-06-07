@@ -2,7 +2,7 @@ import request from "@/util/request";
 // 获取中国地图数据
 export function getChinaJson() {
   return request({
-    url: "/web-vue2x/china.json",
+    url: "/web-devops/china.json",
     method: "get",
   });
 }

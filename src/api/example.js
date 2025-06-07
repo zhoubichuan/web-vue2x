@@ -1,9 +1,9 @@
 import request from "@/util/request";
-// 增
-export function query(params) {
+// 查询
+export function query(task) {
   return request({
-    url: "/api/example/query",
+    url: "/common-node/api/example/lxquery",
     method: "get",
-    params
+    params: { task }
   });
 }
