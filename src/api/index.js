@@ -1,11 +1,13 @@
-import request from "@/util/request";
 export * from "./getJsonData";
 export * from "./login";
 export * from "./relationEntity";
 export * from "./dataEntity";
 export * from "./dtaInstance";
-export * from "./systemTag";
-export * from "./student";
+import * as example from "./example";
+import * as student from "./student";
+
+export { example, student };
+import request from "@/util/request";
 
 function ip(params) {
   return request({

@@ -3,7 +3,7 @@ import { Message, MessageBox } from "element-ui";
 import { getToken } from "@/util/auth";
 
 // 创建axios实例
-let baseURL="https://zhoubichuan.com";
+let baseURL="http://localhost:3000";
 try {
   baseURL = process ? process.env?.BASE_API : "";
 } catch (e) {}

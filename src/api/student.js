@@ -1,32 +1,32 @@
 import request from "@/util/request";
 // 增
-export function add(params) {
+export function add(data) {
   return request({
-    url: "/common-node/api/student/addSingle",
+    url: "/api/student/addSingle",
     method: "post",
-    params
+    data
   });
 }
 // 删
 export function delSingle(data) {
   return request({
-    url: "/common-node/api/student/deleteSingle",
+    url: "/api/student/deleteSingle",
     method: "delete",
     params: { data },
   });
 }
 // 改
-export function update(params) {
+export function update(data) {
   return request({
-    url: "/common-node/api/student/update",
+    url: "/api/student/update",
     method: "put",
-    params
+    data
   });
 }
 // 查
 export function query(params) {
   return request({
-    url: "/common-node/api/student/querySingle",
+    url: "/api/student/querySingle",
     method: "get",
     params,
   });
@@ -34,7 +34,7 @@ export function query(params) {
 // 查所有
 export function queryAll() {
   return request({
-    url: "/common-node/api/student/queryAll",
+    url: "/api/student/queryAll",
     method: "get",
   });
 }
