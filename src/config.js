@@ -16,7 +16,6 @@ export default {
     Vue.prototype.$service = service;
     Vue.prototype.$qs = qs;
     Vue.prototype.$api = api;
-    Vue.prototype.$api.loadApi()
     Vue.prototype.$awaitWarp = function (promise) {
       return promise
         .then(

@@ -30,10 +30,10 @@ export default {
             type: String,
             default: ''
         },
-    },
-    data: {
-        type: Array,
-        default: () => []
+        data: {
+            type: Array,
+            default: () => []
+        },
     },
     methods: {
         transformSize(dis) {

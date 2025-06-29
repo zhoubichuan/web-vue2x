@@ -7,3 +7,10 @@ export function query(task) {
     params: { task }
   });
 }
+export function csvtojson(task) {
+  return request({
+    url: "/common-node/api/example/csvtojson",
+    method: "get",
+    params: { task }
+  });
+}
