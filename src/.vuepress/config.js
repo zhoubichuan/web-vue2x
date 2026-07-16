@@ -45,6 +45,7 @@ module.exports = {
   stylus: { preferPathResolver: "webpack" },
   less: {},
   scss: {
+    implementation: require("sass"),
     data: `
     @import "~@/assets/style/var.scss";
     @import "~@/assets/style/variables.scss";
@@ -52,7 +53,10 @@ module.exports = {
     @import "~@/assets/style/mixins.scss";
     `,
   },
-  sass: { indentedSyntax: true },
+  sass: {
+    implementation: require("sass"),
+    indentedSyntax: true,
+  },
   dest: "web-vue2x", // 指定 vuepress 的输出目录
   markdown: {
     toc: { includeLevel: [2, 3] },

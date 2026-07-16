@@ -17,7 +17,6 @@
 </template>
    
   <script>
-import VoiceCore from "voice-core";
 export default {
   name: "VoiceAssistant",
   props: {
@@ -33,13 +32,20 @@ export default {
       appId: "d57fa021",
       apiKey: "bdb9f90684f6e2be35b3d7fe687b78ff",
       voice: null,
+      VoiceCore: null,
       messagelist: [],
     };
   },
-  mounted() {},
+  mounted() {
+    this.VoiceCore = require("voice-core");
+    this.voiceCoreInit(this.list);
+  },
   methods: {
     voiceCoreInit(list) {
-      this.voice = new VoiceCore(
+      if (!this.VoiceCore) {
+        return;
+      }
+      this.voice = new this.VoiceCore(
         {
           onClose: () => {
             this.tip = "语音助手已经关闭";
@@ -117,8 +123,8 @@ export default {
         this.voiceState = false;
         return;
       }
-      if (this.props.callback && typeof this.props.callback === "function") {
-        this.props.callback(item);
+      if (this.$props.callback && typeof this.$props.callback === "function") {
+        this.$props.callback(item);
       }
     },
 
@@ -163,7 +169,6 @@ export default {
       handler(val, oldval) {
         this.voiceCoreInit(val);
       },
-      immediate: true,
       deep: true,
     },
   },

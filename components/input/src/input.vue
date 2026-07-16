@@ -26,7 +26,7 @@ export default {
   },
   watch: {
     value(value) {
-      this.currentValue = val;
+      this.currentValue = value;
     },
   },
   methods: {
@@ -37,7 +37,7 @@ export default {
       this.dispatch("VueFormItem", "on-form-change", value);
     },
     handleBlur() {
-      this.dispatch("VueFormItem", "on-from-blur", this.currentValue);
+      this.dispatch("VueFormItem", "on-form-blur", this.currentValue);
     },
   },
 };

@@ -28,15 +28,15 @@ meta:
         <p>掌握Vue2.x全家桶和Vue3.x全家桶中重点知识，对相关官方文档进行一些知识的补充，全面提升Vue的基础知识能力</p>
       </div>
       <div class="feature">
-        <h2><a href="/web-vue2x/senior/mobile/1.index.html">移动端规范</a></h2> 
+        <h2><a href="/web-vue2x/senior/1.mobile/1.index.html">移动端规范</a></h2> 
         <p>了解移动端设计中的一些通用标准、兼容性问题以及打包成app注意的问题 </p>
       </div>
        <div class="feature">
-        <h2><a href="/web-vue2x/senior/browser/1.index.html">网页端规范</a></h2> 
+        <h2><a href="/web-vue2x/senior/2.browser/1.index.html">网页端规范</a></h2> 
         <p>了解网页设计中一个通用标准、大屏开发中需要注意的一些事项 </p>
       </div>
       <div class="feature">
-        <h2><a href="/web-vue2x/senior/component/1.index.html">组件开发</a></h2> 
+        <h2><a href="/web-vue2x/senior/3.component/1.index.html">组件开发</a></h2> 
         <p>了解组件设计思路，组件编写工作流搭建，从0编写复杂组件之异步级联组件 单元测试编写及组件的发布</p>
       </div>
       <div class="feature">
@@ -44,7 +44,7 @@ meta:
         <p>深入了解VueCLI2.x原理、Vue 2.x原理剖析、Vue-router3.x原理剖析、Vuex3.x原理剖析、微前端相关原理 </p>
       </div>
       <div class="feature">
-        <h2><a href="/web-vue2x/senior/deploy/1.index.html">微前端深入</a></h2> 
+        <h2><a href="/web-vue2x/source/1.micro/1.index.html">微前端深入</a></h2> 
         <p>了解vue项目中使用乾坤（qiankun）作为微前端框架的内部原理</p>
       </div>
       <div class="feature">

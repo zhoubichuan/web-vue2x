@@ -29,7 +29,7 @@ export default {
     computed: {},
 };
 </script>
-<style lang="scss" socped>
+<style lang="scss" scoped>
 .web-switch {
     display: inline-block;
     vertical-align: middle;

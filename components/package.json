@@ -4,7 +4,7 @@
   "description": "web-vue2x",
   "main": "index.js",
   "author": "zhoubichaun@icloud.com",
-  "hommepage": "https://github.com/zhoubichuan/web-vue2x",
+  "homepage": "https://github.com/zhoubichuan/web-vue2x",
   "license": "MIT",
   "type":"module",
   "scripts": {

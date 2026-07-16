@@ -23,12 +23,12 @@ export default {
     };
   },
   methods: {
-    destoryCode() {
+    destroyCode() {
       const $target = document.getElementById(this.id);
       if ($target) $target.parentNode.removeChild($target);
       if (this.component) {
         this.$refs.display.removeChild(this.component.$el);
-        this.component.$destory();
+        this.component.$destroy();
         this.component = null;
       }
     },
@@ -68,14 +68,17 @@ export default {
       const style = this.getSource(this.code, "style");
       const template =
         '<div id="app">' + this.getSource(this.code, "template") + "</div>";
+      this.html = template;
+      this.js = script;
+      this.css = style;
     },
   },
-  beforeDestory() {
-    this.destoryCode();
+  beforeDestroy() {
+    this.destroyCode();
   },
   watch: {
     code() {
-      this.destoryCode();
+      this.destroyCode();
       this.renderCode();
     },
   },

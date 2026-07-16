@@ -64,7 +64,7 @@ export default {
     computed: {},
 };
 </script>
-<style lang="scss" socped>
+<style lang="scss" scoped>
 .web-switch {
     &.text-icon {
         & > .text {
